@@ -2,6 +2,7 @@ const Discord = require('discord.js')
 const { get } = require("snekfetch"); 
 const tool = require("./tool.js");
 const cmds = require("./commands.js");
+const config = require("./config.json");
 const bot = new Discord.Client()
 
 //instance
@@ -10,7 +11,7 @@ bot.on('ready', function () {
 })
 
 bot.on('message', function (message) {
-    if (message.content === 'C*help') {
+    if (message.content === config.prefix + 'help') {
         let testEmbed = new Discord.RichEmbed()
         .setDescription("Voici la description")
         .setColor('#1CFF1C')
@@ -23,7 +24,7 @@ bot.on('message', function (message) {
         message.channel.send(testEmbed);
     }
 
-    if (message.content === 'C*Administration') {
+    if (message.content === config.prefix + 'Administration') {
         let adminEmbed = new Discord.RichEmbed()
         .setDescription('Voici la liste des commandes pour les administrateur')
         .setColor('#6GFH6D')
@@ -32,7 +33,7 @@ bot.on('message', function (message) {
         message.channel.send(adminEmbed);
     }
 
-    if (message.content === 'C*Image') {
+    if (message.content === config.prefix + 'Image') {
         let catEmbed = new Discord.RichEmbed()
         .setDescription('Voici les commandes possible pour obtenir des images :wink: ')
         .setColor('#6D5G1R')
@@ -44,13 +45,13 @@ bot.on('message', function (message) {
     }
 
 
-    if (message.content === 'C*Server') {
+    if (message.content === config.prefix + 'Server') {
         let server_name = message.guild.name
         let server_size = message.guild.members.size
         message.channel.send('Serveur : ' + server_name + '\nPersonnes : ' + server_size);
     }
 
-    if (message.content === 'C*Youtube') {
+    if (message.content === config.prefix + 'Youtube') {
         let youtubeEmbed = new Discord.RichEmbed()
         .setDescription("Pense à t'abonner et à liké")
         .setColor('#5DKK6L')
@@ -61,7 +62,7 @@ bot.on('message', function (message) {
         message.channel.send(youtubeEmbed);
     }
 
-    if (message.content === 'C*Invite') {
+    if (message.content === config.prefix + 'Invite') {
         let InviteEmbed = new Discord.RichEmbed()
         .setDescription("Voici le lien pour m'inviter dans ton serveur :wink: ")
         .setColor('#5EGT5B')
@@ -70,17 +71,17 @@ bot.on('message', function (message) {
         message.channel.send(InviteEmbed);
     }
 
-    if (message.content === 'C*Inude') {
+    if (message.content === config.prefix + 'Inude') {
         message.channel.send("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKegUKwwAgFeEROseg6eJzgCTyvosxi58u-IRmHZ8TWygrGgxl")
         message.reply("éspèce de cochon :joy: ")
     }
 
-    if (message.content === 'C*8Iperles') {
+    if (message.content === config.prefix + '8Iperles') {
         number = 5;
         imageNumber = Math.floor (Math.random() * (number - 1 +1)) + 1;
         message.channel.send ( {files: ["./imagesperle/" + imageNumber + ".JPG"]} ) 
     }
-	if(message.content.startsWith('C*Icat')) {
+	if(message.content.startsWith(config.prefix + 'Icat')) {
 		try {
 			get('https://aws.random.cat/meow').then(res => {
 				const embed = new Discord.RichEmbed()
@@ -91,21 +92,14 @@ bot.on('message', function (message) {
 			return message.channel.send(error.stack);
 		}
 	}
-	if(message.content === 'C*ban') {
-	if ( !message.member.hasPermission('BAN_MEMBERS')){
-		return message.channel.send(`Vous n'avez pas la permission de ban`);
-	}
-	let memberToBan = message.mentions.members.first();
-	if(memberToBan && memberToBan.bannable && (message.member.highestRole.calculatedPosition >
-            memberToBan.highestRole.calculatedPosition || message.guild.ownerID == message.author.id)){
-	    message.channel.send(` L\'utilisateur ${memberToBan} à bien été bani`)
-	}else{
-        message.channel.send(`L\'utilisateur ${memberToBan} ne peut être ban`)
-    }
- }
-    
+	if(message.author.bot || message.channel.type != 'text')
+		return;
 
-  
+	if(!message.content.startsWith(config.prefix))
+		return;
+	let cmd =message.content.split(/\s+/)[0].slice(config.prefix.length).toLowerCase();
+	getCmdFunction(cmd)(message);
+
 });
 
    
