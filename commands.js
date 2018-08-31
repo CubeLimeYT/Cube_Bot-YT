@@ -29,7 +29,7 @@ function ban(message){
 	    message.guild.owner.createDM().then(channel => {
 			channel.send({embed: {
 				title: "Ban",
-				color: 'RANDOM',
+				color: 0x00FF,
 				fields:[{
 					name: "Utilisateur banni",
 					value: `${memberToBan}`,
