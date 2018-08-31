@@ -29,6 +29,7 @@ bot.on('message', function (message) {
         .setDescription('Voici la liste des commandes pour les administrateur')
         .setColor('#6GFH6D')
         .addField('C*server', 'Vous donneras les infos sur le serveur')
+	 .addField('C*Ban', 'Pour bannir des gens de façon permanente')
         .setFooter('Voila')
         message.channel.send(adminEmbed);
     }
