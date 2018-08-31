@@ -25,7 +25,28 @@ function ban(message){
 	    	reason: reason ? reason: 'none'
 	    };
 	    memberToBan.ban(banOptions);
-	    message.channel.send(` L\'utilisateur ${memberToBan} à bien été bani`)
+	    message.channel.send(` L\'utilisateur ${memberToBan} à bien été bani`);
+	    message.guild.owner.createDM().then(channel => {
+			channel.send({embed: {
+				title: "Ban",
+				color: 'RANDOM',
+				fields:[{
+					name: "Utilisateur banni",
+					value: `${memberToBan}`,
+					inline: true
+				},
+				{
+					name: "Raison",
+					value: `${reason}`,
+					inline: true
+				},
+				{
+					name: "La personne qui a utliser la commande",
+					value: `${message.author}`,
+					inline: true
+				}]
+			}});
+		})
 	}else{
         message.channel.send(`L\'utilisateur ${memberToBan} ne peut être ban`)
     }
