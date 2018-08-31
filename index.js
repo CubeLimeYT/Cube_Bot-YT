@@ -81,10 +81,10 @@ bot.on('message', function (message) {
 			get('https://aws.random.cat/meow').then(res => {
 				const embed = new Discord.RichEmbed()
 				.setImage(res.body.file)
-				return msg.channel.send({embed});
+				return message.channel.send({embed});
 			});
 		} catch(err) {
-			return msg.channel.send(error.stack);
+			return message.channel.send(error.stack);
 		}
 	}
     
