@@ -88,6 +88,26 @@ bot.on('message', function (message) {
 			return message.channel.send(error.stack);
 		}
 	}
+	if(message.content === 'C*ban') {
+	if ( !msg.member.hasPermission('BAN_MEMBERS')){
+		return msg.channel.send(`Vous n'avez pas la permission de ban`);
+	}
+	let memberToBan = msg.mentions.members.first();
+	if(memberToBan && memberToBan.bannable && (msg.member.highestRole.calculatedPosition >
+            memberToBan.highestRole.calculatedPosition || msg.guild.ownerID == msg.author.id)){
+		let reason = tool.parseOptionArg('raison', msg.content);
+	    let days = parseInt(tool.parseOptionArg('days', msg.content))
+
+	    let banOptions = {
+	    	days : days ? days : 0,
+	    	reason: reason ? reason: 'none'
+	    };
+	    memberToBan.ban(banOptions);
+	    msg.channel.send(` L\'utilisateur ${memberToBan} à bien été bani`)
+	}else{
+        msg.channel.send(`L\'utilisateur ${memberToBan} ne peut être ban`)
+    }
+ }
     
 
   
