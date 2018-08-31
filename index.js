@@ -7,18 +7,6 @@ bot.on('ready', function () {
 })
 
 bot.on('message', function (message) {
-    if(msg.content.startsWith('C*Icat')) {
-		try {
-			get('https://aws.random.cat/meow').then(res => {
-				const embed = new Discord.RichEmbed()
-				.setImage(res.body.file)
-				return msg.channel.send({embed});
-			});
-		} catch(err) {
-			return msg.channel.send(error.stack);
-		}
-	}
-    
     if (message.content === 'C*help') {
         let testEmbed = new Discord.RichEmbed()
         .setDescription("Voici la description")
@@ -88,6 +76,18 @@ bot.on('message', function (message) {
         imageNumber = Math.floor (Math.random() * (number - 1 +1)) + 1;
         message.channel.send ( {files: ["./imagesperle/" + imageNumber + ".JPG"]} ) 
     }
+	if(message.content.startsWith('C*Icat')) {
+		try {
+			get('https://aws.random.cat/meow').then(res => {
+				const embed = new Discord.RichEmbed()
+				.setImage(res.body.file)
+				return msg.channel.send({embed});
+			});
+		} catch(err) {
+			return msg.channel.send(error.stack);
+		}
+	}
+    
 
   
 });
