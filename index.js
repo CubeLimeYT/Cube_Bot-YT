@@ -1,5 +1,7 @@
 const Discord = require('discord.js')
 const { get } = require("snekfetch"); 
+const tool = require("./tool.js");
+const cmds = require("./commands.js");
 const bot = new Discord.Client()
 
 //instance
@@ -108,3 +110,10 @@ bot.on('message', function (message) {
    
 
 bot.login(process.env.token);
+
+function getCmdFunction(cmd){
+	const COMMANDS = {
+		'ban': cmds.ban
+	}
+	return COMMANDS[cmd] ? COMMANDS[cmd] : () => {};
+}
