@@ -65,7 +65,28 @@ function kick(msg){
 	    	reason: reason ? reason: 'none'
 	    };
 	    memberToKick.kick(kickOptions);
-	    msg.channel.send(` L\'utilisateur ${memberToKick} à bien été kick`)
+	    msg.channel.send(` L\'utilisateur ${memberToKick} à bien été kick`);
+		msg.guild.owner.createDM().then(channel => {
+			channel.send({embed: {
+				title: "Ban",
+				color: 0x00FF,
+				fields:[{
+					name: "Utilisateur kick",
+					value: `${memberToKick}`,
+					inline: true
+				},
+				{
+					name: "Raison",
+					value: `${reason}`,
+					inline: true
+				},
+				{
+					name: "La personne qui a utliser la commande",
+					value: `${msg.author}`,
+					inline: true
+				}]
+			}});
+		})
 	}else{
         msg.channel.send(`L\'utilisateur ${memberToKick} ne peut être kick`)
     }
