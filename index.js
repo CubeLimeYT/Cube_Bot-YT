@@ -7,6 +7,18 @@ bot.on('ready', function () {
 })
 
 bot.on('message', function (message) {
+    if(msg.content.startsWith('C*IcatRandom')) {
+		try {
+			get('https://aws.random.cat/meow').then(res => {
+				const embed = new Discord.RichEmbed()
+				.setImage(res.body.file)
+				return msg.channel.send({embed});
+			});
+		} catch(err) {
+			return msg.channel.send(error.stack);
+		}
+	}
+    
     if (message.content === 'C*help') {
         let testEmbed = new Discord.RichEmbed()
         .setDescription("Voici la description")
@@ -34,6 +46,7 @@ bot.on('message', function (message) {
         .setDescription('Voici les commandes possible pour obtenir des images :wink: ')
         .setColor('#6D5G1R')
         .addField("C*Icat", "Vous donneras des images de chat :joy: ")
+        .addField("C*IcatRandom", "Vous donneras des images aléatoires de chat :joy: ")
         .addField("C*Idog", "Vous donneras des images de chien :joy: ")
         .addField("C*Inude","Vous enverras un nude en privé :wink: ")
         .setFooter("Si tu as des suggestions d'images a rajouter fait moi en part  ")
