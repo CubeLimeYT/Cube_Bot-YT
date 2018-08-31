@@ -6,7 +6,8 @@ const stripInDent = require('strip-indent');
 const os = require('os');
 
 module.exports = {
-	'ban': ban
+	'ban': ban,
+	'kick': kick
 }
 
 function ban(message){
@@ -27,5 +28,24 @@ function ban(message){
 	    message.channel.send(` L\'utilisateur ${memberToBan} à bien été bani`)
 	}else{
         message.channel.send(`L\'utilisateur ${memberToBan} ne peut être ban`)
+    }
+}
+function kick(msg){
+	if ( !msg.member.hasPermission('KICK_MEMBERS')){
+		return msg.channel.send(`Vous n'avez pas la permission de kick`);
+	}
+    
+	let memberToKick = msg.mentions.members.first();
+	if(memberToKick && memberToKick.kickable && (msg.member.highestRole.calculatedPosition >
+            memberToKick.highestRole.calculatedPosition || msg.guild.ownerID == msg.author.id)){
+		let reason = tool.parseOptionArg('raison', msg.content);
+
+	    let kickOptions = {
+	    	reason: reason ? reason: 'none'
+	    };
+	    memberToKick.kick(kickOptions);
+	    msg.channel.send(` L\'utilisateur ${memberToKick} à bien été kick`)
+	}else{
+        msg.channel.send(`L\'utilisateur ${memberToKick} ne peut être kick`)
     }
 }
