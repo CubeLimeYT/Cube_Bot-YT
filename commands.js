@@ -68,7 +68,7 @@ function kick(msg){
 	    msg.channel.send(` L\'utilisateur ${memberToKick} à bien été kick`);
 		msg.guild.owner.createDM().then(channel => {
 			channel.send({embed: {
-				title: "Ban",
+				title: "Kick",
 				color: 0x00FF,
 				fields:[{
 					name: "Utilisateur kick",
