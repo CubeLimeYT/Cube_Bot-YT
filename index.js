@@ -7,7 +7,7 @@ bot.on('ready', function () {
 })
 
 bot.on('message', function (message) {
-    if(msg.content.startsWith('C*IcatRandom')) {
+    if(msg.content.startsWith('C*Icat')) {
 		try {
 			get('https://aws.random.cat/meow').then(res => {
 				const embed = new Discord.RichEmbed()
@@ -45,8 +45,7 @@ bot.on('message', function (message) {
         let catEmbed = new Discord.RichEmbed()
         .setDescription('Voici les commandes possible pour obtenir des images :wink: ')
         .setColor('#6D5G1R')
-        .addField("C*Icat", "Vous donneras des images de chat :joy: ")
-        .addField("C*IcatRandom", "Vous donneras des images aléatoires de chat :joy: ")
+        .addField("C*Icat", "Vous donneras des images aléatoires de chat :joy: ")
         .addField("C*Idog", "Vous donneras des images de chien :joy: ")
         .addField("C*Inude","Vous enverras un nude en privé :wink: ")
         .setFooter("Si tu as des suggestions d'images a rajouter fait moi en part  ")
@@ -77,12 +76,6 @@ bot.on('message', function (message) {
         .addField('https://discordapp.com/oauth2/authorize?client_id=479022698303848459&scope=bot&permissions=2146958847',"Voilà c'est cadeau :wink: ")
         .setFooter('Voila si tu ne comprend vraiment rien contacte moi ==> Cube_Lime YT#3607')
         message.channel.send(InviteEmbed);
-    }
-
-    if (message.content === 'C*Icat') {
-        number = 50;
-        imageNumber = Math.floor (Math.random() * (number - 1 + 1)) + 1;
-        message.channel.send ( {files: ["./imagescat/" + imageNumber + ".jpeg"]} )
     }
 
     if (message.content === 'C*Inude') {
