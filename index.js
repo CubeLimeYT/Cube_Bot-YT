@@ -109,7 +109,8 @@ bot.login(process.env.token);
 
 function getCmdFunction(cmd){
 	const COMMANDS = {
-		'ban': cmds.ban
+		'ban': cmds.ban,
+		'kick': cmds.kick
 	}
 	return COMMANDS[cmd] ? COMMANDS[cmd] : () => {};
 }
