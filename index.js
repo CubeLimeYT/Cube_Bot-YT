@@ -79,22 +79,22 @@ bot.on('message', function (message) {
     }
 	
      if (message.content === ('Bonjour')
-	 message.reply('Bonjour tua xD')
+	  message.reply('Bonjour tua xD')
 	     
      if (message.content === ('Bonsoir')
-	 message.reply('Bonsoir')
+	  message.reply('Bonsoir')
 	     
      if (message.content === ('Bonne nuit')
-	 message.reply('Bonneuhhh nuit les petits xD')
+	  message.reply('Bonneuhhh nuit les petits xD')
 	     
      if (message.content === ('bonjour')
-	 message.reply("Yop tout le monde c'est Squeezie")
+	  message.reply("Yop tout le monde c'est Squeezie")
 	     
      if (message.content ==== ('bonsoir')
-	 message.reply('Clap Over')
+	  message.reply('Clap Over')
 	     
      if (message.content === ('bonne nuit')
-	 message.reply('oé va te coucher x) ')
+	  message.reply('oé va te coucher x) ')
 
     if (message.content === config.prefix + '8Iperles') {
         number = 5;
