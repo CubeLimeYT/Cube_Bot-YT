@@ -7,13 +7,13 @@ const bot = new Discord.Client()
 
 //instance
 let statuses = [`${config.prefix}help`, `ban des petit caïd `]
-bot.on('ready',() {
+bot.on('ready', () {
     setInterval(function() {
 		let status = statuses[Math.floor(Math.random()*statuses.length)];
 
 		bot.user.setPresence({ game: { name: status }, status: 'online'});//status dnd = ne pas déranger, online, 
 	}, 10000)
-})
+});
 
 bot.on('message', function (message) {
     if (message.content === config.prefix + 'help') {
