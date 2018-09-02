@@ -77,6 +77,24 @@ bot.on('message', function (message) {
         message.channel.send("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKegUKwwAgFeEROseg6eJzgCTyvosxi58u-IRmHZ8TWygrGgxl")
         message.reply("éspèce de cochon :joy: ")
     }
+	
+     if (message.content === ('Bonjour')
+	 message.reply('Bonjour tua xD')
+	     
+     if (message.content === ('Bonsoir')
+	 message.reply('Bonsoir')
+	     
+     if (message.content === ('Bonne nuit')
+	 message.reply('Bonneuhhh nuit les petits xD')
+	     
+     if (message.content === ('bonjour')
+	 message.reply("Yop tout le monde c'est Squeezie")
+	     
+     if (message.content ==== ('bonsoir')
+	 message.reply('Clap Over')
+	     
+     if (message.content === ('bonne nuit')
+	 message.reply('oé va te coucher x) ')
 
     if (message.content === config.prefix + '8Iperles') {
         number = 5;
