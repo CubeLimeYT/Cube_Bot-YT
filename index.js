@@ -78,7 +78,22 @@ bot.on('message', function (message) {
         message.reply("éspèce de cochon :joy: ")
     }
 	if(message.content === 'Bonjour')
-		message.reply('Bonjour tua xDD')
+		message.reply('Ousalamalekoum salam et bienvenue sur ma chaîne youtube')
+
+	if(message.content === 'bonjour')
+		message.reply("Yop tout le monde Squeezie")
+
+	if(message.content === 'Bonsoir')
+		message.reply('Bonsoir à toi')
+
+	if(message.content === 'bonsoir')
+		message.reply('Clap Over')
+
+	if(message.content === 'Bonne nuit')
+		message.reply('Bonneuhhhh nuit les petits')
+
+	if(message.content === 'bonne nuit')
+		meesage.reply('oé vas te coucher x) ')
 	
     if (message.content === config.prefix + '8Iperles') {
         number = 5;
