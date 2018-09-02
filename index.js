@@ -6,8 +6,13 @@ const config = require("./config.json");
 const bot = new Discord.Client()
 
 //instance
-bot.on('ready', function () {
-    bot.user.setGame("C*help")
+let statuses = [`${config.prefix}help`, `ban des petit caïd `]
+bot.on('ready', () {
+    setInterval(function() {
+		let status = statuses[Math.floor(Math.random()*statuses.length)];
+
+		bot.user.setPresence({ game: { name: status }, status: 'online'});//status dnd = ne pas déranger, online, 
+	}, 10000)
 })
 
 bot.on('message', function (message) {
