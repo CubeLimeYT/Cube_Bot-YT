@@ -32,7 +32,7 @@ bot.on('message', function (message) {
 
     if (message.content === config.prefix + 'Administration') {
 	  if ( !message.member.hasPermission('ADMINISTRATOR')){
-		return message.channel.send(`Vous n'avez pas la permission de ban`);
+		return message.channel.send(`Vous n'avez pas la permission d'acceder au pannel administrateur car vous n'avez pas un rôle avec l'option administrateur`);
 	  }else{
         let adminEmbed = new Discord.RichEmbed()
         .setDescription('Voici la liste des commandes pour les administrateur')
@@ -112,7 +112,7 @@ bot.on('message', function (message) {
 		message.reply('Hasta la vista xD revien demain :D')
 	
 	if(message.content === 'bn')
-		message.reply("Moi aussi j'aime les BN :troll: ")
+		message.reply("Moi aussi j'aime les BN <:troll:479719554826633236>")
 
 	if(message.content === '@Steven-ADev') 
 		message.reply("Vous appeller le grand maitre. Patientez a un moment il viendra ....,");
