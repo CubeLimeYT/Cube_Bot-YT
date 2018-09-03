@@ -31,8 +31,8 @@ bot.on('message', function (message) {
     }
 
     if (message.content === config.prefix + 'Administration') {
-	  if ( !msg.member.hasPermission('ADMINISTRATOR')){
-		return msg.channel.send(`Vous n'avez pas la permission de ban`);
+	  if ( !message.member.hasPermission('ADMINISTRATOR')){
+		return message.channel.send(`Vous n'avez pas la permission de ban`);
 	  }else{
         let adminEmbed = new Discord.RichEmbed()
         .setDescription('Voici la liste des commandes pour les administrateur')
