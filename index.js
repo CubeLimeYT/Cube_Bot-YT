@@ -142,7 +142,7 @@ bot.on('message', function (message) {
 	let cmd =message.content.split(/\s+/)[0].slice(config.prefix.length).toLowerCase();
 	getCmdFunction(cmd)(message);
 
-}});
+});
 
    
 
