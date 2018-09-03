@@ -27,6 +27,9 @@ bot.on('message', function (message) {
     }
 
     if (message.content === config.prefix + 'Administration') {
+	if ( !msg.member.hasPermission('ADMINISTRATOR')){
+		return msg.channel.send(`Vous n'avez pas la permission de ban`);
+	}else{
         let adminEmbed = new Discord.RichEmbed()
         .setDescription('Voici la liste des commandes pour les administrateur')
         .setColor('#6GFH6D')
@@ -35,7 +38,7 @@ bot.on('message', function (message) {
 	 .addField('C*Kick', 'Pour kicker des gens :D')
         .setFooter('Voila')
         message.channel.send(adminEmbed);
-    }
+    	}
 
     if (message.content === config.prefix + 'Image') {
         let catEmbed = new Discord.RichEmbed()
