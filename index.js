@@ -5,6 +5,11 @@ const cmds = require("./commands.js");
 const config = require("./config.json");
 const bot = new Discord.Client()
 
+bot.on('ready', function () {
+    bot.user.setGame("$help pour ban des caïd")
+})
+
+
 //instance
 let statuses = [`${config.prefix}help`, `ban des petit caïd `]
 
