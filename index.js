@@ -8,7 +8,7 @@ const bot = new Discord.Client()
 //instance
 let statuses = [`${config.prefix}help`, `ban des caïd`]
 bot.on('ready', () => {
-	bot.user.setActivity('https://www.youtube.com/channel/UCKwjZKxnVGF2WUNPEHc0RVg', {type: 'STREAMING'})
+	bot.user.setActivity('https://www.twitch.tv/mcbezigrad', {type: 'STREAMING'})
 });
 
 
@@ -105,6 +105,10 @@ bot.on('message', function (message) {
 	
 	if(message.content === 'bn')
 		message.reply("Moi aussi j'aime les BN :troll: ")
+
+	if(message.content === '@Steven-ADev#1843') message.reply("Vous appeller le grand maitre. Patientez a un moment il viendra ....,");
+		
+
 	
     if (message.content === config.prefix + '8Iperles') {
         number = 5;
