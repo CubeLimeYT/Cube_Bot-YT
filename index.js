@@ -8,7 +8,7 @@ const bot = new Discord.Client()
 //instance
 let statuses = [`${config.prefix}help`, `ban des caïd`]
 bot.on('ready', () => {
-	bot.user.setActivity('https://www.twitch.tv/davidlafarge' {type: 'STREAMING'})
+	bot.user.setActivity('https://www.twitch.tv/davidlafarge', {type: 'STREAMING'})
 });
 
 
