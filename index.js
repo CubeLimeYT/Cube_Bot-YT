@@ -32,10 +32,11 @@ bot.on('message', function (message) {
 
     if (message.content === config.prefix + 'Administration') {
 	  if ( !message.member.hasPermission('ADMINISTRATOR')){
-		return message.channel.send(`Vous n'avez pas la permission d'acceder au pannel administrateur car vous n'avez pas un rôle avec l'option administrateur`);
-		  message.react('<:troll:479719554826633236>')
+		message.react(<:troll:479719554826633236>)
 		  .then(console.log)
 		  .catch(console.error);
+		 message.channel.send(`Vous n'avez pas la permission d'acceder au pannel administrateur car vous n'avez pas un rôle avec l'option administrateur`);
+		  
 	  }else{
         let adminEmbed = new Discord.RichEmbed()
         .setDescription('Voici la liste des commandes pour les administrateur')
