@@ -6,9 +6,13 @@ const config = require("./config.json");
 const bot = new Discord.Client()
 
 //instance
-let statuses = [`${config.prefix}help`, `ban des caïd`]
+let statuses = [`${config.prefix}help`, `ban des caïd`, `https://www.youtube.com/channel/UCKwjZKxnVGF2WUNPEHc0RVg`, `Roblox`]
 bot.on('ready', () => {
-	bot.user.setActivity('https://www.twitch.tv/mcbezigrad', {type: 'STREAMING'})
+	setInterval(function() {
+		let status = statuses[Math.floor(Math.random()*statuses.length)];
+
+		bot.user.setPresence({ game: { name: status }, status: 'online'});
+	}, 10000)
 });
 
 
@@ -109,7 +113,7 @@ bot.on('message', function (message) {
 	if(message.content === 'bn')
 		message.reply("Moi aussi j'aime les BN :troll: ")
 
-	if(message.content === '@Steven-ADev#1843') 
+	if(message.content === '@Steven-ADev') 
 		message.reply("Vous appeller le grand maitre. Patientez a un moment il viendra ....,");
 
 	
