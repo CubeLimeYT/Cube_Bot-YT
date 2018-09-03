@@ -61,7 +61,7 @@ bot.on('message', function (message) {
     }
 
 
-    if (message.content === config.prefix + 'Server' && config.prefix + 'serveur') {
+    if (message.content === config.prefix + 'Server') {
         let server_name = message.guild.name
         let server_size = message.guild.members.size
         message.channel.send('Serveur : ' + server_name + '\nPersonnes : ' + server_size);
