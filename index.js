@@ -6,7 +6,7 @@ const config = require("./config.json");
 const bot = new Discord.Client()
 
 bot.on('ready', function () {
-    bot.user.setGame("$help pour ban des caïd")
+    bot.user.setGame("C*help pour ban des caïd")
 })
 
 
