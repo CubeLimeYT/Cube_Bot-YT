@@ -109,8 +109,8 @@ bot.on('message', function (message) {
 	if(message.content === 'bn')
 		message.reply("Moi aussi j'aime les BN :troll: ")
 
-	if(message.content === '@Steven-ADev#1843') message.reply("Vous appeller le grand maitre. Patientez a un moment il viendra ....,");
-		
+	if(message.content === '@Steven-ADev#1843') 
+		message.reply("Vous appeller le grand maitre. Patientez a un moment il viendra ....,");
 
 	
     if (message.content === config.prefix + '8Iperles') {
@@ -137,7 +137,7 @@ bot.on('message', function (message) {
 	let cmd =message.content.split(/\s+/)[0].slice(config.prefix.length).toLowerCase();
 	getCmdFunction(cmd)(message);
 
-});
+}});
 
    
 
