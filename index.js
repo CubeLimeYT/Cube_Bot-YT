@@ -8,11 +8,7 @@ const bot = new Discord.Client()
 //instance
 let statuses = [`${config.prefix}help`, `ban des caïd`]
 bot.on('ready', () => {
-	setInterval(function() {
-		let status = statuses[Math.floor(Math.random()*statuses.length)];
-
-		bot.user.setPresence({ game: { name: status }, status: 'dnd'});
-	}, 10000)
+	bot.user.setActivity('https://www.twitch.tv/davidlafarge' {type: 'STREAMING'})
 });
 
 
