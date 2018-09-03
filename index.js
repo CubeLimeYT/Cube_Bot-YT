@@ -5,13 +5,15 @@ const cmds = require("./commands.js");
 const config = require("./config.json");
 const bot = new Discord.Client()
 
-bot.on('ready', function () {
-    bot.user.setGame("C*help pour ban des caïd")
-})
-
-
 //instance
-let statuses = [`${config.prefix}help`, `ban des petit caïd `]
+let statuses = [`${config.prefix}help`, `ban des caïd`]
+bot.on('ready', () => {
+	setInterval(function() {
+		let status = statuses[Math.floor(Math.random()*statuses.length)];
+
+		bot.user.setPresence({ game: { name: status }, status: 'dnd'});
+	}, 10000)
+});
 
 
 bot.on('message', function (message) {
