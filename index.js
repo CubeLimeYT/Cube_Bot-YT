@@ -100,6 +100,9 @@ bot.on('message', function (message) {
 	if(message.content === 'aurevoir')
 		message.reply('Hasta la vista xD revien demain :D')
 	
+	if(message.content === 'bn')
+		message.reply("Moi aussi j'aime les BN :troll: ")
+	
     if (message.content === config.prefix + '8Iperles') {
         number = 5;
         imageNumber = Math.floor (Math.random() * (number - 1 +1)) + 1;
