@@ -6,12 +6,12 @@ const config = require("./config.json");
 const bot = new Discord.Client()
 
 //instance
-let statuses = [`${config.prefix}help`, `ban des caïd`, `https://www.youtube.com/channel/UCKwjZKxnVGF2WUNPEHc0RVg`, `Roblox`]
+let statuses = [`${config.prefix}help`, `ban des caïd`, `https://www.youtube.com/channel/UCKwjZKxnVGF2WUNPEHc0RVg`, `Manger`]
 bot.on('ready', () => {
 	setInterval(function() {
 		let status = statuses[Math.floor(Math.random()*statuses.length)];
 
-		bot.user.setPresence({ game: { name: status }, status: 'online'});
+		bot.user.setPresence({ game: { name: status }, status: 'streaming'});
 	}, 10000)
 });
 
