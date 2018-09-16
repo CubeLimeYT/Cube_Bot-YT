@@ -6,7 +6,7 @@ const config = require("./config.json");
 const bot = new Discord.Client()
 
 //instance
-let statuses = [`${config.prefix}help`, `ban des caïd`, `https://www.youtube.com/channel/UCKwjZKxnVGF2WUNPEHc0RVg`, `Manger`]
+let statuses = [`${config.prefix}help`, `ban des caïd`, `https://www.youtube.com/channel/UCKwjZKxnVGF2WUNPEHc0RVg`, `Manger`, 'tousvous surveillez', 'La SM de Cube_Lime YT]
 bot.on('ready', () => {
 	setInterval(function() {
 		let status = statuses[Math.floor(Math.random()*statuses.length)];
