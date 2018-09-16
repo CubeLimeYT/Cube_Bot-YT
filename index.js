@@ -41,7 +41,7 @@ bot.on('message', function (message) {
         let adminEmbed = new Discord.RichEmbed()
         .setDescription('Voici la liste des commandes pour les administrateur')
         .setColor('#6GFH6D')
-        .addField('C*server', 'Vous donneras les infos sur le serveur')
+        .addField('C*Server', 'Vous donneras les infos sur le serveur')
 	      .addField('C*Ban', 'Pour bannir des gens de façon permanente')
 	      .addField('C*Kick', 'Pour kicker des gens :D')
         .setFooter('Voila')
