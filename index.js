@@ -87,6 +87,19 @@ bot.on('message', function (message) {
         message.channel.send(InviteEmbed);
     }
 
+	if(message.content === 'C*Infos') {
+		
+		let embed = new Discord.RichEmbed()
+		.setDescription("Information du Discord")
+		.addField("Nom du Discord", message.guild.name)
+		.addField("Crée le", message.guild.createdAt)
+		.addField("Tu as rejoin le", message.member.joinedAt)
+		.addField("Utilisatreurs sur le Discord", message.guild.memberCount)
+		.setColor("0x0000FF")
+		message.channel.send(embed) 
+		message.react("🆗") 
+	}	
+	
     if (message.content === config.prefix + 'Inude') {
         message.channel.send("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKegUKwwAgFeEROseg6eJzgCTyvosxi58u-IRmHZ8TWygrGgxl")
         message.reply("éspèce de cochon :joy: ")
