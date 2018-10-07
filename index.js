@@ -87,7 +87,7 @@ bot.on('message', function (message) {
         message.channel.send(InviteEmbed);
     }
 
-	if(message.content === 'C*Infos') {
+	if(message.content === config.prefix + 'Infos') {
 		
 		let embed = new Discord.RichEmbed()
 		.setDescription("Information du Discord")
