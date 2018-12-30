@@ -81,6 +81,7 @@ bot.on('message',async message => {
 	   let rMember = message.author;
 	try{
     		await rMember.send(adminEmbed)
+		await message.reply("vérifier vos messages priver")
  	 }catch(e){
    	 	message.reply(`Impossible de vous envoyez des messages privés`);
  	 }
