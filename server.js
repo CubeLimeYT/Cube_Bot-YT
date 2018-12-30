@@ -1,6 +1,5 @@
 const Discord = require('discord.js')
 const bot = new Discord.Client();
-const fs = require('fs');
 const config = require('./config.json');
 
 let statuses = [`${config.prefix}help`, `ban des caïd`, `https://www.youtube.com/channel/UCKwjZKxnVGF2WUNPEHc0RVg`, `Manger`, 'tous vous surveillez', 'être optimisé']
