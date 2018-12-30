@@ -64,12 +64,7 @@ bot.on('message',async message => {
         		message.channel.send(testEmbed);
 		}
 	}
-});
-
-
-bot.on('message', function (message) {
-
-    if (message.content === config.prefix + 'Administration') {
+	if (message.content === config.prefix + 'Administration') {
 	  if ( !message.member.hasPermission('ADMINISTRATOR')){
 		message.react('👌')
 		  .then(console.log)
@@ -77,16 +72,23 @@ bot.on('message', function (message) {
 		 message.channel.send(`Vous n'avez pas la permission d'acceder au pannel administrateur car vous n'avez pas un rôle avec l'option administrateur`);
 		  
 	  }else{
-        let adminEmbed = new Discord.RichEmbed()
-        .setDescription('Voici la liste des commandes pour les administrateur')
-        .setColor('#6GFH6D')
-        .addField('C*Server', 'Vous donneras les infos sur le serveur')
-	      .addField('C*Ban', 'Pour bannir des gens de façon permanente')
-	      .addField('C*Kick', 'Pour kicker des gens :D')
-        .setFooter('Voila')
-        message.channel.send(adminEmbed);
+		  message.author.createDM().then(channel => {
+        		let adminEmbed = new Discord.RichEmbed()
+        		.setDescription('Voici la liste des commandes pour les administrateur')
+        		.setColor('#6GFH6D')
+        		.addField('C*Server', 'Vous donneras les infos sur le serveur')
+	      		.addField('C*Ban', 'Pour bannir des gens de façon permanente')
+	      		.addField('C*Kick', 'Pour kicker des gens :D')
+        		.setFooter('Voila')
+        		message.channel.send(adminEmbed);
+		  }).catch(console.error, channel => message.reply("impossible de vous envoyez le panel administration"));
+		  message.reply("vérifier vos MP");
       }
     }
+});
+
+
+bot.on('message', function (message) {
 
     if (message.content === config.prefix + 'Image') {
         let catEmbed = new Discord.RichEmbed()
