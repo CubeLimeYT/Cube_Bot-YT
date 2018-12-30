@@ -4,6 +4,7 @@ const config = require('./config.json');
 
 let statuses = [`${config.prefix}help`, `ban des caïd`, `https://www.youtube.com/channel/UCKwjZKxnVGF2WUNPEHc0RVg`, `Manger`, 'tous vous surveillez', 'être optimisé']
 bot.on('ready', () => {
+	console.log("Bot lancer!")
 	setInterval(function() {
 		let status = statuses[Math.floor(Math.random()*statuses.length)];
 
