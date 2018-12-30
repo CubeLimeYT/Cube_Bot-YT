@@ -87,9 +87,10 @@ bot.on('message', function (message) {
 	      		.addField('C*Kick', 'Pour kicker des gens :D')
         		.setFooter('Voila')
         		channel.send(adminEmbed);
-		  })
-		  message.reply("vérifier vos MP");
-		  .catch(console.error, channel => message.reply("impossible de vous envoyez le panel administration"));
+			 message.channel.send("vérifier vos MP");
+		  }).catch(console.error, channel => message.reply("impossible de vous envoyez le panel administration"));
+		  
+		  
       }
     }
 
