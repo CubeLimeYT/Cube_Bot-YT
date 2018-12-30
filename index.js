@@ -78,8 +78,9 @@ bot.on('message',async message => {
 	      		.addField('C*Ban', 'Pour bannir des gens de façon permanente')
 	      		.addField('C*Kick', 'Pour kicker des gens :D')
         		.setFooter('Voila')
+	   let rMember = message.author;
 	try{
-    		await channel.send(adminEmbed)
+    		await rMember.send(adminEmbed)
  	 }catch(e){
    	 	message.reply(`Impossible de vous envoyez des messages privés`);
  	 }
