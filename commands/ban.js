@@ -38,7 +38,7 @@ module.exports.run = async (bot, message, args) => {
 					inline: true
 				}]
 			}});
-		})
+		}).catch(message.channel.send(`${message.guild.owner} ne peut recevoir des messages priver`))
 	}else{
         message.channel.send(`L\'utilisateur ${memberToBan} ne peut être ban`)
     }
