@@ -69,6 +69,13 @@ bot.on('message',async message => {
 
 
 bot.on('message', function (message) {
+	
+	if(message.content === config.prefix + 'sendDM'){
+		 message.author.createDM().then(channel => {
+		 	message.channel.send("TEST");
+		 })message.reply("check dm").catch(console.error, channel => message.reply("impossible de vous envoyez le dm"));
+	}
+	
 	if (message.content === config.prefix + 'Administration') {
 	  if ( !message.member.hasPermission('ADMINISTRATOR')){
 		message.react('👌')
