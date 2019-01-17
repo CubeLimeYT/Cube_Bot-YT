@@ -37,7 +37,7 @@ bot.on('message',async message => {
         });
         
     }
-	if(message.content === config.prefix + "help"){
+	if(message.content === config.prefix + "help" || bot.username + "help"){
 		if(message.channel.type === 'dm'){
 			message.author.createDM().then(channel => {
 				let testEmbed = new Discord.RichEmbed()
