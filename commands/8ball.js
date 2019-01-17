@@ -9,13 +9,13 @@ module.exports.run = async (bot, message, args) => {
     
     let question = args.slice(1).join(" ");
     
-    let 8ballembed = new Discord.RichEmbed()
+    let ballembed = new Discord.RichEmbed()
     .setAuthor(message.author.tag)
     .setColor("#FF9900")
     .addField("Question :", question)
     .addField("Réponse:", answer[result])
     
-    message.channel.send(8ballemebed)
+    message.channel.send(ballemebed)
 }
 module.exports.help = {
   name: "8ball"
