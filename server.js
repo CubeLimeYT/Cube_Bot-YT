@@ -53,6 +53,79 @@ bot.on('message', function (message) {
 
 bot.on("message", async message => {
   console.log(`${bot.user.username} Is Ready!`);
+	
+if(message.content.startsWith(config.prefix + "restart")) {
+	if(message.author.id !== "372099632173416449") return message.reply('Vous n\'êtes pas le propriétaire du bot');
+        message.channel.send('**Redémarrage**').then(msg => {
+            setTimeout(() => {
+               msg.edit('**Redémarrage..**');
+            },1000);
+            setTimeout(() => {
+               msg.edit('**Redémarrage...**');
+            },2000);
+        console.log(`${message.author.tag} [ ${message.author.id} ] has restarted the bot.`);
+        console.log(`Restarting..`);
+        setTimeout(() => {
+            bot.destroy();
+            bot.login(process.env.token);
+        },3000);
+          setTimeout(() => {
+               msg.edit('Bot redémarré ✅');
+            },2000);
+        });
+        
+    }
+	if(message.content === config.prefix + "help" || bot.username + "help"){
+		if(message.channel.type === 'dm'){
+			message.author.createDM().then(channel => {
+				let testEmbed = new Discord.RichEmbed()
+        			.setDescription("Voici la description")
+        			.setColor('#1CFF1C')
+       				.addField('C*Administration', "Vous donne la page d'Administration")
+        			.addField('C*Youtube', 'Vous donneras tout concernant le Youtube Game :) ')
+        			.addField('C*Game', 'Vous donneras tout les jeux présent sur le bot')
+        			.addField('C*Image', 'Vous donneras les commandes pour avoir des images')
+        			.addField('C*Invite', "Vous donneras l'invitation du bot")
+        			.setFooter('Support Server : https://discord.gg/pcfYDMK ')
+        			message.channel.send(testEmbed);
+			})
+		}else{
+			let testEmbed = new Discord.RichEmbed()
+        		.setDescription("Voici la description")
+        		.setColor('#1CFF1C')
+        		.addField('C*Administration', "Vous donne la page d'Administration")
+        		.addField('C*Youtube', 'Vous donneras tout concernant le Youtube Game :) ')
+        		.addField('C*Game', 'Vous donneras tout les jeux présent sur le bot')
+        		.addField('C*Image', 'Vous donneras les commandes pour avoir des images')
+        		.addField('C*Invite', "Vous donneras l'invitation du bot")
+        		.setFooter('Support Server : https://discord.gg/pcfYDMK ')
+        		message.channel.send(testEmbed);
+		}
+	}
+	if (message.content === config.prefix + 'Administration') {
+	  if ( !message.member.hasPermission('ADMINISTRATOR')){
+		message.react('👌')
+		  .then(console.log)
+		  .catch(console.error);
+		 message.channel.send(`Vous n'avez pas la permission d'acceder au pannel administrateur car vous n'avez pas un rôle avec l'option administrateur`);
+		  
+	  }let adminEmbed = new Discord.RichEmbed()
+        		.setDescription('Voici la liste des commandes pour les administrateur')
+        		.setColor('#6GFH6D')
+        		.addField('C*Server', 'Vous donneras les infos sur le serveur')
+	      		.addField('C*Ban', 'Pour bannir des gens de façon permanente')
+	      		.addField('C*Kick', 'Pour kicker des gens :D')
+        		.setFooter('Voila')
+	   let rMember = message.author;
+	try{
+    		await rMember.send(adminEmbed)
+		await message.reply("vérifier vos messages priver")
+ 	 }catch(e){
+   	 	message.reply(`Impossible de vous envoyez des messages privés`);
+ 	 }
+		  
+		  
+      }
  let prefix = config.prefix;
   
 // Variables
