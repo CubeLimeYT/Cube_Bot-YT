@@ -74,7 +74,7 @@ if(message.content.startsWith(config.prefix + "restart")) {
     }
 	
 	if (message.content === config.prefix + 'Image')
-		const catEmbed = new Discord.RichEmbed()
+		let catEmbed = new Discord.RichEmbed()
         	.setDescription('Voici les commandes possible pour obtenir des images :wink: ')
         	.setColor('#6D5G1R')
         	.addField("C*Icat", "Vous donneras des images aléatoires de chat :joy: ")
@@ -90,7 +90,7 @@ if(message.content.startsWith(config.prefix + "restart")) {
 	 }
 
     if (message.content === config.prefix + 'Youtube')
-	 const youtubeEmbed = new Discord.RichEmbed()
+	let youtubeEmbed = new Discord.RichEmbed()
         .setDescription("Pense à t'abonner et à liké")
         .setColor('#5DKK6L')
         .addField('Voilà la chaîne de Cube_Lime YT', 'https://www.youtube.com/channel/UCKwjZKxnVGF2WUNPEHc0RVg')
@@ -106,7 +106,7 @@ if(message.content.startsWith(config.prefix + "restart")) {
     }
 
     if (message.content === config.prefix + 'Invite') {
-        const InviteEmbed = new Discord.RichEmbed()
+        let InviteEmbed = new Discord.RichEmbed()
         .setDescription("Voici le lien pour m'inviter dans ton serveur :wink: ")
         .setColor('#5EGT5B')
         .addField('https://discordapp.com/oauth2/authorize?client_id=479022698303848459&scope=bot&permissions=2146958847',"Voilà c'est cadeau :wink: ")
@@ -120,7 +120,7 @@ if(message.content.startsWith(config.prefix + "restart")) {
     }
 	
 	if(message.content === config.prefix + "help"){
-	const HelpEmbed = new Discord.RichEmbed()
+	let HelpEmbed = new Discord.RichEmbed()
         .setDescription("Voici la description")
         .setColor('#1CFF1C')
        	.addField('C*Administration', "Vous donne la page d'Administration")
