@@ -217,6 +217,6 @@ if(message.content.startsWith(config.prefix + "restart")) {
     } finally {
         console.log(`${message.author.username} ran the command: ${cmd}`);
     }
-}));
+});
 
 bot.login(process.env.token)
