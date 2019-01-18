@@ -143,6 +143,7 @@ if(message.content.startsWith(config.prefix + "restart")) {
         .setFooter('Voila si tu ne comprend vraiment rien contacte moi ==> Cube_Lime YT#3607') 
     	message.channel.send(InviteEmbed);
     }
+}
 	
 	if(message.content === config.prefix + "help"){
 	
@@ -217,6 +218,6 @@ if(message.content.startsWith(config.prefix + "restart")) {
     } finally {
         console.log(`${message.author.username} ran the command: ${cmd}`);
     }
-};
+});
 
 bot.login(process.env.token)
