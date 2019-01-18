@@ -10,7 +10,7 @@ if ( !message.member.hasPermission('KICK_MEMBERS')){
 	let memberToKick = message.mentions.members.first();
 	if(memberToKick && memberToKick.kickable && (message.member.highestRole.calculatedPosition >
             memberToKick.highestRole.calculatedPosition || message.guild.ownerID == message.author.id)){
-		let reason = tool.parseOptionArg('raison', msg.content);
+		let reason = tool.parseOptionArg('raison', message.content);
 
 	    let kickOptions = {
 	    	reason: reason ? reason: 'none'
@@ -33,7 +33,7 @@ if ( !message.member.hasPermission('KICK_MEMBERS')){
 				},
 				{
 					name: "La personne qui a utliser la commande",
-					value: `${msg.author}`,
+					value: `${message.author}`,
 					inline: true
 				}]
 			}});
