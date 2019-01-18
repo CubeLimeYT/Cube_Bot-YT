@@ -47,7 +47,7 @@ bot.on('message', function (message) {
 	if(!message.content.startsWith(config.prefix))
 		return;
 	let cmd =message.content.split(/\s+/)[0].slice(config.prefix.length).toLowerCase();
-	getCmdFunction(cmd)(message);
+	bot.getCmdFunction(cmd)(message);
 
 });
 
