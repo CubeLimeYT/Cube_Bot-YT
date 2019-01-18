@@ -158,7 +158,7 @@ if(message.content.startsWith(config.prefix + "restart")) {
         		.addField('C*Invite', "Vous donneras l'invitation du bot")
         		.setFooter('Support Server : https://discord.gg/pcfYDMK ')
 				channel.send(HelpEmbed);
-			})
+			});
 		}else{
 	let HelpEmbed = new Discord.RichEmbed()
         .setDescription("Voici la description")
@@ -217,6 +217,6 @@ if(message.content.startsWith(config.prefix + "restart")) {
     } finally {
         console.log(`${message.author.username} ran the command: ${cmd}`);
     }
-});
+}));
 
 bot.login(process.env.token)
