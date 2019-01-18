@@ -74,6 +74,9 @@ if(message.content.startsWith(config.prefix + "restart")) {
     }
 	
 	if (message.content === config.prefix + 'Image')
+		
+	if(message.channel.type === 'dm'){
+       	 	message.author.createDM().then(channel => {
 		let catEmbed = new Discord.RichEmbed()
         	.setDescription('Voici les commandes possible pour obtenir des images :wink: ')
         	.setColor('#6D5G1R')
@@ -81,15 +84,24 @@ if(message.content.startsWith(config.prefix + "restart")) {
         	.addField("C*Idog", "Vous donneras des images de chien :joy: ")
         	.addField("C*Inude","Vous enverras un nude en privé :wink: ")
         	.setFooter("Si tu as des suggestions d'images a rajouter fait moi en part  ")
-	if(message.channel.type === 'dm'){
-       	 	message.author.createDM().then(channel => {
         		channel.send(catEmbed)
 		});
 	}else{
+		let catEmbed = new Discord.RichEmbed()
+        	.setDescription('Voici les commandes possible pour obtenir des images :wink: ')
+        	.setColor('#6D5G1R')
+        	.addField("C*Icat", "Vous donneras des images aléatoires de chat :joy: ")
+        	.addField("C*Idog", "Vous donneras des images de chien :joy: ")
+        	.addField("C*Inude","Vous enverras un nude en privé :wink: ")
+        	.setFooter("Si tu as des suggestions d'images a rajouter fait moi en part  ")
         	message.channel.send(catEmbed);
 	 }
 
     if (message.content === config.prefix + 'Youtube')
+	
+    if(message.channel.type === 'dm'){
+	 
+        message.author.createDM().then(channel => {
 	let youtubeEmbed = new Discord.RichEmbed()
         .setDescription("Pense à t'abonner et à liké")
         .setColor('#5DKK6L')
@@ -97,29 +109,43 @@ if(message.content.startsWith(config.prefix + "restart")) {
         .addField('Viens aussi sur son serveur discord', 'https://discord.gg/pcfYDMK')
 	 .addField("Tu peut également l'ajouter en ami sur youtube", "https://youtu.be/join/ct-Py9DY3VEGjY")
         .setFooter("Allez c'est gratuit pour le moment")
-    if(message.channel.type === 'dm'){
-        message.author.createDM().then(channel => {
         	channel.send(youtubeEmbed)
 	});
     }else{
+	let youtubeEmbed = new Discord.RichEmbed()
+        .setDescription("Pense à t'abonner et à liké")
+        .setColor('#5DKK6L')
+        .addField('Voilà la chaîne de Cube_Lime YT', 'https://www.youtube.com/channel/UCKwjZKxnVGF2WUNPEHc0RVg')
+        .addField('Viens aussi sur son serveur discord', 'https://discord.gg/pcfYDMK')
+	 .addField("Tu peut également l'ajouter en ami sur youtube", "https://youtu.be/join/ct-Py9DY3VEGjY")
+        .setFooter("Allez c'est gratuit pour le moment")
         message.channel.send(youtubeEmbed);
     }
 
     if (message.content === config.prefix + 'Invite') {
-        let InviteEmbed = new Discord.RichEmbed()
+            
+    if(message.channel.type === 'dm'){
+        message.author.createDM().then(channel => {
+	let InviteEmbed = new Discord.RichEmbed()
         .setDescription("Voici le lien pour m'inviter dans ton serveur :wink: ")
         .setColor('#5EGT5B')
         .addField('https://discordapp.com/oauth2/authorize?client_id=479022698303848459&scope=bot&permissions=2146958847',"Voilà c'est cadeau :wink: ")
-        .setFooter('Voila si tu ne comprend vraiment rien contacte moi ==> Cube_Lime YT#3607')    
-    if(message.channel.type === 'dm'){
-        message.author.createDM().then(channel => {     
+        .setFooter('Voila si tu ne comprend vraiment rien contacte moi ==> Cube_Lime YT#3607')     
         	channel.send(InviteEmbed)
 	})
     }else{
+	let InviteEmbed = new Discord.RichEmbed()
+        .setDescription("Voici le lien pour m'inviter dans ton serveur :wink: ")
+        .setColor('#5EGT5B')
+        .addField('https://discordapp.com/oauth2/authorize?client_id=479022698303848459&scope=bot&permissions=2146958847',"Voilà c'est cadeau :wink: ")
+        .setFooter('Voila si tu ne comprend vraiment rien contacte moi ==> Cube_Lime YT#3607') 
     	message.channel.send(InviteEmbed);
     }
 	
 	if(message.content === config.prefix + "help"){
+	
+		if(message.channel.type === 'dm'){
+			message.author.createDM().then(channel => {
 	let HelpEmbed = new Discord.RichEmbed()
         .setDescription("Voici la description")
         .setColor('#1CFF1C')
@@ -129,11 +155,18 @@ if(message.content.startsWith(config.prefix + "restart")) {
         .addField('C*Image', 'Vous donneras les commandes pour avoir des images')
         .addField('C*Invite', "Vous donneras l'invitation du bot")
         .setFooter('Support Server : https://discord.gg/pcfYDMK ')
-		if(message.channel.type === 'dm'){
-			message.author.createDM().then(channel => {
 				channel.send(HelpEmbed);
 			})
 		}else{
+			let HelpEmbed = new Discord.RichEmbed()
+        .setDescription("Voici la description")
+        .setColor('#1CFF1C')
+       	.addField('C*Administration', "Vous donne la page d'Administration")
+        .addField('C*Youtube', 'Vous donneras tout concernant le Youtube Game :) ')
+        .addField('C*Game', 'Vous donneras tout les jeux présent sur le bot')
+        .addField('C*Image', 'Vous donneras les commandes pour avoir des images')
+        .addField('C*Invite', "Vous donneras l'invitation du bot")
+        .setFooter('Support Server : https://discord.gg/pcfYDMK ')
         		message.channel.send(HelpEmbed);
 		}
 	}
