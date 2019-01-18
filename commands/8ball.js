@@ -11,7 +11,14 @@ module.exports.run = async (bot, message, args) => {
         "Oui",
         "Non",
         "Je ne sais pas",
-        "Peut être"
+        "Peut être",
+        "Essaye plus tard", 
+        "Essaye encore", 
+        "C'est ton destin", 
+        "Impossible", 
+        "Sans aucun doute", 
+        "Pas d'avis", 
+        "Repose ta question"
         ];
     
     let reponse = (replys[Math.floor(Math.random() * replys.length)])
