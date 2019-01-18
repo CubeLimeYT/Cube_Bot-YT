@@ -8,13 +8,7 @@ module.exports.run = async (bot, message, args) => {
     
     let question = args.slice(1).join(" ");
     
-    let ballembed = new Discord.RichEmbed()
-    .setAuthor(message.author.tag)
-    .setColor("#FF9900")
-    .addField("Question :", question)
-    .addField("Réponse:", answer[result])
-    
-    message.channel.send(ballemebed);
+    message.channel.send(answer[result]);
 }
 module.exports.help = {
   name: "8ball"
