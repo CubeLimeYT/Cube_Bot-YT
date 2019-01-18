@@ -138,37 +138,7 @@ if(message.content.startsWith(config.prefix + "restart")) {
     if (sender.bot) return;
     if (!message.content.startsWith(prefix)) return;
     if (message.channel.type === 'dm') return;
-	
-	if(message.content === prefix + "help"){
-		if(message.channel.type === 'dm'){
-			message.author.createDM().then(channel => {
-				let testEmbed = new Discord.RichEmbed()
-        			.setDescription("Voici la description")
-        			.setColor('#1CFF1C')
-       				.addField('C*Administration', "Vous donne la page d'Administration")
-        			.addField('C*Youtube', 'Vous donneras tout concernant le Youtube Game :) ')
-        			.addField('C*Game', 'Vous donneras tout les jeux présent sur le bot')
-        			.addField('C*Image', 'Vous donneras les commandes pour avoir des images')
-        			.addField('C*Invite', "Vous donneras l'invitation du bot")
-        			.setFooter('Support Server : https://discord.gg/pcfYDMK ')
-        			message.channel.send(testEmbed);
-			})
-		}else{
-			let testEmbed = new Discord.RichEmbed()
-        		.setDescription("Voici la description")
-        		.setColor('#1CFF1C')
-        		.addField('C*Administration', "Vous donne la page d'Administration")
-        		.addField('C*Youtube', 'Vous donneras tout concernant le Youtube Game :) ')
-        		.addField('C*Game', 'Vous donneras tout les jeux présent sur le bot')
-        		.addField('C*Image', 'Vous donneras les commandes pour avoir des images')
-        		.addField('C*Invite', "Vous donneras l'invitation du bot")
-        		.setFooter('Support Server : https://discord.gg/pcfYDMK ')
-        		message.channel.send(testEmbed);
-		}
-	}
-
-// Command Handler
-    try {
+	try {
         let commandFile = require(`./commands/${cmd}.js`);
         commandFile.run(bot, message, args, prefix);
     } catch(e) {
