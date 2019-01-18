@@ -2,7 +2,6 @@ const Discord = require("discord.js")
 const config = require("././config.json");
 
 module.exports.run = async (bot, message, args) => {
-    let args = message.content.split(" ").slice(1);
     let tte = args.join(" ")
     if(!tte){
         return message.reply(" posez une vrai question")
