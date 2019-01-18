@@ -73,7 +73,7 @@ if(message.content.startsWith(config.prefix + "restart")) {
         
     }
 	
-	if (message.content === config.prefix + 'Image')
+	if (message.content === config.prefix + 'Image'){
 		
 	if(message.channel.type === 'dm'){
        	 	message.author.createDM().then(channel => {
@@ -96,8 +96,9 @@ if(message.content.startsWith(config.prefix + "restart")) {
         	.setFooter("Si tu as des suggestions d'images a rajouter fait moi en part  ")
         	message.channel.send(catEmbed);
 	 }
+	}
 
-    if (message.content === config.prefix + 'Youtube')
+    if (message.content === config.prefix + 'Youtube'){
 	
     if(message.channel.type === 'dm'){
 	 
@@ -120,6 +121,7 @@ if(message.content.startsWith(config.prefix + "restart")) {
 	 .addField("Tu peut également l'ajouter en ami sur youtube", "https://youtu.be/join/ct-Py9DY3VEGjY")
         .setFooter("Allez c'est gratuit pour le moment")
         message.channel.send(youtubeEmbed);
+    	}
     }
 
     if (message.content === config.prefix + 'Invite') {
@@ -132,7 +134,7 @@ if(message.content.startsWith(config.prefix + "restart")) {
         .addField('https://discordapp.com/oauth2/authorize?client_id=479022698303848459&scope=bot&permissions=2146958847',"Voilà c'est cadeau :wink: ")
         .setFooter('Voila si tu ne comprend vraiment rien contacte moi ==> Cube_Lime YT#3607')     
         	channel.send(InviteEmbed)
-	})
+	});
     }else{
 	let InviteEmbed = new Discord.RichEmbed()
         .setDescription("Voici le lien pour m'inviter dans ton serveur :wink: ")
@@ -146,19 +148,19 @@ if(message.content.startsWith(config.prefix + "restart")) {
 	
 		if(message.channel.type === 'dm'){
 			message.author.createDM().then(channel => {
-	let HelpEmbed = new Discord.RichEmbed()
-        .setDescription("Voici la description")
-        .setColor('#1CFF1C')
-       	.addField('C*Administration', "Vous donne la page d'Administration")
-        .addField('C*Youtube', 'Vous donneras tout concernant le Youtube Game :) ')
-        .addField('C*Game', 'Vous donneras tout les jeux présent sur le bot')
-        .addField('C*Image', 'Vous donneras les commandes pour avoir des images')
-        .addField('C*Invite', "Vous donneras l'invitation du bot")
-        .setFooter('Support Server : https://discord.gg/pcfYDMK ')
+			let HelpEmbed = new Discord.RichEmbed()
+        		.setDescription("Voici la description")
+        		.setColor('#1CFF1C')
+       			.addField('C*Administration', "Vous donne la page d'Administration")
+        		.addField('C*Youtube', 'Vous donneras tout concernant le Youtube Game :) ')
+        		.addField('C*Game', 'Vous donneras tout les jeux présent sur le bot')
+        		.addField('C*Image', 'Vous donneras les commandes pour avoir des images')
+        		.addField('C*Invite', "Vous donneras l'invitation du bot")
+        		.setFooter('Support Server : https://discord.gg/pcfYDMK ')
 				channel.send(HelpEmbed);
 			})
 		}else{
-			let HelpEmbed = new Discord.RichEmbed()
+	let HelpEmbed = new Discord.RichEmbed()
         .setDescription("Voici la description")
         .setColor('#1CFF1C')
        	.addField('C*Administration', "Vous donne la page d'Administration")
@@ -170,6 +172,7 @@ if(message.content.startsWith(config.prefix + "restart")) {
         		message.channel.send(HelpEmbed);
 		}
 	}
+	    
 	if (message.content === config.prefix + 'Administration') {
 	  if ( !message.member.hasPermission('ADMINISTRATOR')){
 		message.react('👌')
