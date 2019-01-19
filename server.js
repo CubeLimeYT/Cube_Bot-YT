@@ -188,7 +188,6 @@ if(message.content.startsWith(config.prefix + "restart")) {
 // Return Statements
     if (sender.bot) return;
     if (!message.content.startsWith(prefix)) return;
-    if (message.channel.type === 'dm') return;
 	try {
         let commandFile = require(`./commands/${cmd}.js`);
         commandFile.run(bot, message, args, prefix);
