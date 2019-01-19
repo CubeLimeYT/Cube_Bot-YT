@@ -1,6 +1,6 @@
 const Discord = require("discord.js");
 
-module.exports.run = async (bot, message, args) {
+module.exports.run = async (bot, message, args) => {
         let InviteEmbed = new Discord.RichEmbed()
         .setDescription("Voici le lien pour m'inviter dans ton serveur :wink: ")
         .setColor('#5EGT5B')
