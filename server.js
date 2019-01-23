@@ -174,7 +174,18 @@ if(message.content.startsWith(config.prefix + "restart")) {
  	 }catch(e){
    	 	message.reply(`Impossible de vous envoyez des messages privés`);
  	 }
-		  
+	
+	}
+	if(message.content.startsWith(config.prefix + 'Icat')) {
+		try {
+			get('https://aws.random.cat/meow').then(res => {
+				const embed = new Discord.RichEmbed()
+				.setImage(res.body.file)
+				return message.channel.send({embed});
+			});
+		} catch(err) {
+			return message.channel.send(error.stack);
+		}	  
 		  
       }
  let prefix = config.prefix;
