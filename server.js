@@ -13,6 +13,18 @@ bot.on('ready', () => {
 });
 
 bot.on('message', function (message) {
+	if(message.content.startsWith(config.prefix + 'Icat')) {
+		try {
+			get('https://aws.random.cat/meow').then(res => {
+				const embed = new Discord.RichEmbed()
+				.setImage(res.body.file)
+				return message.channel.send({embed});
+			});
+		} catch(err) {
+			return message.channel.send(error.stack);
+		}	  
+		  
+      }
     
 	if(message.content === 'Bonjour')
 		message.reply('Ousalamalekoum salam et bienvenue sur ma chaîne youtube')
@@ -176,18 +188,6 @@ if(message.content.startsWith(config.prefix + "restart")) {
  	 }
 	
 	}
-	if(message.content.startsWith(config.prefix + 'Icat')) {
-		try {
-			get('https://aws.random.cat/meow').then(res => {
-				const embed = new Discord.RichEmbed()
-				.setImage(res.body.file)
-				return message.channel.send({embed});
-			});
-		} catch(err) {
-			return message.channel.send(error.stack);
-		}	  
-		  
-      }
  let prefix = config.prefix;
   
 // Variables
