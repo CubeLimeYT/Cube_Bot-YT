@@ -13,29 +13,6 @@ bot.on('ready', () => {
 });
 
 bot.on('message', function (message) {
-	if(message.content.startsWith(config.prefix + 'Icat')) {
-		let msg = message.channel.send('Génération de l\'image').then(msg => {
-           	 setTimeout(() => {
-              	 msg.edit('Génération de l\'image..');
-           	 },1000);
-           	 setTimeout(() => {
-               msg.edit('Génération de l\'image...');
-           	 },2000);
-		});
-									
-		let {body} = await superagent
-		.get('https://aws.random.cat/meow')
-		
-		if(!{body}) return message.channel.send("Réessayez") 
-		
-		const cembed = new Discord.RichEmbed()
-		.setImage(body.file)
-		
-		message.channel.send({embed: cembed});
-		
-		msg.delete();
-		  
-      }
     
 	if(message.content === 'Bonjour')
 		message.reply('Ousalamalekoum salam et bienvenue sur ma chaîne youtube')
@@ -73,6 +50,32 @@ bot.on('message', function (message) {
 
 bot.on("message", async message => {
   console.log(`${bot.user.username} Is Ready!`);
+	
+	if(message.content.startsWith(config.prefix + 'Icat')) {
+		let msg = message.channel.send('Génération de l\'image').then(msg => {
+           	 setTimeout(() => {
+              	 msg.edit('Génération de l\'image..');
+           	 },1000);
+           	 setTimeout(() => {
+               msg.edit('Génération de l\'image...');
+           	 },2000);
+		});
+									
+		let {body} = await superagent
+		.get('https://aws.random.cat/meow')
+		
+		if(!{body}) return message.channel.send("Réessayez") 
+		
+		const cembed = new Discord.RichEmbed()
+		.setImage(body.file)
+		
+		message.channel.send({embed: cembed});
+		
+		msg.delete();
+		  
+      }
+	
+	
 	
 if(message.content.startsWith(config.prefix + "restart")) {
 	if(message.author.id !== "372099632173416449") return message.reply('Vous n\'êtes pas le propriétaire du bot');
