@@ -21,7 +21,7 @@ bot.on('message', function (message) {
            	 setTimeout(() => {
                msg.edit('Génération de l\'image...');
            	 },2000);
-		}
+		});
 									
 		let {body} = await superagent
 		.get('https://aws.random.cat/meow')
