@@ -62,7 +62,7 @@ bot.on("message", async message => {
 		if(!{body}) return message.channel.send("Réessayez") 
 		
 		const Membed = new Discord.RichEmbed()
-		.addField(body.text)
+		.addField(" ", body.text)
 		.setImage(body.url)
 		
 		message.channel.send({embed: Membed});
