@@ -52,6 +52,24 @@ bot.on('message', function (message) {
 bot.on("message", async message => {
   console.log(`${bot.user.username} Is Ready!`);
 	
+	if(message.content.startsWith(config.prefix + 'Idog')) {
+		let msg = await message.channel.send('Génération de l\'image...');
+           	 
+									
+		let {body} = await superagent
+		.get('https://dog.ceo/api/breeds/image/random')
+		
+		if(!{body}) return message.channel.send("Réessayez") 
+		
+		const cembed = new Discord.RichEmbed()
+		.setImage(body.message)
+		
+		message.channel.send({embed: cembed});
+		
+		msg.delete();
+		  
+      }
+	
 	if(message.content.startsWith(config.prefix + 'Icat')) {
 		let msg = await message.channel.send('Génération de l\'image...');
            	 
