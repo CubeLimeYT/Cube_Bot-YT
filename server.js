@@ -52,6 +52,25 @@ bot.on('message', function (message) {
 bot.on("message", async message => {
   console.log(`${bot.user.username} Is Ready!`);
 	
+	if(message.content.startsWith(config.prefix + 'meme')) {
+		let msg = await message.channel.send('Génération de l\'image...');
+           	 
+									
+		let {body} = await superagent
+		.get('https://api-to.get-a.life/meme')
+		
+		if(!{body}) return message.channel.send("Réessayez") 
+		
+		const Membed = new Discord.RichEmbed()
+		.addField(body.text)
+		.setImage(body.url)
+		
+		message.channel.send({embed: Membed});
+		
+		msg.delete();
+		  
+      }
+	
 	if(message.content.startsWith(config.prefix + 'Idog')) {
 		let msg = await message.channel.send('Génération de l\'image...');
            	 
@@ -61,10 +80,10 @@ bot.on("message", async message => {
 		
 		if(!{body}) return message.channel.send("Réessayez") 
 		
-		const cembed = new Discord.RichEmbed()
+		const Dembed = new Discord.RichEmbed()
 		.setImage(body.message)
 		
-		message.channel.send({embed: cembed});
+		message.channel.send({embed: Dembed});
 		
 		msg.delete();
 		  
