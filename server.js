@@ -15,7 +15,7 @@ bot.on('ready', () => {
 bot.on('message', function (message) {
 	if(message.content.startsWith(config.prefix + 'Icat')) {
 		try {
-			bot.get('https://aws.random.cat/meow').then(res => {
+			.get('https://aws.random.cat/meow').then(res => {
 				const embed = new Discord.RichEmbed()
 				.setImage(res.body.file)
 				return message.channel.send({embed});
