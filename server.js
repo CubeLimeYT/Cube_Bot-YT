@@ -1,6 +1,7 @@
 const Discord = require('discord.js')
 const bot = new Discord.Client();
 const config = require('./config.json');
+const superagent = require('superagent');
 
 let statuses = [`${config.prefix}help`, `ban des caïd`, `https://www.youtube.com/channel/UCKwjZKxnVGF2WUNPEHc0RVg`, `Manger`, 'tous vous surveillez', 'être optimisé']
 bot.on('ready', () => {
