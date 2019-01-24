@@ -14,15 +14,26 @@ bot.on('ready', () => {
 
 bot.on('message', function (message) {
 	if(message.content.startsWith(config.prefix + 'Icat')) {
-		try {
-			.get('https://aws.random.cat/meow').then(res => {
-				const embed = new Discord.RichEmbed()
-				.setImage(res.body.file)
-				return message.channel.send({embed});
-			});
-		} catch(err) {
-			return message.channel.send(err.stack);
-		}	  
+		let msg = message.channel.send('Génération de l\'image').then(msg => {
+           	 setTimeout(() => {
+              	 msg.edit('Génération de l\'image..');
+           	 },1000);
+           	 setTimeout(() => {
+               msg.edit('Génération de l\'image...');
+           	 },2000);
+		}
+									
+		let {body} = await superagent
+		.get('https://aws.random.cat/meow')
+		
+		if(!{body}) return message.channel.send("Réessayez") 
+		
+		const cembed = new Discord.RichEmbed()
+		.setImage(body.file)
+		
+		message.channel.send({embed: cembed});
+		
+		msg.delete();
 		  
       }
     
