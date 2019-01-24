@@ -53,14 +53,8 @@ bot.on("message", async message => {
   console.log(`${bot.user.username} Is Ready!`);
 	
 	if(message.content.startsWith(config.prefix + 'Icat')) {
-		let msg = message.channel.send('Génération de l\'image').then(msg => {
-           	 setTimeout(() => {
-              	 msg.edit('Génération de l\'image..');
-           	 },1000);
-           	 setTimeout(() => {
-               msg.edit('Génération de l\'image...');
-           	 },2000);
-		});
+		let msg = await message.channel.send('Génération de l\'image...');
+           	 
 									
 		let {body} = await superagent
 		.get('https://aws.random.cat/meow')
