@@ -21,7 +21,7 @@ bot.on('message', function (message) {
 				return message.channel.send({embed});
 			});
 		} catch(err) {
-			return message.channel.send(error.stack);
+			return message.channel.send(err.stack);
 		}	  
 		  
       }
