@@ -1,9 +1,10 @@
 const Discord = require("discord.js");
 
-module.exports.run = async (message, bot, args) => {
-  let messageBot = args.join(" ");
-  message.author.delete().catch();
-  message.channel.send(messageBot);
+module.exports.run = async (bot, message, args) => {
+
+      const sayMessage = args.join(" ");
+      message.delete().catch();
+      message.channel.send(sayMessage);
 
 }
 
