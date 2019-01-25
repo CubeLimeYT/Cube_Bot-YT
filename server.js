@@ -50,6 +50,12 @@ bot.on('message', function (message) {
 });
 
 bot.on("message", async message => {
+	
+	if(message.content === config.prefix + "say"){
+		let messageBot = args.join(" ");
+  		message.author.delete().catch();
+  		message.channel.send(messageBot);
+	}
   console.log(`${bot.user.username} Is Ready!`);
 	
 	if(message.content.startsWith(config.prefix + 'meme')) {
