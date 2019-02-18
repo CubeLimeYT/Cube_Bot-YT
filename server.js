@@ -2,6 +2,7 @@ const Discord = require('discord.js')
 const bot = new Discord.Client();
 const config = require('./config.json');
 const superagent = require('superagent');
+const music = require('./commands/music.js')
 
 let statuses = [`${config.prefix}help`, `ban des caïd`, `https://www.youtube.com/channel/UCKwjZKxnVGF2WUNPEHc0RVg`, `Manger`, 'tous vous surveillez', 'être optimisé']
 bot.on('ready', () => {
@@ -259,6 +260,15 @@ if(message.content.startsWith(config.prefix + "restart")) {
     } finally {
         console.log(`${message.author.username} ran the command: ${cmd}`);
     }
+	
+    let cmd =msg.content.split(/\s+/)[0].slice(config.prefix.length).toLowerCase();
+	getCmdFunction(cmd)(msg);
 });
 
 bot.login(process.env.token)
+function getCmdFunction(cmd){
+	const COMMANDS = {
+		'music': music.processCommands
+	}
+	return COMMANDS[cmd] ? COMMANDS[cmd] : () => {};
+}
