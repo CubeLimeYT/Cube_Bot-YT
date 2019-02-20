@@ -252,13 +252,13 @@ if(message.content.startsWith(config.prefix + "restart")) {
     let msg = message.content.toLowerCase();
     let sender = message.author;
     let args = message.content.slice(prefix.length).trim().split(" ");
-    let cmds = args.shift().toLowerCase();
+    let cmd = args.shift().toLowerCase();
 
 // Return Statements
     if (sender.bot) return;
     if (!message.content.startsWith(prefix)) return;
 	try {
-        let commandFile = require(`./commands/${cmds}.js`);
+        let commandFile = require(`./commands/${cmd}.js`);
         commandFile.run(bot, message, args, prefix);
     } catch(e) {
         console.log(e.message);
@@ -267,21 +267,5 @@ if(message.content.startsWith(config.prefix + "restart")) {
     }
 });
 
-bot.on('message', msg => {
-
-	if(msg.author.bot || msg.channel.type != 'text')
-		return;
-
-	if(!msg.content.startsWith(config.prefix))
-		return;
-	let cmd = msg.content.split(/\s+/)[0].slice(config.prefix.length).toLowerCase();
-	getCmdFunction(cmd)(msg);
-})
 
 bot.login(process.env.token)
-function getCmdFunction(cmd){
-	const COMMANDS = {
-		'music': music.processCommands
-	}
-	return COMMANDS[cmd] ? COMMANDS[cmd] : () => {};
-}
