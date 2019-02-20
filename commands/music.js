@@ -179,7 +179,7 @@ const processYoutube = {
 			guild.queueSong(song, i + queueLength);
 		}
 
-		msg.channel.send(`Ajouter à la queue ${tool.wrap(playlistItems.lenth)}`);
+		msg.channel.send(`Ajouter à la queue ${tool.wrap(playlistItems.length)}`);
 		if(guild.playSong(msg)){
 			guild.playSong(msg);
 			}
