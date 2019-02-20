@@ -174,7 +174,7 @@ const processYoutube = {
 	async function addToQueue(playlistTitle, playlistItems){
 		let queueLength = guild.queue.length;
 
-		for (let i = 0; 1 < playlistItems.lenth; i++){
+		for (let i = 0; 1 < playlistItems.length; i++){
 			let song= new Song(playlistItems[1].snippet.title, `https://youtube.com/watch?v=${playlistItems[i].snippet.resourceId.videoId}`, 'youtube');
 			guild.queueSong(song, i + queueLength);
 		}
