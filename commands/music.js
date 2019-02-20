@@ -119,70 +119,91 @@ const opts = {
 
 const processYoutube = {
 
-	song(msg, guild, url){
-		ytdl.getInfo(url, (err, song) => {
-			if (err) {
-				console.log(err);
-				msg.channel.send(`Désoler je ne peux pas ajouter la musique`);
-				return;
-			}
-			guild.queueSong(new Song(song.title, url, 'youtube'));
-			msg.channel.send(`Ajouter à la queue ${tool.wrap(song.title.trim())} demandé par ${tool.wrap(msg.author.username + '#') + msg.author.discriminator}`);
-		if(guild.status != 'playing'){
-			guild.playSong(msg);
-		}
-		});
-	},
+    song(msg, guild, url) {
+        ytdl.getInfo(url, (err, song) => {
+            if (err) {
+                console.log(err);
+                msg.channel.send(`Désoler je ne peux pas ajouter la musique`);
+                return;
+            }
+            const author  = msg.author.username + '#' + msg.author.discriminator;
+            console.log(song);
+            guild.queueSong(new Song(song.title, url, 'youtube', author,time(song.length_seconds), song.iurlmq));
+            msg.channel.send(
+                `Ajouter a la queue ${tool.wrap(song.title.trim())} (\`${time(song.length_seconds)}\`) demandé par ${tool.wrap(author)}`
+            );
+            if (guild.status != 'playing') {
+                guild.playSong(msg);
+            }
+        });
+    },
 
-	playlist(msg, guild, playlistId){
-		const youtubeApiUrl = 'https://www.googleapis.com/youtube/v3/';
-		
-		Promise.all([getPlaylistName(), getPlaylistSongs([], null)])
-		.then(results => addToQueue(results[0], results[1]))
-		.catch(err => {
-			console.log(err);
-			msg.channel.send(`
-				Désoler, je ne peux pas ajouter la playlist à la queue`)
-			console.log(playlistId)
-		});
 
-		async function getPlaylistName() {
-			let option = {
-				url : `${youtubeApiUrl}playlists?id=${playlistId}&part=snippet&key=${process.env.YTB}`
-			}
-			let body = await rp(option);
-			let playlistTitle =JSON.parse(body).items[0].snippet.title;
-			return playlistTitle
-		}
-		async function getPlaylistSongs(playlistItems, pageToken){
-			pageToken = pageToken ? `&pageToken=${pageToken}` : '';
-			let options = {
-				url: `${youtubeApiUrl}playlistItems?playlistId=${playlistId}${pageToken}&part=snippet,contentDetails&fields=nextPageToken,items(snippet(title,resourceId/videoId,thumbnails),contentDetails)&maxResults=50&key=${process.env.YTB}`
-			}
+    playlist(msg, guild, playlistId) {
+        const youtubeApiUrl = 'https://www.googleapis.com/youtube/v3/';
 
-			let body = await rp(options);
-			let playlist = JSON.parse(body);
-			playlistItems = playlistItems.concat(playlist.items.filter(item => item.snippet.title != 'video supprimer'));
-		
-		if(playlist.hasOwnProperty('nextPageToken')){
-			playlistItems = await getPlaylistSongs(playlistItems, playlist.nextPageToken);
-		}
-		return playlistItems;
+        Promise.all([getPlaylistName(), getPlaylistSongs([], null)])
+            .then(results => addToQueue(results[0], results[1]))
+            .catch(err => {
+                console.log(err);
+                msg.channel.send(
+                    `Désoler, je ne peux pas ajouter la playlist à la queue`
+                )
+            });
 
-	}
+        async function getPlaylistName() {  
+            let options = {
+                url: `${youtubeApiUrl}playlists?id=${playlistId}&part=snippet&key=${process.env.YTB}`
+            }
+            let body = await rp(options);
+            let playlistTitle = JSON.parse(body).items[0].snippet.title;
+            return playlistTitle;
+        }
 
-	async function addToQueue(playlistTitle, playlistItems){
-			let queueLength = guild.queue.length;
-            	const author  = msg.author.username + '#' + msg.author.discriminator;
-            		for (let i = 0; i < playlistItems.length; i++) {
-                		let song = new Song(
-                    		playlistItems[i].snippet.title,
-                    		`https://www.youtube.com/watch?v=${playlistItems[i].snippet.resourceId.videoId}`,
-                    		'youtube', author, "0:00", (playlistItems[i].snippet.thumbnails.medium.url || playlistItems[i].snippet.thumbnails.default.url));
-                	guild.queueSong(song, i + queueLength);
-			}
-		}
-	}
+
+
+        async function getPlaylistSongs(playlistItems, pageToken) {
+            pageToken = pageToken ?
+                `&pageToken=${pageToken}` :
+                '';
+
+            let options = {
+                url: `${youtubeApiUrl}playlistItems?playlistId=${playlistId}${pageToken}&part=snippet,contentDetails&fields=nextPageToken,items(snippet(title,resourceId/videoId,thumbnails),contentDetails)&maxResults=50&key=${process.env.YTB}`
+            }
+
+            let body = await rp(options);
+            let playlist = JSON.parse(body);
+            playlistItems = playlistItems.concat(playlist.items.filter( 
+                item => item.snippet.title != 'Deleted video'));
+
+            if (playlist.hasOwnProperty('nextPageToken')) { 
+                playlistItems = await getPlaylistSongs(playlistItems, playlist.nextPageToken);
+            }
+
+            return playlistItems;
+        }
+
+
+        async function addToQueue(playlistTitle, playlistItems) {
+            let queueLength = guild.queue.length;
+            const author  = msg.author.username + '#' + msg.author.discriminator;
+            for (let i = 0; i < playlistItems.length; i++) {
+                let song = new Song(
+                    playlistItems[i].snippet.title,
+                    `https://www.youtube.com/watch?v=${playlistItems[i].snippet.resourceId.videoId}`,
+                    'youtube', author, "0:00", (playlistItems[i].snippet.thumbnails.medium.url || playlistItems[i].snippet.thumbnails.default.url));
+                guild.queueSong(song, i + queueLength);
+            }
+
+            msg.channel.send(
+                `Ajouté ${tool.wrap(playlistItems.length)} song de ${tool.wrap(playlistTitle)} demandé par ${tool.wrap(msg.author.username + '#' + msg.author.discriminator)}`
+            );
+
+            if (guild.status != 'playing') {
+                guild.playSong(msg);
+            }
+        }
+    },
 }
 
 function time(timesec){
