@@ -162,7 +162,12 @@ if(message.content.startsWith(config.prefix + "restart")) {
         	message.channel.send(catEmbed);
 	 }
 	}
-
+    if (message.content === config.prefix + 'Server') {
+        let server_name = message.guild.name
+        let server_size = message.guild.members.size
+        message.channel.send('Serveur : ' + server_name + '\nPersonnes : ' + server_size);
+    }
+	
     if (message.content === config.prefix + 'Youtube'){
 	
     if(message.channel.type === 'dm'){
@@ -242,11 +247,6 @@ if(message.content.startsWith(config.prefix + "restart")) {
 	
 	}
  let prefix = config.prefix;
-	if (message.content === config.prefix + 'Server') {
-        let server_name = message.guild.name
-        let server_size = message.guild.members.size
-        message.channel.send('Serveur : ' + server_name + '\nPersonnes : ' + server_size);
-    }
   
 // Variables
     let msg = message.content.toLowerCase();
