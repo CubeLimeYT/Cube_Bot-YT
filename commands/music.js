@@ -143,6 +143,7 @@ const processYoutube = {
 			console.log(err);
 			msg.channel.send(`
 				Désoler, je ne peux pas ajouter la playlist à la queue`)
+			console.log(playlistId)
 		});
 
 		async function getPlaylistName() {
