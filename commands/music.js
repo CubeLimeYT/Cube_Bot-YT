@@ -148,7 +148,7 @@ const processYoutube = {
 
 		async function getPlaylistName() {
 			let option = {
-				url : `${youtubeApiUrl}playlists?id=${playlistId}&part=snippet&key=${config.youtube_api_key}`
+				url : `${youtubeApiUrl}playlists?id=${playlistId}&part=snippet&key=${process.env.YTB}`
 			}
 			let body = await rp(option);
 			let playlistTitle =JSON.parse(body).items[0].snippet.title;
