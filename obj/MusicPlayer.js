@@ -81,7 +81,7 @@ playSong(msg) {
     */
     skipSong() {
         if (this.dispatch && this.status == 'playing') {
-            this.musicChannel.send(`:fast_forward: Passé ${tool.wrap(this.queue[0].title)}`);
+            this.musicChannel.send(`:fast_forward: musique Passée`);
             this.dispatch.end();
         } else {
             this.musicChannel.send(`Il n'y a rien a passer!`);
