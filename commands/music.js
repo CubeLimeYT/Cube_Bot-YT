@@ -172,16 +172,17 @@ const processYoutube = {
 	}
 
 	async function addToQueue(playlistTitle, playlistItems){
-		let queueLength = guild.queue.length;
-            const author  = msg.author.username + '#' + msg.author.discriminator;
-            for (let i = 0; i < playlistItems.length; i++) {
-                let song = new Song(
-                    playlistItems[i].snippet.title,
-                    `https://www.youtube.com/watch?v=${playlistItems[i].snippet.resourceId.videoId}`,
-                    'youtube', author, "0:00", (playlistItems[i].snippet.thumbnails.medium.url || playlistItems[i].snippet.thumbnails.default.url));
-                guild.queueSong(song, i + queueLength);
+			let queueLength = guild.queue.length;
+            	const author  = msg.author.username + '#' + msg.author.discriminator;
+            		for (let i = 0; i < playlistItems.length; i++) {
+                		let song = new Song(
+                    		playlistItems[i].snippet.title,
+                    		`https://www.youtube.com/watch?v=${playlistItems[i].snippet.resourceId.videoId}`,
+                    		'youtube', author, "0:00", (playlistItems[i].snippet.thumbnails.medium.url || playlistItems[i].snippet.thumbnails.default.url));
+                	guild.queueSong(song, i + queueLength);
+			}
+		}
 	}
-}
 }
 
 function time(timesec){
