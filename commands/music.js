@@ -182,6 +182,7 @@ const processYoutube = {
                 guild.queueSong(song, i + queueLength);
 	}
 }
+}
 
 function time(timesec){
         let upTimeOutput = "";
