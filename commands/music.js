@@ -181,6 +181,7 @@ const processYoutube = {
                     'youtube', author, "0:00", (playlistItems[i].snippet.thumbnails.medium.url || playlistItems[i].snippet.thumbnails.default.url));
                 guild.queueSong(song, i + queueLength);
 	}
+}
 
 function time(timesec){
         let upTimeOutput = "";
