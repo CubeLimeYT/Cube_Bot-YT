@@ -157,7 +157,7 @@ const processYoutube = {
 		async function getPlaylistSongs(playlistItems, pageToken){
 			pageToken = pageToken ? `&pageToken=${pageToken}` : '';
 			let options = {
-				url: `${youtubeApiUrl}playlistItems?playlistId=${playlistId}${pageToken}&part=snippet,contentDetails&fields=nextPageToken,items(snippet(title,resourceId/videoId,thumbnails),contentDetails)&maxResults=50&key=${config.youtube_api_key}`
+				url: `${youtubeApiUrl}playlistItems?playlistId=${playlistId}${pageToken}&part=snippet,contentDetails&fields=nextPageToken,items(snippet(title,resourceId/videoId,thumbnails),contentDetails)&maxResults=50&key=${process.env.YTB}`
 			}
 
 			let body = await rp(options);
