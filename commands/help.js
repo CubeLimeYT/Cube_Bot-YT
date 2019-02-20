@@ -1,4 +1,4 @@
-const config = require('./config.json')
+const config = require('../config.json')
 
 module.exports = {
     'help': help,
@@ -79,22 +79,19 @@ function ban(msg){
   });
 }
 
+
+
 function help(msg){
-  msg.channel.send(
-        {embed: {
-      color: 0x00FF00,
-      title: `${config.prefix}help [command]`,
-      fields: [{
-            name: "Help",
-            value: `help : Affiche la page de commande. Passer une commande pour plus d'informations.`,
-          }
-       ],
-        timestamp: new Date(),
-      footer: {
-        text: "©Steve & Co"
-      }
-      }
-  });
+			let HelpEmbed = new Discord.RichEmbed()
+        		.setDescription("Voici la description")
+        		.setColor('#1CFF1C')
+       			.addField('C*Administration', "Vous donne la page d'Administration")
+        		.addField('C*Youtube', 'Vous donneras tout concernant le Youtube Game :) ')
+        		.addField('C*Game', 'Vous donneras tout les jeux présent sur le bot')
+        		.addField('C*Image', 'Vous donneras les commandes pour avoir des images')
+        		.addField('C*Invite', "Vous donneras l'invitation du bot")
+        		.setFooter('Support Server : https://discord.gg/pcfYDMK ')
+				msg.channel.send(HelpEmbed);
 }
 
 function music(msg){
