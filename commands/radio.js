@@ -11,7 +11,7 @@ const radio = {
     "rfm": "http://rfm-live-mp3-128.scdn.arkena.com/rfm.mp3",
     "bfm": "http://chai5she.cdn.dvmr.fr/bfmbusiness",
     "nostalgie": "http://cdn.nrjaudio.fm/audio1/fr/30601/mp3_128.mp3?origine=fluxradios",
-    "mouv": "http://direct.mouv.fr/live/mouv-midfi.mp3"
+    "mouv": "http://chai5she.cdn.dvmr.fr/mouv-midfi.mp3"
 }
 
                 if (!message.member.voiceChannel) return message.channel.send(`Vous devez être connecté dans un salon-vocal !`)
