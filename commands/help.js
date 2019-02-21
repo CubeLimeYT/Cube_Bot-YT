@@ -1,8 +1,8 @@
 const Discord = require("discord.js");
 const config = require("../config.json");
 
-module.exports.run = async (message, bot, args) => {
-
+module.exports.run = async (message, bot) => {
+	let args = message.content.split(" ").slice(1).join(" ").toLowerCase();
 
 		if(!args){
 			let HelpEmbed = new Discord.RichEmbed()
