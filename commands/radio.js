@@ -10,7 +10,7 @@ const radio = {
     "rtl": "http://streaming.radio.rtl.fr/rtl-1-48-192",
     "rfm": "http://rfm-live-mp3-128.scdn.arkena.com/rfm.mp3",
     "bfm": "http://chai5she.cdn.dvmr.fr/bfmbusiness",
-    "nostalgie": "http://cdn.nrjaudio.fm/audio1/fr/30601/mp3_128.mp3?origine=fluxradios",
+    "nostalgie": "http://185.52.127.160/fr/30601/mp3_128.mp3?origine=fluxradios",
     "mouv": "http://chai5she.cdn.dvmr.fr/mouv-midfi.mp3"
 }
 
@@ -23,7 +23,7 @@ const radio = {
 
             let args = message.content.split(" ").slice(1).join(" ").toLowerCase();
              
-      if (!args) return message.channel.send(`Veuillez spécifier un nom de radio, voici la liste des radios: **franceinfo**, **nrj**, **rtl2**, **skyrock**, **rtl**, **rfm**, **bfm**`)
+      if (!args) return message.channel.send(`Veuillez spécifier un nom de radio, voici la liste des radios: **franceinfo**, **nrj**, **rtl2**, **skyrock**, **rtl**, **rfm**, **bfm**, **nostalgie**, **mouv**`)
 
         if(!radio[args]) return message.channel.send(`Radio non-valide, voici la liste des radios: **franceinfo**, **nrj**, **rtl2**, **skyrock**, **rtl**, **rfm**, **bfm**, **nostalgie**, **mouv**`)
     
