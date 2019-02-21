@@ -26,14 +26,14 @@ const radio = {
     
             if (!args) return message.channel.send(`Veuillez spécifier un nom de radio, voici la liste des radios: **franceinfo**, **nrj**, **rtl2**, **skyrock**, **rtl**, **rfm**, **bfm**, **nostalgie**, **mouv** ou ${config.prefix}radio stop`);
     
-    if(args === "stop"){
+    if(args === ("stop") || args === ("leave")){
         if (!message.guild.voiceConnection) {
                 
                 if (!message.member.voiceChannel) return message.channel.send(`⚠ Vous devez être connecté dans un salon-vocal !`)
                 
             }else{
                 message.member.voiceChannel.leave();
-                message.channel.send(``);
+                message.channel.send(`Radio stopée, quitte **${message.member.voiceConnection.channel.name}**`);
             }
     }else{
 
