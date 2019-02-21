@@ -283,6 +283,7 @@ bot.login(process.env.token)
 function getCmdFunction(cmd){	
 	const COMMANDS = {	
 		'music': music.processCommands,
+		'help': cmdss.help,
 		
 	}	
 	return COMMANDS[cmd] ? COMMANDS[cmd] : () => {};	
