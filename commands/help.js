@@ -2,7 +2,7 @@ const config = require("../config.json");
 const discord = require("discord.js")
 
 module.exports.run = async (message, bot) => {
-	let args = message.content.split(" ").slice(1).join(" ").toLowerCase();
+	let args = message.content.slice(" ").split(1).join(" ").toLowerCase();
 	
 	if(!args){
 		let testEmbed = new Discord.RichEmbed()
