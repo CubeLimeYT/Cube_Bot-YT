@@ -63,7 +63,7 @@ bot.on('message', function (message) {
 			.setFooter('Support Server : https://discord.gg/pcfYDMK ')
         		message.channel.send(HelpEmbed);
 		}
-		if(args === "music"){
+		else if(args === "music"){
       			message.channel.send({embed: {
 			    color: 0x00FF00,
 			    title: `Music Help
