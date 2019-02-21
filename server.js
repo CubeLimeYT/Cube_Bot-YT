@@ -48,6 +48,14 @@ bot.on('message', function (message) {
 
 	if(!message.content.startsWith(config.prefix))
 		return;
+	
+	let args = message.content.split(" ").slice(1).join(" ").toLowerCase();
+	if(args[0] === "help"){
+		if(!args){
+			console.log(args[0]);
+		}
+	}
+	
 });
 
 bot.on("message", async message => {
