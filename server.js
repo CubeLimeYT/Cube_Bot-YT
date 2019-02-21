@@ -3,6 +3,7 @@ const bot = new Discord.Client();
 const config = require('./config.json');
 const superagent = require('superagent');
 const music = require('./commands/music.js');
+const cmdss = require('./commands.js');
 
 let statuses = [`${config.prefix}help`, `ban des caïd`, `https://www.youtube.com/channel/UCKwjZKxnVGF2WUNPEHc0RVg`, `Manger`, 'tous vous surveillez', 'être optimisé']
 bot.on('ready', () => {
@@ -281,7 +282,8 @@ bot.login(process.env.token)
 
 function getCmdFunction(cmd){	
 	const COMMANDS = {	
-		'music': music.processCommands,	
+		'music': music.processCommands,
+		
 	}	
 	return COMMANDS[cmd] ? COMMANDS[cmd] : () => {};	
 }
