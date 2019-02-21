@@ -160,7 +160,7 @@ playSong(msg) {
                     timestamp: new Date(),
                     footer: {
                       icon_url: msg.author.avatarURL,
-                      text: "© Silver Crow"
+                      text: "Fatality Team"
                     }
                   }
                 });
