@@ -49,7 +49,7 @@ bot.on('message', function (message) {
 	if(!message.content.startsWith(config.prefix))
 		return;
 	
-	let args = message.content.split(" ").slice(2).join(' ');
+	let args = message.content.split(" ").slice(1).join(' ');
 	if(message.content === config.prefix + "help"){
 		if(!args){
 			let HelpEmbed = new Discord.RichEmbed()
