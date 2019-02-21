@@ -49,7 +49,7 @@ bot.on('message', function (message) {
 	if(!message.content.startsWith(config.prefix))
 		return;
 	
-	let args = message.content.slice(config.prefix.length).trim().split(" ");;
+	let args = message.content.split(" ").slice(2).join(' ');
 	if(args[0] === "help"){
 		if(!args){
 			console.log(args[0]);
