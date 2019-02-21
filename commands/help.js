@@ -3,7 +3,7 @@ const config = require("../config.json");
 module.exports.run = async (message, bot) => {
 	let args = message.content.split(" ").slice(1).join(" ").toLowerCase();
 	
-	if(args === "help"){
+	if(!args){
 		let testEmbed = new Discord.RichEmbed()
         		.setDescription("Voici la description")
         		.setColor('#1CFF1C')
