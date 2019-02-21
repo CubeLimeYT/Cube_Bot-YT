@@ -36,9 +36,9 @@ const radio = {
         .setColor(0xBCFF78)
         .addField(`• Radio`, "`"+args+"`")
         .addField(`• Lien`, "`"+radio[args]+"`")
-        .setFooter(`demandé par @${msg.author.username}`);
+        .setFooter(`demandé par @${message.author.username}`);
 
-     message.channel.send(client.I18n.translate`📻 En joue:`, embed);
+     message.channel.send(`📻 En joue:`, embed);
  
           });
 
