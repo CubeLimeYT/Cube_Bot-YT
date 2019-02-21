@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 const config = require("../config.json");
 
-module.exports.run = async (message, bot) => {
+module.exports.run = async (message, bot, args) => {
   let args = message.content.split(" ").slice(1);
 
 		if(!args){
