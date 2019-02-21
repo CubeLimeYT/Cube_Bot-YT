@@ -52,7 +52,7 @@ bot.on('message', function (message) {
 	let args = message.content.split(" ").slice(2).join(' ');
 	if(message.content === config.prefix + "help"){
 		if(!args){
-			console.log(args[0]);
+			console.log(args);
 		}
 	}
 	
