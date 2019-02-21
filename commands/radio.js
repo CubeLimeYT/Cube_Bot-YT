@@ -29,7 +29,7 @@ const radio = {
     if(args === ("stop") || args === ("leave")){
         if (message.guild.voiceConnection) {
                 message.member.voiceChannel.leave();
-                message.channel.send(`Radio stopée`);
+                message.channel.send(`Radio stoppée`);
                 
                 
             }else{
