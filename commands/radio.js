@@ -1,4 +1,5 @@
 const Discord = require("discord.js");
+const config = require("../config.json");
 
 module.exports.run = async (client, message) => {
 
@@ -23,6 +24,8 @@ const radio = {
 
             let args = message.content.split(" ").slice(1).join(" ").toLowerCase();
     
+            if (!args) return message.channel.send(`Veuillez spécifier un nom de radio, voici la liste des radios: **franceinfo**, **nrj**, **rtl2**, **skyrock**, **rtl**, **rfm**, **bfm**, **nostalgie**, **mouv** ou ${config.prefix}radio stop`);
+    
     if(args === "stop"){
         if (!message.guild.voiceConnection) {
                 
@@ -32,8 +35,6 @@ const radio = {
                 message.member.voiceChannel.leave();
             }
     }else{
-             
-      if (!args) return message.channel.send(`Veuillez spécifier un nom de radio, voici la liste des radios: **franceinfo**, **nrj**, **rtl2**, **skyrock**, **rtl**, **rfm**, **bfm**, **nostalgie**, **mouv**`)
 
         if(!radio[args]) return message.channel.send(`Radio non-valide, voici la liste des radios: **franceinfo**, **nrj**, **rtl2**, **skyrock**, **rtl**, **rfm**, **bfm**, **nostalgie**, **mouv**`)
     
