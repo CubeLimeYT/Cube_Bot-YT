@@ -33,6 +33,7 @@ const radio = {
                 
             }else{
                 message.member.voiceChannel.leave();
+                message.channel.send(``);
             }
     }else{
 
