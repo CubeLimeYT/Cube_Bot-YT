@@ -9,7 +9,9 @@ const radio = {
     "skyrock": "http://icecast.skyrock.net/s/natio_mp3_128k?tvr_name=tunein16&tvr_section1=128mp3",
     "rtl": "http://streaming.radio.rtl.fr/rtl-1-48-192",
     "rfm": "http://rfm-live-mp3-128.scdn.arkena.com/rfm.mp3",
-    "bfm": "http://chai5she.cdn.dvmr.fr/bfmbusiness"
+    "bfm": "http://chai5she.cdn.dvmr.fr/bfmbusiness",
+    "nostalgie": "http://cdn.nrjaudio.fm/audio1/fr/30601/mp3_128.mp3?origine=fluxradios",
+    "mouv": "http://direct.mouv.fr/live/mouv-midfi.mp3"
 }
 
                 if (!message.member.voiceChannel) return message.channel.send(`Vous devez être connecté dans un salon-vocal !`)
@@ -23,7 +25,7 @@ const radio = {
              
       if (!args) return message.channel.send(`Veuillez spécifier un nom de radio, voici la liste des radios: **franceinfo**, **nrj**, **rtl2**, **skyrock**, **rtl**, **rfm**, **bfm**`)
 
-        if(!radio[args]) return message.channel.send(`Radio non-valide, voici la liste des radios: **franceinfo**, **nrj**, **rtl2**, **skyrock**, **rtl**, **rfm**, **bfm**`)
+        if(!radio[args]) return message.channel.send(`Radio non-valide, voici la liste des radios: **franceinfo**, **nrj**, **rtl2**, **skyrock**, **rtl**, **rfm**, **bfm**, **nostalgie**, **mouv**`)
     
     message.member.voiceChannel.join().then(connection => {
 
