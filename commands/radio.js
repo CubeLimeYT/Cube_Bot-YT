@@ -22,6 +22,16 @@ const radio = {
 
 
             let args = message.content.split(" ").slice(1).join(" ").toLowerCase();
+    
+    if(args === "stop"){
+        if (!message.guild.voiceConnection) {
+                
+                if (!message.member.voiceChannel) return message.channel.send(`⚠ Vous devez être connecté dans un salon-vocal !`)
+                
+            }else{
+                message.member.voiceChannel.leave();
+            }
+    }else{
              
       if (!args) return message.channel.send(`Veuillez spécifier un nom de radio, voici la liste des radios: **franceinfo**, **nrj**, **rtl2**, **skyrock**, **rtl**, **rfm**, **bfm**, **nostalgie**, **mouv**`)
 
@@ -31,21 +41,21 @@ const radio = {
 
     require('http').get(radio[args], (res) => { 
 
-            connection.playStream(res); 
+               connection.playStream(res); 
 
-     let embed = new Discord.RichEmbed()
-        .setAuthor(`${client.user.username} FM`, client.user.avatarURL)
-        .setColor(0xBCFF78)
-        .addField(`• Radio`, "`"+args+"`")
-        .addField(`• Lien`, "`"+radio[args]+"`")
-        .setFooter(`demandé par @${message.author.username}`);
+         let embed = new Discord.RichEmbed()
+            .setAuthor(`${client.user.username} FM`, client.user.avatarURL)
+            .setColor(0xBCFF78)
+            .addField(`• Radio`, "`"+args+"`")
+            .addField(`• Lien`, "`"+radio[args]+"`")
+            .setFooter(`demandé par @${message.author.username}`);
 
-     message.channel.send(`📻 En joue:`, embed);
+            message.channel.send(`📻 En joue:`, embed);
  
-          });
+            });
 
-  });
-
+        });
+    }
 }
 
 module.exports.help = {
