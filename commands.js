@@ -7,44 +7,6 @@ module.exports = {
 
 function help(msg){
 	let args = msg.content.split(/\s+/).slice(1);
-	
-	if(msg.content != args){
-		msg.channel.send(
-				{embed: {
-				    color: 0x00FF00,
-				    title: `Help`,
-				    fields: [{
-					  name: "C*Administration",
-					  value: `Vous donne la page d'Administration`,
-					  inline: true
-					},
-					{
-					  name: "C*Youtube",
-					  value: `Vous donneras tout concernant le Youtube Game :)`,
-					  inline: true
-					},
-					{
-					  name: "C*Game",
-					  value: `Vous donneras tout les jeux présent sur le bot`,
-					  inline: true
-					},
-					{
-					  name: "C*Image",
-					  value: `Vous donneras les commandes pour avoir des images`,
-					  inline: true
-					},
-					{
-					  name: "C*Invite",
-					  value: `Vous donneras l'invitation du bot`,
-					  inline: true
-					}],
-				      timestamp: new Date(),
-				    footer: {
-				      text: "Fatality support https://discord.gg/W2uMAsZ"
-				    }
-			      }
-			  });	
-	}	
 
 	let helpStr;
 	if(args.length == 1){
@@ -57,6 +19,45 @@ function help(msg){
 		helpStr(msg);
   }
 	else {
-		msg.channel.send();
+		msg.channel.send(
+				{embed: {
+				    color: 0x00FF00,
+				    title: `Help`,
+				    fields: [{
+					  name: `${config.prefix}Administration`,
+					  value: `Vous donne la page d'Administration`,
+					  inline: true
+					},
+					{
+					  name: `${config.prefix}Youtube`,
+					  value: `Vous donneras tout concernant le Youtube Game :)`,
+					  inline: true
+					},
+					{
+					  name: `${config.prefix}Game`,
+					  value: `Vous donneras tout les jeux présent sur le bot`,
+					  inline: true
+					},
+					{
+					  name: `${config.prefix}Image`,
+					  value: `Vous donneras les commandes pour avoir des images`,
+					  inline: true
+					},
+					{
+					  name: `${config.prefix}Invite`,
+					  value: `Vous donneras l'invitation du bot`,
+					  inline: true
+					},
+					{
+					  name: `${config.prefix}help music`,
+					  value: `Vous donne toute les informations sur la commande music`,
+					  inline: true
+					}],
+				      timestamp: new Date(),
+				    footer: {
+				      text: "Fatality support https://discord.gg/W2uMAsZ"
+				    }
+			      }
+			  });
    }
 }
