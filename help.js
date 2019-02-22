@@ -2,7 +2,8 @@ const config = require("./config.json");
 
 module.exports = {
    'help': help,
-   'music': music
+   'music': music,
+   'radio': radio
 }
 
 function radio(msg){
