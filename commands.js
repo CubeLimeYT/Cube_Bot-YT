@@ -60,7 +60,7 @@ function help(msg){
 					}],
 				      timestamp: new Date(),
 				    footer: {
-				      text: "Fatality support https://discord.gg/W2uMAsZ"
+				      text: "Fatality support https://discord.me/fatalityteam"
 				    }
 			      }
 			  });
