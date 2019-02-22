@@ -199,7 +199,7 @@ if(message.content.startsWith(config.prefix + "restart")) {
         let gameEmbed = new Discord.RichEmbed()
         .setDescription('Voici les commandes possible pour jouer avec moi :D')
         .setColor('#03fff7')
-        .addField("C*8ball", "Je peut répondre a vos questions ,tapez la commande suivi de votre question (ex:C*8ball tu m'aime ?)"
+        .addField("C*8ball", "Je peut répondre a vos questions ,tapez la commande suivi de votre question (ex:C*8ball tu m'aime ?)")
         .setFooter("Si tu as des suggestions de jeu  a rajouter fait moi en part");
         message.channel.send(gameEmbed);
     }
