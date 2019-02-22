@@ -73,51 +73,39 @@ function music(msg){
 }
 
 function help(msg){
-   let HelpEmbed = new Discord.RichEmbed()
-        .setDescription("Voici la description")
-        .setColor('#1CFF1C')
-       	.addField('C*Administration', "Vous donne la page d'Administration")
-        .addField('C*Youtube', 'Vous donneras tout concernant le Youtube Game :) ')
-        .addField('C*Game', 'Vous donneras tout les jeux présent sur le bot')
-        .addField('C*Image', 'Vous donneras les commandes pour avoir des images')
-        .addField('C*Invite', "Vous donneras l'invitation du bot")
-        .setFooter('Support Server : https://discord.gg/pcfYDMK ')
-        		msg.channel.send(HelpEmbed);
-   
    msg.channel.send(
         {embed: {
-      color: 0x00FF00,
-      title: `Help`,
-      fields: [{
-            name: "C*Administration",
-            value: `Vous donne la page d'Administration`,
-            inline: true
-          },
-          {
-            name: "C*Youtube",
-            value: `Vous donneras tout concernant le Youtube Game :)`,
-            inline: true
-          },
-          {
-            name: "C*Game",
-            value: `Vous donneras tout les jeux présent sur le bot`,
-            inline: true
-          },
-          {
-            name: "C*Image",
-            value: `Vous donneras les commandes pour avoir des images`,
-            inline: true
-          },
-          {
-            name: "C*Invite",
-            value: `Vous donneras l'invitation du bot`,
-            inline: true
-          }
-         ],
-        timestamp: new Date(),
-      footer: {
-        text: "Fatality support https://discord.gg/W2uMAsZ"
-      }
+            color: 0x00FF00,
+            title: `Help`,
+            fields: [{
+                  name: "C*Administration",
+                  value: `Vous donne la page d'Administration`,
+                  inline: true
+                },
+                {
+                  name: "C*Youtube",
+                  value: `Vous donneras tout concernant le Youtube Game :)`,
+                  inline: true
+                },
+                {
+                  name: "C*Game",
+                  value: `Vous donneras tout les jeux présent sur le bot`,
+                  inline: true
+                },
+                {
+                  name: "C*Image",
+                  value: `Vous donneras les commandes pour avoir des images`,
+                  inline: true
+                },
+                {
+                  name: "C*Invite",
+                  value: `Vous donneras l'invitation du bot`,
+                  inline: true
+                }],
+              timestamp: new Date(),
+            footer: {
+              text: "Fatality support https://discord.gg/W2uMAsZ"
+            }
       }
   });
 }
