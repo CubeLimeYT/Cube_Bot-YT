@@ -8,22 +8,22 @@ module.exports = {
 
 function radio(msg){
    msg.channel.send({embed: {
-               color: 0x00FF00,
+               color: 0xff0703,
                title: `Radio Help`,
                fields: [{
                   name: `${config.prefix}radio [franceinfo, nrj, rtl2, skyrock, rtl, rfm, bfm, nostalgie, mouv]`,
-                  value: "Pour que le bot joue la radio en direct, PS: il faut être dans canal vocal mais le bot peut vous le rarappeler 😉",
+                  value: "Pour que le bot joue la radio en direct, PS: il faut être dans un vocal mais le bot peut vous le rappeler 😉",
                   inline: true
                },
                {
                   name: `${config.prefix}radio [leave/stop]`,
-                  value: "Permet au bot de quitte et de stopper la radio",
+                  value: "Permet au bot de quitter et de stopper la radio",
                   inline: true
                }
                ],
                 timestamp: new Date(),
             footer: {
-              text: "Fatality support https://discord.gg/W2uMAsZ"
+              text: "Fatality support https://discord.me/fatalityteam"
             }
                      }
                     });
@@ -35,42 +35,42 @@ function music(msg){
         {embed: {
       color: 0x00FF00,
       title: `Music Help
-              ${config.prefix}music | <function>
-              Toute les function:`,
+              ${config.prefix}music | <fonctions>
+              Toute les functions:`,
       fields: [{
             name: "Play",
             value: `play <url> ou <recherche> : 
-            Ajouter le(s) song ou la playlist à la file d'attente.`,
+            Ajouter le(s) musiques ou la playlist à la file d'attente.`,
             inline: true
           },
           {
             name: "Skip",
-            value: `skip : Passer le song actuel.`,
+            value: `skip : Passer la musique actuelle.`,
             inline: true
           },
           {
             name: "Pause",
-            value: `pause : Pause le song.`,
+            value: `pause : Met pause la musique.`,
             inline: true
           },
           {
             name: "Resume",
-            value: `resume : Reprendre le song.`,
+            value: `resume : Reprendre/continuer la musique.`,
             inline: true
           },
           {
             name: "Queue",
-            value: `queue : Afficher le(s) song(s) de la file d'attente.`,
+            value: `queue : Afficher la/les musique(s) de la file d'attente.`,
             inline: true
           },
           {
             name: "Purge",
-            value: `purge : Éffacer le(s) song(s) de la file d'attente.`,
+            value: `purge : Éffacer la/les musique(s) de la file d'attente.`,
             inline: true
           },
           {
             name: "np",
-            value: `np : Afficher le titre du song actuel.`,
+            value: `np : Afficher le titre de la musique actuelle.`,
             inline: true
           },
           {
@@ -80,12 +80,12 @@ function music(msg){
           },
           {
             name: "Join",
-            value: `join : Rejoins votre voice channel.`,
+            value: `join : Rejoins votre salon vocal.`,
             inline: true
           },
           {
             name: "Leave",
-            value: `leave : Quitte voice channel.`,
+            value: `leave : Quitte le salon vocal.`,
             inline: true
           }
        ],
@@ -129,7 +129,7 @@ function help(msg){
                 }],
               timestamp: new Date(),
             footer: {
-              text: "Fatality support https://discord.gg/W2uMAsZ"
+              text: "Fatality support https://discord.me/fatalityteam"
             }
       }
   });
