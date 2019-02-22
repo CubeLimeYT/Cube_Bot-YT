@@ -195,34 +195,6 @@ if(message.content.startsWith(config.prefix + "restart")) {
     	}
     }
 	
-	if(message.content === config.prefix + "help"){
-	
-		if(message.channel.type === 'dm'){
-			message.author.createDM().then(channel => {
-			let HelpEmbed = new Discord.RichEmbed()
-        		.setDescription("Voici la description")
-        		.setColor('#1CFF1C')
-       			.addField('C*Administration', "Vous donne la page d'Administration")
-        		.addField('C*Youtube', 'Vous donneras tout concernant le Youtube Game :) ')
-        		.addField('C*Game', 'Vous donneras tout les jeux présent sur le bot')
-        		.addField('C*Image', 'Vous donneras les commandes pour avoir des images')
-        		.addField('C*Invite', "Vous donneras l'invitation du bot")
-        		.setFooter('Support Server : https://discord.gg/pcfYDMK ')
-				channel.send(HelpEmbed);
-			});
-		}else{
-	let HelpEmbed = new Discord.RichEmbed()
-        .setDescription("Voici la description")
-        .setColor('#1CFF1C')
-       	.addField('C*Administration', "Vous donne la page d'Administration")
-        .addField('C*Youtube', 'Vous donneras tout concernant le Youtube Game :) ')
-        .addField('C*Game', 'Vous donneras tout les jeux présent sur le bot')
-        .addField('C*Image', 'Vous donneras les commandes pour avoir des images')
-        .addField('C*Invite', "Vous donneras l'invitation du bot")
-        .setFooter('Support Server : https://discord.gg/pcfYDMK ')
-        		message.channel.send(HelpEmbed);
-		}
-	}
 	    
 	if (message.content === config.prefix + 'Administration') {
 	  if ( !message.member.hasPermission('ADMINISTRATOR')){
