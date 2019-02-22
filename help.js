@@ -5,6 +5,30 @@ module.exports = {
    'music': music
 }
 
+function radio(msg){
+   msg.channel.send({embed: {
+               color: 0x00FF00,
+               title: `Radio Help`,
+               fields: [{
+                  name: `${config.prefix}radio [franceinfo, nrj, rtl2, skyrock, rtl, rfm, bfm, nostalgie, mouv]`,
+                  value: "Pour que le bot joue la radio en direct, PS: il faut être dans canal vocal mais le bot peut vous le rarappeler 😉",
+                  inline: true
+               },
+               {
+                  name: `${config.prefix}radio [leave/stop]`,
+                  value: "Permet au bot de quitte et de stopper la radio",
+                  inline: true
+               }
+               ],
+                timestamp: new Date(),
+            footer: {
+              text: "Fatality support https://discord.gg/W2uMAsZ"
+            }
+                     }
+                    });
+}
+
+
 function music(msg){
      msg.channel.send(
         {embed: {
