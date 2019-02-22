@@ -1,4 +1,5 @@
 const commandHelp = require("./help.js");
+const config = require("./config.json");
 
 module.exports = {
    'help': help
