@@ -163,7 +163,7 @@ if(message.content.startsWith(config.prefix + "restart")) {
         	message.channel.send(catEmbed);
 	 }
 	}
-    if (message.content === config.prefix + 'Server') {
+    if (message.content === (config.prefix + 'Server') || message.content === (config.prefix + 'Serveur')) {
         let server_name = message.guild.name
         let server_size = message.guild.members.size
         message.channel.send('Serveur : ' + server_name + '\nPersonnes : ' + server_size);
