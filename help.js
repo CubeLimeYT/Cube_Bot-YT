@@ -66,7 +66,7 @@ function music(msg){
        ],
         timestamp: new Date(),
       footer: {
-        text: "©Steve & Co"
+        text: "Fatality Team"
       }
       }
   });
