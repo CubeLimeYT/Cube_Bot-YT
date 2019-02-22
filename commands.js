@@ -7,6 +7,8 @@ module.exports = {
 
 function help(msg){
 	let args = msg.content.split(/\s+/).slice(1);
+	
+	console.log(args);
 
 	let helpStr;
 	if(args.length == 1){
