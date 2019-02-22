@@ -52,6 +52,11 @@ function help(msg){
 					  name: `${config.prefix}help music`,
 					  value: `Vous donne toute les informations sur la commande music`,
 					  inline: true
+					},
+					{
+					  name: `${config.prefix}help radio`,
+					  value: `Vous donne toute les informations sur la commande radio`,
+					  inline: true
 					}],
 				      timestamp: new Date(),
 				    footer: {
