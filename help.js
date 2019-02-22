@@ -33,59 +33,59 @@ function radio(msg){
 function music(msg){
      msg.channel.send(
         {embed: {
-      color: 0x00FF00,
+      color: 0xff0703,
       title: `Music Help
               ${config.prefix}music | <fonctions>
               Toute les functions:`,
       fields: [{
             name: "Play",
             value: `play <url> ou <recherche> : 
-            Ajouter le(s) musiques ou la playlist à la file d'attente.`,
+            Ajouter le(s) musiques ou la playlist à la file d'attente ▶️.`,
             inline: true
           },
           {
             name: "Skip",
-            value: `skip : Passer la musique actuelle.`,
+            value: `skip : Passer la musique actuelle ⏭.`,
             inline: true
           },
           {
             name: "Pause",
-            value: `pause : Met pause la musique.`,
+            value: `pause : Met pause la musique ▶️.`,
             inline: true
           },
           {
             name: "Resume",
-            value: `resume : Reprendre/continuer la musique.`,
+            value: `resume : Reprendre/continuer la musique ⏸.`,
             inline: true
           },
           {
             name: "Queue",
-            value: `queue : Afficher la/les musique(s) de la file d'attente.`,
+            value: `queue : Afficher la/les musique(s) de la file d'attente 🔃.`,
             inline: true
           },
           {
             name: "Purge",
-            value: `purge : Éffacer la/les musique(s) de la file d'attente.`,
+            value: `purge : Éffacer la/les musique(s) de la file d'attente ⏹.`,
             inline: true
           },
           {
             name: "np",
-            value: `np : Afficher le titre de la musique actuelle.`,
+            value: `np : Afficher le titre de la musique actuelle ⏏️.`,
             inline: true
           },
           {
             name: "Volume",
-            value: `vol <0-100> : Régler le volume.`,
+            value: `vol <0-100> : Régler le volume 🔉 🔊.`,
             inline: true
           },
           {
             name: "Join",
-            value: `join : Rejoins votre salon vocal.`,
+            value: `join : Rejoins votre salon vocal 🔵.`,
             inline: true
           },
           {
             name: "Leave",
-            value: `leave : Quitte le salon vocal.`,
+            value: `leave : Quitte le salon vocal🔴.`,
             inline: true
           }
        ],
