@@ -105,6 +105,15 @@ bot.on('message', function (message) {
         .setFooter("Si tu as des suggestions d'images a rajouter fait moi en part  ")
         message.channel.send(catEmbed);
     }
+	
+    if (message.content === config.prefix + 'Game') {
+        let gameEmbed = new Discord.RichEmbed()
+        .setDescription('Voici les commandes possible pour jouer avec moi :D')
+        .setColor('#03fff7')
+        .addField("C*8ball", "Je peut répondre a vos questions ,tapez la commande suivi de votre question (ex:C*8ball tu m'aime ?"
+        .setFooter("Si tu as des suggestions de jeu  a rajouter fait moi en part ")
+        message.channel.send(gameEmbed);
+    }
 
 
     if (message.content === config.prefix + 'Server') {
