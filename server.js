@@ -96,7 +96,7 @@ bot.on("message", async message => {
 		msg.delete();
 		  
       }
-	if (message.content.startsWith(prefix + "ping")){
+	if (message.content.startsWith(config.prefix + "ping")){
         message.channel.send(`Ping en ${Date.now() - message.createdTimestamp} ms`)
 	}
 	
