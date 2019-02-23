@@ -155,7 +155,7 @@ playSong(msg) {
                     color: 3447003,
                     fields: [{
                         name: `:notes: Lecture en cours `,
-                        value: `[${this.queue[0].title}]`+`(${this.queue[0].url}) (\`${this.queue[0].time}\`) demandé par **${this.queue[0].author}**`
+                        value: `[${this.queue[0].title}]`+`(${this.queue[0].url}) (\`${this.queue[0].length_seconds\`) demandé par **${this.queue[0].author}**`
                       }], 
                     timestamp: new Date(),
                     footer: {
