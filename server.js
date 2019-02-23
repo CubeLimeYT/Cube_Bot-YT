@@ -96,6 +96,9 @@ bot.on("message", async message => {
 		msg.delete();
 		  
       }
+	if (message.content.startsWith(prefix + "ping")){
+        message.channel.send(`Ping en ${Date.now() - message.createdTimestamp} ms`)
+	}
 	
 	if(message.content.startsWith(config.prefix + 'Icat')) {
 		let msg = await message.channel.send('Génération de l\'image...');
