@@ -215,21 +215,22 @@ if(message.content.startsWith(config.prefix + "restart")) {
 		  .catch(console.error);
 		 message.channel.send(`Vous n'avez pas la permission d'acceder au pannel administrateur car vous n'avez pas un rôle avec l'option administrateur`);
 		  
-	  }let adminEmbed = new Discord.RichEmbed()
-        		.setDescription('Voici la liste des commandes pour les administrateur')
-        		.setColor('#6GFH6D')
-        		.addField('C*Server', 'Vous donneras les infos sur le serveur')
-	      		.addField('C*Ban', 'Pour bannir des gens de façon permanente')
-	      		.addField('C*Kick', 'Pour kicker des gens :D')
-        		.setFooter('Voila')
-	   let rMember = message.author;
-	try{
-    		await rMember.send(adminEmbed)
-		await message.reply("vérifier vos messages priver")
- 	 }catch(e){
-   	 	message.reply(`Impossible de vous envoyez des messages privés`);
- 	 }
-	
+	  }else{
+				let adminEmbed = new Discord.RichEmbed()
+					.setDescription('Voici la liste des commandes pour les administrateur')
+					.setColor('#6GFH6D')
+					.addField('C*Server', 'Vous donneras les infos sur le serveur')
+					.addField('C*Ban', 'Pour bannir des gens de façon permanente')
+					.addField('C*Kick', 'Pour kicker des gens :D')
+					.setFooter('Voila')
+			   let rMember = message.author;
+			try{
+				await rMember.send(adminEmbed)
+				await message.reply("vérifier vos messages priver")
+			 }catch(e){
+				message.reply(`Impossible de vous envoyez des messages privés`);
+			 }
+	  }
 	}
  let prefix = config.prefix;
   
