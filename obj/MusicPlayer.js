@@ -37,7 +37,8 @@ playSong(msg) {
                 this.changeStatus('playing');
                 this.dispatch = this.voiceConnection.playStream(stream, {
                     passes: 2,
-                    volume: this.volume
+                    volume: this.volume,
+		    time: this.queue.time
                 });
 
                 this.dispatch.on('error', error => {
