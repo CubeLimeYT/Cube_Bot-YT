@@ -3,7 +3,7 @@ const Discord = require("discord.js");
 module.exports.run = async (bot, message, args) => {
       
       if(message.guild.roles.find(r => r.name === "Say")){
-            let RMember = message.member.guild.roles;
+            let RMember = message.author.guild.member;
             if(RMember.find(r => r.name === "Say")){
                   const sayMessage = args.join(" ");
                   message.delete().catch();
