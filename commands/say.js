@@ -1,10 +1,10 @@
 const Discord = require("discord.js");
 
 module.exports.run = async (bot, message, args) => {
-      
+      var GMember = message.guild.member(message.author);
       if(message.guild.roles.find(r => r.name === "Say")){
-            let RMember = message.author.guild;
-            if(RMember.find(r => r.name === "Say")){
+            let RMember = message.author;
+            if(GMember.find(r => r.name === "Say")){
                   const sayMessage = args.join(" ");
                   message.delete().catch();
                   message.channel.send(sayMessage);
