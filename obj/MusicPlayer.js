@@ -151,12 +151,11 @@ playSong(msg) {
     */
     nowPlaying(msg) {
         if (this.queue.length > 0){
-	let queue = queueSong(msg.guild.id);
             msg.channel.send({embed: {
                     color: 3447003,
                     fields: [{
                         name: `:notes: Lecture en cours `,
-                        value: `[${this.queue[0].title}]`+`(${this.queue[0].url}) (\`${this.queue[0].length_seconds}\`) demandé par **${queue[0].requested}**`
+                        value: `[${this.queue[0].title}]`+`(${this.queue[0].url}) (\`${this.queue[0].length_seconds}\`) demandé par **${this.queue[0].requested}**`
                       }], 
                     timestamp: new Date(),
                     footer: {
