@@ -14,7 +14,7 @@ module.exports.run = async (bot, message, args) => {
       
       }else{
             let owner = message.guild.owner;
-            message.channel.send(`${owner} il n'y a pas de role comportant le nom: Say`);
+            message.channel.send(`${owner} il n'y a pas de role comportant le nom: Say pour autoriser certaines personnes à utiliser cette commande`);
       }
 
 }
