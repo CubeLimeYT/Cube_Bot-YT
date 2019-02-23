@@ -14,7 +14,7 @@ const radio = {
     "nostalgie": "http://185.52.127.160/fr/30601/mp3_128.mp3?origine=fluxradios",
     "mouv": "http://chai5she.cdn.dvmr.fr/mouv-midfi.mp3",
     "funradio": "http://streaming.radio.funradio.fr/fun-1-48-192",
-    "virginradio": "http://vr-live-mp3-128.scdn.arkena.com/virginradio.mp3",
+    "virginradio": "http://mp3lg4.tdf-cdn.com/9243/lag_164753.mp3",
     "cherie": "http://185.52.127.132/fr/30201/mp3_128.mp3?origine=fluxradios"
 }
 
