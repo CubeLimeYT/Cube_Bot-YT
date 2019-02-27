@@ -5,7 +5,7 @@ exports.run = async (client, message, args) => {
 
     let quiz = [
         { q: 'Quel est la couleur du ciel ?', a: ['pas de couleur', 'invisible'] },
-        { q: 'Nommez une marque de boisson gazeuse', a: ['pepsi', 'coke', 'rc', '7up', 'sprite', 'mountain dew'] },
+        { q: 'Nommez une marque de boisson gazeuse', a: ['pepsi', 'coca', 'rc', '7up', 'sprite', 'mountain dew'] },
         { q: 'Nommez un langage de programmation.', a: ['actionscript', 'coffescript', 'c', 'c++', 'c#', 'visual basic', 'perl', 'javascript', 'dotnet', 'crystal', 'lua', 'go', 'python', 'rust', 'ruby', 'java'] },
         { q: 'Qui sont mes créateurs', a: ['Cube et Steven'] }
         
