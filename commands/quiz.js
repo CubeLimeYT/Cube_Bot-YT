@@ -4,7 +4,7 @@ const Discord = require('discord.js');
 exports.run = async (client, message, args) => {
 
     let quiz = [
-        { q: 'Quel est la couleur du ciel ?', a: ['no color', 'invisible'] },
+        { q: 'Quel est la couleur du ciel ?', a: ['pas de couleur', 'invisible'] },
         { q: 'Nommez une marque de boisson gazeuse', a: ['pepsi', 'coke', 'rc', '7up', 'sprite', 'mountain dew'] },
         { q: 'Nommez un langage de programmation.', a: ['actionscript', 'coffescript', 'c', 'c++', 'c#', 'visual basic', 'perl', 'javascript', 'dotnet', 'crystal', 'lua', 'go', 'python', 'rust', 'ruby', 'java'] },
         { q: 'Qui sont mes créateurs', a: ['Cube et Steven'] }
@@ -24,7 +24,7 @@ exports.run = async (client, message, args) => {
         return message.channel.send({
             embed: new Discord.RichEmbed()
                 .setAuthor(`Gagnant: ${winnerMessage.author.tag}`, winnerMessage.author.displayAvatarURL)
-                .setTitle(`Réponse correct: \`${winnerMessage.content}\``)
+                .setTitle(`Reponse correct: \`${winnerMessage.content}\``)
                 .setFooter(`Question: ${item.q}`)
                 .setColor('RANDOM')
         })
@@ -32,8 +32,8 @@ exports.run = async (client, message, args) => {
     } catch (_) {
         return message.channel.send({
             embed: new Discord.RichEmbed()
-                .setAuthor('Personne n\'a eu la réponse à temps!')
-                .setTitle(`Réponses correcte(s): \`${item.a}\``)
+                .setAuthor('Personne n\'a eu la reponse a temps!')
+                .setTitle(`Reponses correcte(s): \`${item.a}\``)
                 .setFooter(`Question: ${item.q}`)
         })
 
