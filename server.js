@@ -181,7 +181,7 @@ if(message.content.startsWith(config.prefix + "restart")) {
         .setDescription("Pense à t'abonner et à liké")
         .setColor('#5DKK6L')
         .addField('Voilà la chaîne de Cube_Lime YT', 'https://www.youtube.com/channel/UCKwjZKxnVGF2WUNPEHc0RVg')
-        .addField('Viens aussi sur son serveur discord', 'https://discord.gg/pcfYDMK')
+        .addField('Viens aussi sur son serveur discord', 'https://discord.me/fatalityteam')
 	 .addField("Tu peut également l'ajouter en ami sur youtube", "https://youtu.be/join/ct-Py9DY3VEGjY")
         .setFooter("Allez c'est gratuit pour le moment")
         	channel.send(youtubeEmbed)
@@ -191,7 +191,7 @@ if(message.content.startsWith(config.prefix + "restart")) {
         .setDescription("Pense à t'abonner et à liké")
         .setColor('#5DKK6L')
         .addField('Voilà la chaîne de Cube_Lime YT', 'https://www.youtube.com/channel/UCKwjZKxnVGF2WUNPEHc0RVg')
-        .addField('Viens aussi sur son serveur discord', 'https://discord.gg/pcfYDMK')
+        .addField('Viens aussi sur son serveur discord', 'https://discord.me/fatalityteam')
 	 .addField("Tu peut également l'ajouter en ami sur youtube", "https://youtu.be/join/ct-Py9DY3VEGjY")
         .setFooter("Allez c'est gratuit pour le moment")
         message.channel.send(youtubeEmbed);
