@@ -11,11 +11,11 @@ module.exports.run = async (bot, message, args) => {
             }else{
                         message.reply("vous n'avez pas le role say pour utiliser cette commande");
 
-            }else{
+            
+      }else{
                   let owner = message.guild.owner;
                   message.channel.send(`${owner} il n'y a pas de role comportant le nom: Say pour autoriser certaines personnes à utiliser cette commande`);
             }
-      }
 
 }
 
