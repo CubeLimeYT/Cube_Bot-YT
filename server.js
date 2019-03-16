@@ -304,7 +304,7 @@ bot.on("message", async message => {
 		let utilityEmbed = new Discord.RichEmbed()
 		.setDescription('Voici les commandes utiles')
 		.setColor('#03fff7')
-		.addField("C*ping", "Vous donnes votre nombre de ms.")
+		.addField(`${config.prefix}ping`, `Vous donnes votre nombre de ms.`)
 		.setFooter("Si tu as des commandes a rajouter dit le moi");
 		message.channel.send(utilityEmbed);
 	  }
