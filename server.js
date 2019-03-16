@@ -238,6 +238,7 @@ if(message.content.startsWith(config.prefix + "restart")) {
 					.setDescription('Voici la liste des commandes pour les administrateur')
 					.setColor('#6GFH6D')
 					.addField('C*Server', 'Vous donneras les infos sur le serveur')
+				        .addField('C*SetupCGC', 'Vous ajouetras un Global-Chat automatiquement')
 					.addField('C*Ban', 'Pour bannir des gens de façon permanente')
 					.addField('C*Kick', 'Pour kicker des gens :D')
 					.setFooter('Voila')
