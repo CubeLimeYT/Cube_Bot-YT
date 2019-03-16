@@ -31,7 +31,7 @@ function help(msg){
         	.addField(`${config.prefix}Invite`, `Vous donneras l'invitation du bot`)
         	.addField(`${config.prefix}help music`, `Vous donne toute les informations sur la commande music`)
         	.addField(`${config.prefix}help radio`, `Vous donne toute les informations sur la commande radio`)
-        	.setFooter("Si tu as des suggestions d'images a rajouter fait moi en part  ")
+        	.setFooter("Si tu as des problèmes fait moi en part => Cube_Lime#3607")
 
 		msg.channel.send(helpembed);
    }
