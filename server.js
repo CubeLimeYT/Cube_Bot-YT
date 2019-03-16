@@ -114,6 +114,7 @@ bot.on("message", async message => {
 		message.channel.send(Radios.radio05);
 		message.channel.send(Radios.radio06);
 		message.channel.send(Radios.radio07);
+		message.channel.send(Radios.radio08);
 	}
 	
 	//Generation d'image meme
