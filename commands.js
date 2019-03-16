@@ -1,5 +1,6 @@
 const commandHelp = require("./help.js");
 const config = require("./config.json");
+const Discord = require("discord.js");
 
 module.exports = {
    'help': help
@@ -19,55 +20,18 @@ function help(msg){
 		helpStr(msg);
   }
 	else {
-		msg.channel.send(
-				{embed: {
-				    color: 0x00FF00,
-				    title: `Help`,
-				    fields: [{
-					  name: `${config.prefix}Administration`,
-					  value: `Vous donne la page d'Administration`,
-					  inline: true
-					},
-					{
-					  name: `${config.prefix}Utility`,
-					  value: `Vous donneras les commandes utiles`,
-					  inline: true
-					},
-					{
-					  name: `${config.prefix}Youtube`,
-					  value: `Vous donneras tout concernant le Youtube Game :)`,
-					  inline: true
-					},
-					{
-					  name: `${config.prefix}Game`,
-					  value: `Vous donneras tout les jeux présent sur le bot`,
-					  inline: true
-					},
-					{
-					  name: `${config.prefix}Image`,
-					  value: `Vous donneras les commandes pour avoir des images`,
-					  inline: true
-					},
-					{
-					  name: `${config.prefix}Invite`,
-					  value: `Vous donneras l'invitation du bot`,
-					  inline: true
-					},
-					{
-					  name: `${config.prefix}help music`,
-					  value: `Vous donne toute les informations sur la commande music`,
-					  inline: true
-					},
-					{
-					  name: `${config.prefix}help radio`,
-					  value: `Vous donne toute les informations sur la commande radio`,
-					  inline: true
-					}],
-				      timestamp: new Date(),
-				    footer: {
-				      text: "Fatality support https://discord.me/fatalityteam"
-				    }
-			      }
-			  });
+		let helpembed = new Discord.RichEmbed()
+		.setDescription('Voici les commandes possible pour obtenir des images :wink: ')
+        	.setColor('#6D5G1R')
+        	.addField(`${config.prefix}Administration`, "Vous donne la page d'Administration")
+        	.addField(`${config.prefix}Youtube`, `Vous donneras tout concernant le Youtube Game :)`)
+        	.addField(`${config.prefix}Game`, `Vous donneras tout les jeux présent sur le bot`)
+        	.addField(`${config.prefix}Image`, `Vous donneras les commandes pour avoir des images`)
+        	.addField(`${config.prefix}Invite`, `Vous donneras l'invitation du bot`)
+        	.addField(`${config.prefix}help music`, `Vous donne toute les informations sur la commande music`)
+        	.addField(`${config.prefix}help radio`, `Vous donne toute les informations sur la commande radio`)
+        	.setFooter("Si tu as des suggestions d'images a rajouter fait moi en part  ")
+
+		msg.channel.send(helpembed);
    }
 }
