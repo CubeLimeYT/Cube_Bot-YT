@@ -59,6 +59,7 @@ bot.on("message", async message => {
 		message.channel.send(Radios.radio);
 	}
 	
+	//Generation d'image meme
 	if(message.content.startsWith(config.prefix + 'meme')) {
 		let msg = await message.channel.send('Génération de l\'image...');
            	 
@@ -78,6 +79,7 @@ bot.on("message", async message => {
 		  
       }
 	
+	//Generation d'image de chien
 	if(message.content.startsWith(config.prefix + 'Idog')) {
 		let msg = await message.channel.send('Génération de l\'image...');
            	 
@@ -95,6 +97,8 @@ bot.on("message", async message => {
 		msg.delete();
 		  
       }
+	
+	//Ping return Pong in ..ms
 	if (message.content.startsWith(config.prefix + "ping")){
         message.channel.send(`Ping en ${Date.now() - message.createdTimestamp} ms`)
 	}
@@ -118,28 +122,28 @@ bot.on("message", async message => {
       }
 	
 	
-	
-if(message.content.startsWith(config.prefix + "restart")) {
-	if(message.author.id !== "372099632173416449") return message.reply('Vous n\'êtes pas le propriétaire du bot');
-        message.channel.send('**Redémarrage**').then(msg => {
-            setTimeout(() => {
-               msg.edit('**Redémarrage..**');
-            },1000);
-            setTimeout(() => {
-               msg.edit('**Redémarrage...**');
-            },2000);
-        console.log(`${message.author.tag} [ ${message.author.id} ] has restarted the bot.`);
-        console.log(`Restarting..`);
-        setTimeout(() => {
-            bot.destroy();
-            bot.login(process.env.token);
-        },3000);
-          setTimeout(() => {
-               msg.edit('Bot redémarré ✅');
-            },2000);
-        });
-        
-    }
+	//Command for restart bot
+		if(message.content.startsWith(config.prefix + "restart")) {
+			if(message.author.id !== "372099632173416449") return message.reply('Vous n\'êtes pas le propriétaire du bot');
+			message.channel.send('**Redémarrage**').then(msg => {
+			    setTimeout(() => {
+			       msg.edit('**Redémarrage..**');
+			    },1000);
+			    setTimeout(() => {
+			       msg.edit('**Redémarrage...**');
+			    },2000);
+			console.log(`${message.author.tag} [ ${message.author.id} ] has restarted the bot.`);
+			console.log(`Restarting..`);
+			setTimeout(() => {
+			    bot.destroy();
+			    bot.login(process.env.token);
+			},3000);
+			  setTimeout(() => {
+			       msg.edit('Bot redémarré ✅');
+			    },2000);
+			});
+
+		    }
 	
 	if (message.content === config.prefix + 'Image'){
 		var catEmbed = new Discord.RichEmbed()
