@@ -205,6 +205,15 @@ if(message.content.startsWith(config.prefix + "restart")) {
         .setFooter("Si tu as des suggestions de jeu  a rajouter fait moi en part");
         message.channel.send(gameEmbed);
     }
+
+    if (message.content === config.prefix + 'Utility') {
+        let utilityEmbed = new Discord.RichEmbed()
+        .setDescription('Voici les commandes utiles')
+        .setColor('#03fff7')
+        .addField("C*ping", "Vous donnes votre nombre de ms.")
+        .setFooter("Si tu as des commandes a rajouter dit le moi");
+        message.channel.send(utilityEmbed);
+    }
 	
     if (message.content === config.prefix + 'CGC') {
         let cgcEmbed = new Discord.RichEmbed()
