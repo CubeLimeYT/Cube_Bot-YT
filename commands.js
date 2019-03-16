@@ -24,7 +24,7 @@ function help(msg){
 		.setDescription('Voici toutes les commandes a votre dispositions')
         	.setColor('RANDOM')
         	.addField(`${config.prefix}Administration`, `Vous donne la page d'Administration`)
-		.addField(`${config.prefix}Utility`, `Vous donnes les commandes utiles`
+		.addField(`${config.prefix}Utility`, `Vous donnes les commandes utiles`)
         	.addField(`${config.prefix}Youtube`, `Vous donneras tout concernant le Youtube Game :)`)
         	.addField(`${config.prefix}Game`, `Vous donneras tout les jeux présent sur le bot`)
         	.addField(`${config.prefix}Image`, `Vous donneras les commandes pour avoir des images`)
