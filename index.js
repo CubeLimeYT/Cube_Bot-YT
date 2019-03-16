@@ -78,6 +78,7 @@ bot.on('message',async message => {
         		.addField('C*Server', 'Vous donneras les infos sur le serveur')
 	      		.addField('C*Ban', 'Pour bannir des gens de façon permanente')
 	      		.addField('C*Kick', 'Pour kicker des gens :D')
+	      		.addField('C*Userinfo', "Vous donneras les infos de quelqu'un ")
         		.setFooter('Voila')
 	   let rMember = message.author;
 	try{
@@ -104,6 +105,15 @@ bot.on('message', function (message) {
         .addField("C*Idog", "Vous donneras des images de chien :joy: ")
         .addField("C*Inude","Vous enverras un nude en privé :wink: ")
         .setFooter("Si tu as des suggestions d'images a rajouter fait moi en part  ")
+        message.channel.send(catEmbed);
+    }
+	
+    if (message.content === config.prefix + 'Utility') {
+        let catEmbed = new Discord.RichEmbed()
+        .setDescription('Voici les commandes possible pour obtenir des images :wink: ')
+        .setColor('#6D5G1R')
+        .addField("C*ping", "Vous donneras vos ms.")
+        .setFooter("Si tu as des suggestions de commandes à rajouter fait moi en part  ")
         message.channel.send(catEmbed);
     }
 	
