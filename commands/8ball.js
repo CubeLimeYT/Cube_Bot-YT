@@ -17,8 +17,8 @@ module.exports.run = async (bot, message, args) => {
         "C'est ton destin", 
         "Impossible", 
         "Sans aucun doute", 
-        "Pas d'avis", 
-        "Repose ta question"
+        "Insh'allah comme on dit", 
+        "Seulement si t'es abonné a CuCuBe x)"
         ];
     
     let reponse = (replys[Math.floor(Math.random() * replys.length)])
