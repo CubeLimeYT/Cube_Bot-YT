@@ -54,10 +54,46 @@ bot.on('message', function (message) {
 });
 
 bot.on("message", async message => {
+	//Setup Global Chat
+	if(message.content === config.prefix + "SetupCGC"){
+            if(!message.member.hasPermission('ADMINISTRATOR')){
+                  message.channel.send("Vous n'êtes pas administrateur")   
+            }else{
+                  if(!message.guild.member(bot.user).hasPermission('ADMINISTRATOR')){
+                        message.channel.send("Je n'ai pas la permission de pouvoir créer des salons textuel");
+                  }else{
+                        message.guild.createChannel("Cube-Global-Chat").then(channel => {
+                              channel.setTopic('Global chat')
+                        });
+                  }
+            }
+      }
 	
+	//GlobalChat
+	if(message.channel.name === "cube-global-chat"){
+		if(!message.author.bot){
+			let args = message.content.slice().split(" ");
+		
+		const sayMessage = args.join(" ");
+			message.delete().catch();
+			let embedglobal = new Discord.RichEmbed()
+			.setAuthor(`${message.author.username} | ${message.author.id}`, message.author.avatarURL)
+			.setColor(0xBCFF78)
+			.addField(`${sayMessage}`, "Global Chat V.1")
+			.setFooter(`Envoyé depuis ${message.guild.name}`)
+			.setTimestamp()
+
+			bot.channels.findAll('name', 'cube-global-chat').map(channel => channel.send(embedglobal))
+		}
+		
+		
+	}
+	
+	/*List Radio
 	if(message.content === (config.prefix + "rlist") || (config.prefix + "radiolist")){
 		message.channel.send(Radios.radio);
 	}
+	*/
 	
 	//Generation d'image meme
 	if(message.content.startsWith(config.prefix + 'meme')) {
