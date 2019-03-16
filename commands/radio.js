@@ -12,7 +12,7 @@ const radio = require("../radio.json");
                 if(!message.member.voiceChannel.speakable) return message.channel.send(`Je n'ai pas la permission de \`rejoindre\` ou \`parler\` dans ce salon !`).catch(err => console.log(err));
 
 
-            let args = message.content.split(" ").slice(1).join(" ").toLowerCase();
+            let args = message.content.split(" ").slice(1).join(" ");
     
             if (!args) return message.channel.send(`Veuillez spécifier un nom de radio, faites **${config.prefix}rlist**, pour stopper la radio faites ${config.prefix}radio stop`);
     
