@@ -57,6 +57,7 @@ bot.on('message',async message => {
         		.setDescription("Voici la description")
         		.setColor('#1CFF1C')
         		.addField('C*Administration', "Vous donne la page d'Administration")
+			.addField('C*Utility', "Vous donne la page des commandes utile")
         		.addField('C*Youtube', 'Vous donneras tout concernant le Youtube Game :) ')
         		.addField('C*Game', 'Vous donneras tout les jeux présent sur le bot')
         		.addField('C*Image', 'Vous donneras les commandes pour avoir des images')
@@ -121,7 +122,8 @@ bot.on('message', function (message) {
         let gameEmbed = new Discord.RichEmbed()
         .setDescription('Voici les commandes possible pour jouer avec moi :D')
         .setColor('#03fff7')
-        .addField("C*8ball", "Je peut répondre a vos questions ,tapez la commande suivi de votre question (ex:C*8ball tu m'aime ?"
+        .addField("C*8ball", "Je peut répondre a vos questions ,tapez la commande suivi de votre question (ex:C*8ball tu m'aime ?)")
+	.addField("C*quiz", "Je te pose une question, essaie d'y répondre")
         .setFooter("Si tu as des suggestions de jeu  a rajouter fait moi en part ")
         message.channel.send(gameEmbed);
     }
