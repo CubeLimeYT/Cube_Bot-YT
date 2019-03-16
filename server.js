@@ -54,21 +54,6 @@ bot.on('message', function (message) {
 });
 
 bot.on("message", async message => {
-	//Setup Join-Quit
-	if(message.content === config.prefix + "SetupJQ"){
-            if(!message.member.hasPermission('ADMINISTRATOR')){
-                  message.channel.send("Vous n'êtes pas administrateur")   
-            }else{
-                  if(!message.guild.member(bot.user).hasPermission('ADMINISTRATOR')){
-                        message.channel.send("Je n'ai pas la permission de pouvoir créer des salons textuel");
-                  }else{
-                        message.guild.createChannel("Join-Quit").then(channel => {
-                              channel.setTopic('Join-Quit')
-                        });
-                  }
-            }
-        }
-	
 	//Setup Global Chat
 	if(message.content === config.prefix + "SetupCGC"){
             if(!message.member.hasPermission('ADMINISTRATOR')){
