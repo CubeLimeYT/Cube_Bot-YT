@@ -9,6 +9,7 @@ const Radios = require('./listradio.json');
 let statuses = [`${config.prefix}help`, `ban des caïd`, `https://www.youtube.com/channel/UCKwjZKxnVGF2WUNPEHc0RVg`, `Manger`, 'tous vous surveillez', 'être optimisé']
 bot.on('ready', () => {
 	console.log("Bot lancer!")
+	console.log(`${bot.user.username} est Prêt!`);
 	setInterval(function() {
 		let status = statuses[Math.floor(Math.random()*statuses.length)];
 
@@ -53,7 +54,6 @@ bot.on('message', function (message) {
 });
 
 bot.on("message", async message => {
-  console.log(`${bot.user.username} Is Ready!`);
 	
 	if(message.content === (config.prefix + "rlist") || (config.prefix + "radiolist")){
 		message.channel.send(Radios.radio);
