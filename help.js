@@ -108,6 +108,11 @@ function help(msg){
                   inline: true
                 },
                 {
+                  name: "C*Utility",
+                  value: `Vous donneras les commandes utiles`,
+                  inline: true
+                },
+                {
                   name: "C*Youtube",
                   value: `Vous donneras tout concernant le Youtube Game :)`,
                   inline: true
