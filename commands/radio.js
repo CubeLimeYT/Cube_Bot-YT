@@ -27,7 +27,7 @@ const radio = {
 
             let args = message.content.split(" ").slice(1).join(" ").toLowerCase();
     
-            if (!args) return message.channel.send(`Veuillez spécifier un nom de radio, voici la liste des radios: **franceinfo**, **nrj**, **rtl2**, **skyrock**, **rtl**, **rfm**, **bfm**, **nostalgie**, **mouv**, **funradio**, **virginradio**, **cherie** ou ${config.prefix}radio stop`);
+            if (!args) return message.channel.send(`Veuillez spécifier un nom de radio, faites **//rlist** ou ${config.prefix}radio stop`);
     
     if(args === ("stop") || args === ("leave")){
         if (message.guild.voiceConnection) {
@@ -45,7 +45,7 @@ const radio = {
             }
     }else{
 
-        if(!radio[args]) return message.channel.send(`Radio non-valide, voici la liste des radios: **franceinfo**, **nrj**, **rtl2**, **skyrock**, **rtl**, **rfm**, **bfm**, **nostalgie**, **mouv**, **funradio**, **virginradio**, **cherie**`)
+        if(!radio[args]) return message.channel.send(`Radio non-valide, faites **//rlist** `)
     
     message.member.voiceChannel.join().then(connection => {
 
