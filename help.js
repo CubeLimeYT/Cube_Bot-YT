@@ -18,6 +18,11 @@ function radio(msg){
                   name: `${config.prefix}radio [leave/stop]`,
                   value: "Permet au bot de quitter et de stopper la radio",
                   inline: true
+               },
+               {
+                  name: `${config.prefix}rlist`,
+                  value: "Affiche la liste des radios disponible",
+                  inline: true
                }
                ],
                 timestamp: new Date(),
