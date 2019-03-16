@@ -53,56 +53,6 @@ bot.on('message', function (message) {
 		return;
 });
 
-//Event Memeber Join
-var jimp = require('jimp');
-
-bot.on('guildMemberAdd', async member => {
-	  let font = await jimp.loadFont(jimp.FONT_SANS_32_BLACK)
-	  let font64 = await jimp.loadFont(jimp.FONT_SANS_64_BLACK)
-	  let mask = await jimp.read('https://i.imgur.com/552kzaW.png')
-	  let welcome = await jimp.read('https://i.imgur.com/3Kf6TI8.png')
-
-	  jimp.read(member.user.displayAvatarURL).then(avatar => {
-	    avatar.resize(318, 317)
-	    mask.resize(318, 317)
-	    avatar.mask(mask)
-
-	  welcome.print(font64, 400, 170, member.user.username)
-	  welcome.composite(avatar, 43, 38).write('Welcome2.png')
-	  let channel = bot.channels.find('name', 'join-quit');
-	  member.guild.channels.get(channel.id).send(``, { files: ["Welcome2.png"] })
-
-	  console.log('Image sent!')
-	  })
-	  .catch(err => {
-	  console.log('error sending the avatar')
-	  })
-})
-
-bot.on('guildMemberRemove', async member => {
-	  let font = await jimp.loadFont(jimp.FONT_SANS_32_BLACK)
-	  let font64 = await jimp.loadFont(jimp.FONT_SANS_64_BLACK)
-	  let mask = await jimp.read('https://i.imgur.com/552kzaW.png')
-	  let goodbye = await jimp.read('https://imgur.com/Mazj06u.png')
-
-	  jimp.read(member.user.displayAvatarURL).then(avatar => {
-	    avatar.resize(318, 317)
-	    mask.resize(318, 317)
-	    avatar.mask(mask)
-
-	  goodbye.print(font64, 400, 170, member.user.username)
-	  goodbye.composite(avatar, 43, 38).write('Goodbye2.png')
-	  let channel = bot.channels.find('name', 'join-quit');
-	  member.guild.channels.get(channel.id).send(``, { files: ["Goodbye2.png"] })
-
-	  console.log('Image sent!')
-	  })
-	  .catch(err => {
-	  console.log('error sending the avatar')
-	  })
-})
-
-
 bot.on("message", async message => {
 	//Setup Join-Quit
 	if(message.content === config.prefix + "SetupJQ"){
