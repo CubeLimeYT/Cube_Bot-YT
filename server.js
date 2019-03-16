@@ -250,9 +250,9 @@ bot.on("message", async message => {
 		var catEmbed = new Discord.RichEmbed()
         	.setDescription('Voici les commandes possible pour obtenir des images :wink: ')
         	.setColor('#6D5G1R')
-        	.addField("C*Icat", "Vous donneras des images aléatoires de chat :joy: ")
-        	.addField("C*Idog", "Vous donneras des images de chien :joy: ")
-        	.addField("C*Inude","Vous enverras un nude en privé :wink: ")
+        	.addField(`${config.prefix}cat`, "Vous donneras des images aléatoires de chat :joy: ")
+        	.addField(`${config.prefix}dog`, "Vous donneras des images de chien :joy: ")
+        	.addField(`${config.prefix}nude`,"Vous enverras un nude en privé :wink: ")
         	.setFooter("Si tu as des suggestions d'images a rajouter fait moi en part  ")
 	if(message.channel.type === 'dm'){
        	 	message.author.createDM().then(channel => {
