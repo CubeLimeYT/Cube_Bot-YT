@@ -15,11 +15,12 @@ module.exports.run = async (bot, message, args) => {
 	    	days : days ? days : 0,
 	    	reason: reason ? reason: 'none'
 	    };
-      
+      		
 	    memberToBan.ban(banOptions);
 	    message.channel.send(` L\'utilisateur ${memberToBan} à bien été bani`);
-	    message.guild.owner.createDM().then(channel => {
-			channel.send({embed: {
+	    let owner =  message.guild.owner;
+	    try{
+				await owner.send({embed: {
 				title: "Ban",
 				color: 0x00FF,
 				fields:[{
@@ -37,8 +38,10 @@ module.exports.run = async (bot, message, args) => {
 					value: `${message.author}`,
 					inline: true
 				}]
-			}});
-		}).catch(message.channel.send(`${message.guild.owner} ne peut recevoir des messages priver`))
+			}})
+			 }catch(e){
+				message.reply(`Impossible d'envoyer le rapport a l'owner de la guild`);
+			 }
 	}else{
         message.channel.send(`L\'utilisateur ${memberToBan} ne peut être ban`)
     }
