@@ -4,6 +4,7 @@ const config = require('./config.json');
 const superagent = require('superagent');
 const music = require('./commands/music.js');
 const cmdss = require('./commands.js');
+const Radios = require('./listradio.json');
 
 let statuses = [`${config.prefix}help`, `ban des caïd`, `https://www.youtube.com/channel/UCKwjZKxnVGF2WUNPEHc0RVg`, `Manger`, 'tous vous surveillez', 'être optimisé']
 bot.on('ready', () => {
@@ -52,13 +53,11 @@ bot.on('message', function (message) {
 });
 
 bot.on("message", async message => {
-	
-	if(message.content === config.prefix + "say"){
-		let messageBot = args.join(" ");
-  		message.author.delete().catch();
-  		message.channel.send(messageBot);
-	}
   console.log(`${bot.user.username} Is Ready!`);
+	
+	if(message.content === (config.prefix + "rlist") || (config.prefix + "radiolist")){
+		message.channel.send(Radios.radio);
+	}
 	
 	if(message.content.startsWith(config.prefix + 'meme')) {
 		let msg = await message.channel.send('Génération de l\'image...');
