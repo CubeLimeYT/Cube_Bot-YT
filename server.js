@@ -62,7 +62,7 @@ bot.on("message", async message => {
                   if(!message.guild.member(bot.user).hasPermission('ADMINISTRATOR')){
                         message.channel.send("Je n'ai pas la permission de pouvoir créer des salons textuel");
                   }else{
-                        message.guild.createChannel("Cube-Global-Chat").then(channel => {
+                        message.guild.createChannel("cube-chat").then(channel => {
                               channel.setTopic('Global chat')
                         });
                   }
@@ -70,7 +70,7 @@ bot.on("message", async message => {
         }
 	
 	//GlobalChat
-	if(message.channel.name === "cube-global-chat"){
+	if(message.channel.name === "cube-chat"){
 		if(!message.author.bot){
 			let args = message.content.slice().split(" ");
 		
