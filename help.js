@@ -1,7 +1,6 @@
 const config = require("./config.json");
 
 module.exports = {
-   'help': help,
    'music': music,
    'radio': radio
 }
