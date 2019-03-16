@@ -105,7 +105,7 @@ bot.on("message", async message => {
 	}
 	
 
-	if(message.content === (config.prefix + "rlist") || (config.prefix + "radiolist")){
+	if(message.content === config.prefix + "rlist"){
 		message.channel.send('Voici la liste des radios');
 		message.channel.send(Radios.radio01);
 		message.channel.send(Radios.radio02);
