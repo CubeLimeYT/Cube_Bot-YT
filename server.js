@@ -83,7 +83,7 @@ bot.on("message", async message => {
 			.setFooter(`Envoyé depuis ${message.guild.name}`)
 			.setTimestamp()
 
-			bot.channels.findAll('name', 'cube-global-chat').map(channel => channel.send(embedglobal))
+			bot.channels.findAll('name', 'cube-chat').map(channel => channel.send(embedglobal))
 		}
 		
 		
