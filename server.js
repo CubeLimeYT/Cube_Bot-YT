@@ -98,11 +98,8 @@ bot.on("message", async message => {
 		  
       }
 	
-	//Ping return Pong in ..ms
-	if (message.content.startsWith(config.prefix + "ping")){
-        message.channel.send(`Ping en ${Date.now() - message.createdTimestamp} ms`)
-	}
 	
+	//Generation d'image de chat
 	if(message.content.startsWith(config.prefix + 'Icat')) {
 		let msg = await message.channel.send('Génération de l\'image...');
            	 
@@ -121,6 +118,10 @@ bot.on("message", async message => {
 		  
       }
 	
+	//Ping return Pong in ..ms
+	if (message.content.startsWith(config.prefix + "ping")){
+        message.channel.send(`Ping en ${Date.now() - message.createdTimestamp} ms`)
+	}
 	
 	//Command for restart bot
 		if(message.content.startsWith(config.prefix + "restart")) {
@@ -145,6 +146,7 @@ bot.on("message", async message => {
 
 		    }
 	
+	//help pour les images
 	if (message.content === config.prefix + 'Image'){
 		var catEmbed = new Discord.RichEmbed()
         	.setDescription('Voici les commandes possible pour obtenir des images :wink: ')
@@ -161,30 +163,33 @@ bot.on("message", async message => {
         	message.channel.send(catEmbed);
 	 }
 	}
-    if (message.content === (config.prefix + 'Server') || message.content === (config.prefix + 'Serveur')) {
-        let server_name = message.guild.name
-        let server_size = message.guild.members.size
-        message.channel.send('Serveur : ' + server_name + '\nPersonnes : ' + server_size);
-    }
 	
+	//member count	
+	if (message.content === (config.prefix + 'Server') || message.content === (config.prefix + 'Serveur')) {
+		let server_name = message.guild.name
+		let server_size = message.guild.members.size
+		message.channel.send('Serveur : ' + server_name + '\nPersonnes : ' + server_size);
+	}
+	
+	//Youtube Channel
     if (message.content === config.prefix + 'Youtube'){
-	
-    if(message.channel.type === 'dm'){
-	 var youtubeEmbed = new Discord.RichEmbed()
-        .setDescription("Pense à t'abonner et à liké")
-        .setColor('#5DKK6L')
-        .addField('Voilà la chaîne de Cube_Lime YT', 'https://www.youtube.com/channel/UCKwjZKxnVGF2WUNPEHc0RVg')
-        .addField('Viens aussi sur son serveur discord', 'https://discord.me/fatalityteam')
-	 .addField("Tu peut également l'ajouter en ami sur youtube", "https://youtu.be/join/ct-Py9DY3VEGjY")
-        .setFooter("Allez c'est gratuit pour le moment")
-        message.author.createDM().then(channel => {
-        	channel.send(youtubeEmbed)
-	});
-    }else{
-        message.channel.send(youtubeEmbed);
-    	}
+	    if(message.channel.type === 'dm'){
+		 var youtubeEmbed = new Discord.RichEmbed()
+		.setDescription("Pense à t'abonner et à liké")
+		.setColor('#5DKK6L')
+		.addField('Voilà la chaîne de Cube_Lime YT', 'https://www.youtube.com/channel/UCKwjZKxnVGF2WUNPEHc0RVg')
+		.addField('Viens aussi sur son serveur discord', 'https://discord.me/fatalityteam')
+		 .addField("Tu peut également l'ajouter en ami sur youtube", "https://youtu.be/join/ct-Py9DY3VEGjY")
+		.setFooter("Allez c'est gratuit pour le moment")
+		message.author.createDM().then(channel => {
+			channel.send(youtubeEmbed)
+		});
+	    }else{
+		message.channel.send(youtubeEmbed);
+		}
     }
-	
+    
+    //Commande pour les jeux du bot
     if (message.content === config.prefix + 'Game') {
         let gameEmbed = new Discord.RichEmbed()
         .setDescription('Voici les commandes possible pour jouer avec moi :D')
@@ -194,26 +199,28 @@ bot.on("message", async message => {
         .setFooter("Si tu as des suggestions de jeu  a rajouter fait moi en part");
         message.channel.send(gameEmbed);
     }
-
-    if (message.content === config.prefix + 'Utility') {
-        let utilityEmbed = new Discord.RichEmbed()
-        .setDescription('Voici les commandes utiles')
-        .setColor('#03fff7')
-        .addField("C*ping", "Vous donnes votre nombre de ms.")
-        .setFooter("Si tu as des commandes a rajouter dit le moi");
-        message.channel.send(utilityEmbed);
-    }
+    
+	//Utility
+	 if (message.content === config.prefix + 'Utility') {
+		let utilityEmbed = new Discord.RichEmbed()
+		.setDescription('Voici les commandes utiles')
+		.setColor('#03fff7')
+		.addField("C*ping", "Vous donnes votre nombre de ms.")
+		.setFooter("Si tu as des commandes a rajouter dit le moi");
+		message.channel.send(utilityEmbed);
+	  }
 	
-    if (message.content === config.prefix + 'CGC') {
-        let cgcEmbed = new Discord.RichEmbed()
-        .setDescription('Voici comment avoir un global-chat')
-        .setColor('#03fsf7')
-        .addField(`${config.prefix}SetupCGC`, "Ajouteras un chat inter-serveur automatiquement :wink: ")
-        .setFooter("Si tu as un problème dit le moi => Cube_Lime#3607");
-        message.channel.send(cgcEmbed);
-    }
+	//Info Global Chat
+	    if (message.content === config.prefix + 'CGC') {
+		let cgcEmbed = new Discord.RichEmbed()
+		.setDescription('Voici comment avoir un global-chat')
+		.setColor('#03fsf7')
+		.addField(`${config.prefix}SetupCGC`, "Ajouteras un chat inter-serveur automatiquement :wink: ")
+		.setFooter("Si tu as un problème dit le moi => Cube_Lime#3607");
+		message.channel.send(cgcEmbed);
+	    }
 	
-	    
+	//Administration
 	if (message.content === config.prefix + 'Administration') {
 	  if ( !message.member.hasPermission('ADMINISTRATOR')){
 		message.react('👌')
@@ -233,6 +240,14 @@ bot.on("message", async message => {
 			message.channel(adminEmbed);
 	  }
 	}
+	
+	
+	
+	
+	
+	
+	
+	
  let prefix = config.prefix;
   
 // Variables
