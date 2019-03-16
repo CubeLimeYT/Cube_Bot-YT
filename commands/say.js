@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 
 module.exports.run = async (bot, message, args) => {
       if(message.guild.roles.find(r => r.name === "👑Fondateur👑")){
-            if (message.member.roles.some(role => role.name === 'Say')){
+            if (message.member.roles.some(role => role.name === '👑Fondateur👑')){
                   const sayMessage = args.join(" ");
                   message.delete().catch();
                   let mesg = await message.channel.send(sayMessage);
