@@ -91,7 +91,7 @@ bot.on('guildMemberRemove', async member => {
 
 	  goodbye.print(font64, 400, 170, member.user.username)
 	  goodbye.composite(avatar, 43, 38).write('Goodbye2.png')
-	  member.guild.channels.get('Join-Quit').send(``, { files: ["Goodbye2.png"] })
+	  member.guild.channels.get('555064788367966209').send(``, { files: ["Goodbye2.png"] })
 
 	  console.log('Image sent!')
 	  })
