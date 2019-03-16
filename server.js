@@ -142,26 +142,18 @@ if(message.content.startsWith(config.prefix + "restart")) {
     }
 	
 	if (message.content === config.prefix + 'Image'){
-		
-	if(message.channel.type === 'dm'){
-       	 	message.author.createDM().then(channel => {
-		let catEmbed = new Discord.RichEmbed()
+		var catEmbed = new Discord.RichEmbed()
         	.setDescription('Voici les commandes possible pour obtenir des images :wink: ')
         	.setColor('#6D5G1R')
         	.addField("C*Icat", "Vous donneras des images aléatoires de chat :joy: ")
         	.addField("C*Idog", "Vous donneras des images de chien :joy: ")
         	.addField("C*Inude","Vous enverras un nude en privé :wink: ")
         	.setFooter("Si tu as des suggestions d'images a rajouter fait moi en part  ")
+	if(message.channel.type === 'dm'){
+       	 	message.author.createDM().then(channel => {
         		channel.send(catEmbed)
 		});
 	}else{
-		let catEmbed = new Discord.RichEmbed()
-        	.setDescription('Voici les commandes possible pour obtenir des images :wink: ')
-        	.setColor('#6D5G1R')
-        	.addField("C*Icat", "Vous donneras des images aléatoires de chat :joy: ")
-        	.addField("C*Idog", "Vous donneras des images de chien :joy: ")
-        	.addField("C*Inude","Vous enverras un nude en privé :wink: ")
-        	.setFooter("Si tu as des suggestions d'images a rajouter fait moi en part  ")
         	message.channel.send(catEmbed);
 	 }
 	}
@@ -174,25 +166,17 @@ if(message.content.startsWith(config.prefix + "restart")) {
     if (message.content === config.prefix + 'Youtube'){
 	
     if(message.channel.type === 'dm'){
-	 
-        message.author.createDM().then(channel => {
-	let youtubeEmbed = new Discord.RichEmbed()
+	 var youtubeEmbed = new Discord.RichEmbed()
         .setDescription("Pense à t'abonner et à liké")
         .setColor('#5DKK6L')
         .addField('Voilà la chaîne de Cube_Lime YT', 'https://www.youtube.com/channel/UCKwjZKxnVGF2WUNPEHc0RVg')
         .addField('Viens aussi sur son serveur discord', 'https://discord.me/fatalityteam')
 	 .addField("Tu peut également l'ajouter en ami sur youtube", "https://youtu.be/join/ct-Py9DY3VEGjY")
         .setFooter("Allez c'est gratuit pour le moment")
+        message.author.createDM().then(channel => {
         	channel.send(youtubeEmbed)
 	});
     }else{
-	let youtubeEmbed = new Discord.RichEmbed()
-        .setDescription("Pense à t'abonner et à liké")
-        .setColor('#5DKK6L')
-        .addField('Voilà la chaîne de Cube_Lime YT', 'https://www.youtube.com/channel/UCKwjZKxnVGF2WUNPEHc0RVg')
-        .addField('Viens aussi sur son serveur discord', 'https://discord.me/fatalityteam')
-	 .addField("Tu peut également l'ajouter en ami sur youtube", "https://youtu.be/join/ct-Py9DY3VEGjY")
-        .setFooter("Allez c'est gratuit pour le moment")
         message.channel.send(youtubeEmbed);
     	}
     }
@@ -238,17 +222,11 @@ if(message.content.startsWith(config.prefix + "restart")) {
 					.setDescription('Voici la liste des commandes pour les administrateur')
 					.setColor('#6GFH6D')
 					.addField('C*Server', 'Vous donneras les infos sur le serveur')
-				        .addField('C*CGC', 'Vous ajouetras un Global-Chat automatiquement')
+				        .addField('C*SetupCGC', 'Vous ajouetras un Global-Chat automatiquement')
 					.addField('C*Ban', 'Pour bannir des gens de façon permanente')
 					.addField('C*Kick', 'Pour kicker des gens :D')
 					.setFooter('Voila')
-			   let rMember = message.author;
-			try{
-				await rMember.send(adminEmbed)
-				await message.reply("vérifier vos messages priver")
-			 }catch(e){
-				message.reply(`Impossible de vous envoyez des messages privés`);
-			 }
+			message.channel(adminEmbed);
 	  }
 	}
  let prefix = config.prefix;
