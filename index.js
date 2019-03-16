@@ -44,6 +44,7 @@ bot.on('message',async message => {
         			.setDescription("Voici la description")
         			.setColor('#1CFF1C')
        				.addField('C*Administration', "Vous donne la page d'Administration")
+       				.addField('C*Utility', "Vous donne la page des commandes utile")
         			.addField('C*Youtube', 'Vous donneras tout concernant le Youtube Game :) ')
         			.addField('C*Game', 'Vous donneras tout les jeux présent sur le bot')
         			.addField('C*Image', 'Vous donneras les commandes pour avoir des images')
