@@ -142,7 +142,7 @@ bot.on("message", async message => {
 			let embedglobal = new Discord.RichEmbed()
 			.setAuthor(`${message.author.username} | ${message.author.id}`, message.author.avatarURL)
 			.setColor(0xBCFF78)
-			.addField(`${sayMessage}`, "Global Chat V.1")
+			.addField(`${sayMessage}`, "Global Chat V.1.1")
 			.setFooter(`Envoyé depuis ${message.guild.name}`)
 			.setTimestamp()
 
