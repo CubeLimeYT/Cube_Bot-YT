@@ -69,7 +69,7 @@ bot.on('guildMemberAdd', async member => {
 
 	  welcome.print(font64, 400, 170, member.user.username)
 	  welcome.composite(avatar, 43, 38).write('Welcome2.png')
-	  bot.channels.find('name', 'Join-Quit').send(``, { files: ["Welcome2.png"] })
+	  member.guild.channels.get('Join-Quit').send(``, { files: ["Welcome2.png"] })
 
 	  console.log('Image sent!')
 	  })
@@ -91,7 +91,7 @@ bot.on('guildMemberRemove', async member => {
 
 	  goodbye.print(font64, 400, 170, member.user.username)
 	  goodbye.composite(avatar, 43, 38).write('Goodbye2.png')
-	  bot.channels.find('name', 'Join-Quit').send(``, { files: ["Goodbye2.png"] })
+	  member.guild.channels.get('Join-Quit').send(``, { files: ["Goodbye2.png"] })
 
 	  console.log('Image sent!')
 	  })
@@ -330,11 +330,13 @@ bot.on("message", async message => {
 	  }else{
 				let adminEmbed = new Discord.RichEmbed()
 					.setDescription('Voici la liste des commandes pour les administrateur')
-					.setColor('#6GFH6D')
-					.addField('C*Server', 'Vous donneras les infos sur le serveur')
-				        .addField('C*SetupCGC', 'Vous ajouetras un Global-Chat automatiquement')
-					.addField('C*Ban', 'Pour bannir des gens de façon permanente')
-					.addField('C*Kick', 'Pour kicker des gens :D')
+					.setColor('RANDOM')
+					.addField(`${config.prefix}Serveur`, `Vous donneras les infos sur le serveur`)
+				        .addField(`${config.prefix}SetupCGC`, `Vous ajouetras un Global-Chat automatiquement`)
+					.addField(`${config.prefix}Userinfo`, `Vous donnes les infos d'une personne`)
+					.addField(`${config.prefix}Clear`, `Permet de nettoyer une channel (0-100)`)
+					.addField(`${config.prefix}Ban`, `Pour bannir des gens de façon permanente`)
+					.addField(`${config.prefix}Kick`, `Pour kicker des gens :D`)
 					.setFooter('Voila')
 			message.channel.send(adminEmbed);
 	  }
