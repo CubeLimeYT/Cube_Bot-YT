@@ -104,11 +104,17 @@ bot.on("message", async message => {
 		
 	}
 	
-	/*List Radio
+
 	if(message.content === (config.prefix + "rlist") || (config.prefix + "radiolist")){
-		message.channel.send(Radios.radio);
+		message.channel.send('Voici la liste des radios');
+		message.channel.send(Radios.radio01);
+		message.channel.send(Radios.radio02);
+		message.channel.send(Radios.radio03);
+		message.channel.send(Radios.radio04);
+		message.channel.send(Radios.radio05);
+		message.channel.send(Radios.radio06);
+		message.channel.send(Radios.radio07);
 	}
-	*/
 	
 	//Generation d'image meme
 	if(message.content.startsWith(config.prefix + 'meme')) {
