@@ -206,6 +206,15 @@ if(message.content.startsWith(config.prefix + "restart")) {
         message.channel.send(gameEmbed);
     }
 	
+    if (message.content === config.prefix + 'CGC') {
+        let cgcEmbed = new Discord.RichEmbed()
+        .setDescription('Voici comment avoir un global-chat')
+        .setColor('#03fsf7')
+        .addField(`${congig.prefix}SetupCGC`, "Ajouteras un chat inter-serveur automatiquement :wink: ")
+        .setFooter("Si tu as un problème dit le moi => Cube_Lime#3607");
+        message.channel.send(cgcEmbed);
+    }
+	
 	    
 	if (message.content === config.prefix + 'Administration') {
 	  if ( !message.member.hasPermission('ADMINISTRATOR')){
