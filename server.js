@@ -69,7 +69,7 @@ bot.on('guildMemberAdd', async member => {
 
 	  welcome.print(font64, 400, 170, member.user.username)
 	  welcome.composite(avatar, 43, 38).write('Welcome2.png')
-	  member.guild.channels.get('Join-Quit').send(``, { files: ["Welcome2.png"] })
+	  member.guild.channels.get('555064788367966209').send(``, { files: ["Welcome2.png"] })
 
 	  console.log('Image sent!')
 	  })
