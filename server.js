@@ -219,7 +219,7 @@ bot.on("message", async message => {
 	
 	//Ping return Pong in ..ms
 	if (message.content.startsWith(config.prefix + "ping")){
-        message.channel.send(`Ping en ${Date.now() - message.createdTimestamp} ms`)
+        message.channel.send(`Pong en ${Date.now() - message.createdTimestamp} ms`)
 	}
 	
 	//Command for restart bot
