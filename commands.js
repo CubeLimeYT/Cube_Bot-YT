@@ -29,6 +29,11 @@ function help(msg){
 					  inline: true
 					},
 					{
+					  name: `${config.prefix}Utility`,
+					  value: `Vous donneras les commandes utiles`,
+					  inline: true
+					},
+					{
 					  name: `${config.prefix}Youtube`,
 					  value: `Vous donneras tout concernant le Youtube Game :)`,
 					  inline: true
