@@ -69,7 +69,7 @@ bot.on('guildMemberAdd', async member => {
 
 	  welcome.print(font64, 400, 170, member.user.username)
 	  welcome.composite(avatar, 43, 38).write('Welcome2.png')
-	  member.guild.channels.get('name', 'Join-Quit').send(``, { files: ["Welcome2.png"] })
+	  member.guild.channels.get('Join-Quit').send(``, { files: ["Welcome2.png"] })
 
 	  console.log('Image sent!')
 	  })
@@ -91,7 +91,7 @@ bot.on('guildMemberRemove', async member => {
 
 	  goodbye.print(font64, 400, 170, member.user.username)
 	  goodbye.composite(avatar, 43, 38).write('Goodbye2.png')
-	  member.guild.channels.get('name', 'Join-Quit').send(``, { files: ["Goodbye2.png"] })
+	  member.guild.channels.get('Join-Quit').send(``, { files: ["Goodbye2.png"] })
 
 	  console.log('Image sent!')
 	  })
