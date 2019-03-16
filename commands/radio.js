@@ -3,20 +3,7 @@ const config = require("../config.json");
 
 module.exports.run = async (client, message) => {
 
-const radio = {
-    "franceinfo": "http://roo8ohho.cdn.dvmr.fr/live/franceinfo-midfi.mp3",
-    "nrj": "http://185.52.127.132/fr/30001/mp3_128.mp3?origine=fluxradios",
-    "rtl2": "http://streaming.radio.rtl2.fr/rtl2-1-48-192",
-    "skyrock": "http://icecast.skyrock.net/s/natio_mp3_128k?tvr_name=tunein16&tvr_section1=128mp3",
-    "rtl": "http://streaming.radio.rtl.fr/rtl-1-48-192",
-    "rfm": "http://rfm-live-mp3-128.scdn.arkena.com/rfm.mp3",
-    "bfm": "http://chai5she.cdn.dvmr.fr/bfmbusiness",
-    "nostalgie": "http://185.52.127.160/fr/30601/mp3_128.mp3?origine=fluxradios",
-    "mouv": "http://chai5she.cdn.dvmr.fr/mouv-midfi.mp3",
-    "funradio": "http://streaming.radio.funradio.fr/fun-1-48-192",
-    "virginradio": "http://mp3lg4.tdf-cdn.com/9243/lag_164753.mp3",
-    "cherie": "http://185.52.127.132/fr/30201/mp3_128.mp3?origine=fluxradios"
-}
+const radio = require("../radio.json");
 
                 if (!message.member.voiceChannel) return message.channel.send(`Vous devez être connecté dans un salon-vocal !`)
                 
@@ -27,7 +14,7 @@ const radio = {
 
             let args = message.content.split(" ").slice(1).join(" ").toLowerCase();
     
-            if (!args) return message.channel.send(`Veuillez spécifier un nom de radio, faites **//rlist** ou ${config.prefix}radio stop`);
+            if (!args) return message.channel.send(`Veuillez spécifier un nom de radio, faites **${config.prefix}rlist**, pour stopper la radio faites ${config.prefix}radio stop`);
     
     if(args === ("stop") || args === ("leave")){
         if (message.guild.voiceConnection) {
@@ -45,7 +32,7 @@ const radio = {
             }
     }else{
 
-        if(!radio[args]) return message.channel.send(`Radio non-valide, faites **//rlist** `)
+        if(!radio[args]) return message.channel.send(`Radio non-valide, faites **${config.prefix}rlist** `)
     
     message.member.voiceChannel.join().then(connection => {
 
