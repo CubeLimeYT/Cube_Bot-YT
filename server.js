@@ -53,7 +53,70 @@ bot.on('message', function (message) {
 		return;
 });
 
+//Event Memeber Join
+var jimp = require('jimp');
+
+bot.on('guildMemberAdd', async member => {
+	  let font = await jimp.loadFont(jimp.FONT_SANS_32_BLACK)
+	  let font64 = await jimp.loadFont(jimp.FONT_SANS_64_BLACK)
+	  let mask = await jimp.read('https://i.imgur.com/552kzaW.png')
+	  let welcome = await jimp.read('https://i.imgur.com/3Kf6TI8.png')
+
+	  jimp.read(member.user.displayAvatarURL).then(avatar => {
+	    avatar.resize(318, 317)
+	    mask.resize(318, 317)
+	    avatar.mask(mask)
+
+	  welcome.print(font64, 400, 170, member.user.username)
+	  welcome.composite(avatar, 43, 38).write('Welcome2.png')
+	  bot.channels.findAll('name', 'Join-Quit').map(channel => channel.send(``, { files: ["Welcome2.png"] }))
+
+	  console.log('Image sent!')
+	  })
+	  .catch(err => {
+	  console.log('error sending the avatar')
+	  })
+})
+
+bot.on('guildMemberRemove', async member => {
+	  let font = await jimp.loadFont(jimp.FONT_SANS_32_BLACK)
+	  let font64 = await jimp.loadFont(jimp.FONT_SANS_64_BLACK)
+	  let mask = await jimp.read('https://i.imgur.com/552kzaW.png')
+	  let goodbye = await jimp.read('https://imgur.com/Mazj06u.png')
+
+	  jimp.read(member.user.displayAvatarURL).then(avatar => {
+	    avatar.resize(318, 317)
+	    mask.resize(318, 317)
+	    avatar.mask(mask)
+
+	  goodbye.print(font64, 400, 170, member.user.username)
+	  goodbye.composite(avatar, 43, 38).write('Goodbye2.png')
+	  bot.channels.findAll('name', 'Join-Quit').map(channel => channel.send(``, { files: ["Goodbye2.png"] }))
+
+	  console.log('Image sent!')
+	  })
+	  .catch(err => {
+	  console.log('error sending the avatar')
+	  })
+})
+
+
 bot.on("message", async message => {
+	//Setup Join-Quit
+	if(message.content === config.prefix + "SetupJQ"){
+            if(!message.member.hasPermission('ADMINISTRATOR')){
+                  message.channel.send("Vous n'êtes pas administrateur")   
+            }else{
+                  if(!message.guild.member(bot.user).hasPermission('ADMINISTRATOR')){
+                        message.channel.send("Je n'ai pas la permission de pouvoir créer des salons textuel");
+                  }else{
+                        message.guild.createChannel("Join-Quit").then(channel => {
+                              channel.setTopic('Join-Quit')
+                        });
+                  }
+            }
+        }
+	
 	//Setup Global Chat
 	if(message.content === config.prefix + "SetupCGC"){
             if(!message.member.hasPermission('ADMINISTRATOR')){
@@ -67,7 +130,7 @@ bot.on("message", async message => {
                         });
                   }
             }
-      }
+        }
 	
 	//GlobalChat
 	if(message.channel.name === "cube-global-chat"){
