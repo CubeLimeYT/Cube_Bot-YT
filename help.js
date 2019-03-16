@@ -10,7 +10,7 @@ function radio(msg){
                color: 0xff0703,
                title: `Radio Help`,
                fields: [{
-                  name: `${config.prefix}radio [franceinfo, nrj, rtl2, skyrock, rtl, rfm, bfm, nostalgie, mouv]`,
+                  name: `${config.prefix}radio [Nom de radio]`,
                   value: "Pour que le bot joue la radio en direct, PS: il faut être dans un vocal mais le bot peut vous le rappeler 😉",
                   inline: true
                },
