@@ -22,7 +22,7 @@ function help(msg){
 	else {
 		let helpembed = new Discord.RichEmbed()
 		.setDescription('Voici toutes les commandes a votre dispositions')
-        	.setColor('#6D5G1R')
+        	.setColor('RANDOM')
         	.addField(`${config.prefix}Administration`, `Vous donne la page d'Administration`)
 		.addField(`${config.prefix}Utility`, `Vous donnes les commandes utiles`
         	.addField(`${config.prefix}Youtube`, `Vous donneras tout concernant le Youtube Game :)`)
