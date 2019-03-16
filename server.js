@@ -210,7 +210,7 @@ if(message.content.startsWith(config.prefix + "restart")) {
         let cgcEmbed = new Discord.RichEmbed()
         .setDescription('Voici comment avoir un global-chat')
         .setColor('#03fsf7')
-        .addField(`${congig.prefix}SetupCGC`, "Ajouteras un chat inter-serveur automatiquement :wink: ")
+        .addField(`${config.prefix}SetupCGC`, "Ajouteras un chat inter-serveur automatiquement :wink: ")
         .setFooter("Si tu as un problème dit le moi => Cube_Lime#3607");
         message.channel.send(cgcEmbed);
     }
