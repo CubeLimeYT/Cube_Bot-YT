@@ -237,7 +237,7 @@ bot.on("message", async message => {
 					.addField('C*Ban', 'Pour bannir des gens de façon permanente')
 					.addField('C*Kick', 'Pour kicker des gens :D')
 					.setFooter('Voila')
-			message.channel(adminEmbed);
+			message.channel.send(adminEmbed);
 	  }
 	}
 	
