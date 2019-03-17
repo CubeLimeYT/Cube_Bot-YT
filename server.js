@@ -6,7 +6,7 @@ const music = require('./commands/music.js');
 const cmdss = require('./commands.js');
 const Radios = require('./listradio.json');
 
-let statuses = [`${config.prefix}help`, `ban des caïd`, `https://www.youtube.com/channel/UCKwjZKxnVGF2WUNPEHc0RVg`, `Manger`, 'tous vous surveillez', 'être optimisé']
+let statuses = [`${config.prefix}help`, `ban des caïd`, `https://www.youtube.com/channel/UCKwjZKxnVGF2WUNPEHc0RVg`, `Manger`, 'tous vous surveillez', 'être optimisé',  `${bot.guild.size} serveurs`]
 bot.on('ready', () => {
 	console.log("Bot lancer!")
 	console.log(`${bot.user.username} est Prêt!`);
