@@ -123,7 +123,7 @@ bot.on("message", async message => {
       }
 	
 	//Generation d'image de chien
-	if(message.content.startsWith(config.prefix + 'Idog')) {
+	if(message.content.startsWith(config.prefix + 'dog')) {
 		let msg = await message.channel.send('Génération de l\'image...');
            	 
 									
@@ -143,7 +143,7 @@ bot.on("message", async message => {
 	
 	
 	//Generation d'image de chat
-	if(message.content.startsWith(config.prefix + 'Icat')) {
+	if(message.content.startsWith(config.prefix + 'cat')) {
 		let msg = await message.channel.send('Génération de l\'image...');
            	 
 									
