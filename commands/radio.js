@@ -4,7 +4,8 @@ const config = require("../config.json");
 module.exports.run = async (client, message) => {
 
 const radio = require("../radio.json");
-
+  message.channel.send("Commande off temporairement suite a des bugs")
+/*
                 if (!message.member.voiceChannel) return message.channel.send(`Vous devez être connecté dans un salon-vocal !`)
                 
                 if(!message.member.voiceChannel.joinable) return message.channel.send(`Je n'ai pas la permission de \`rejoindre\` ou \`parler\` dans ce salon !`).catch(err => console.log(err));
@@ -53,6 +54,7 @@ const radio = require("../radio.json");
 
         });
     }
+    */
 }
 
 module.exports.help = {
