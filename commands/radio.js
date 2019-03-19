@@ -4,7 +4,7 @@ const config = require("../config.json");
 module.exports.run = async (client, message) => {
 
 const radio = require("../radio.json");
-  message.channel.send("Commande off temporairement suite a des bugs")
+  message.channel.send("Commande off temporairement suite a des bugs <:gopnijpepe:557604758236692501>")
 /*
                 if (!message.member.voiceChannel) return message.channel.send(`Vous devez être connecté dans un salon-vocal !`)
                 
