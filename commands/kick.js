@@ -17,8 +17,9 @@ if ( !message.member.hasPermission('KICK_MEMBERS')){
 	    };
 	    memberToKick.kick(kickOptions);
 	    message.channel.send(` L\'utilisateur ${memberToKick} à bien été kick`);
-		message.guild.owner.createDM().then(channel => {
-			channel.send({embed: {
+		let owner =  message.guild.owner;
+		try{
+			await owner.send({embed: {
 				title: "Kick",
 				color: 0x00FF,
 				fields:[{
@@ -36,8 +37,11 @@ if ( !message.member.hasPermission('KICK_MEMBERS')){
 					value: `${message.author}`,
 					inline: true
 				}]
-			}});
-		})
+			}})
+		}catch(e){
+				message.reply(`Impossible d'envoyer le rapport a l'owner de la guild`);
+			 }
+
 	}else{
         message.channel.send(`L\'utilisateur ${memberToKick} ne peut être kick`)
     }
