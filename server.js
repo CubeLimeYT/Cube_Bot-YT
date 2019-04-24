@@ -6,7 +6,7 @@ const music = require('./commands/music.js');
 const cmdss = require('./commands.js');
 const Radios = require('./listradio.json');
 
-let statuses = [`${config.prefix}help`, `//help | Version 1.1`, `${bot.guilds.size} serveurs`]
+let statuses = [`${config.prefix}help | Version 1.1`, `${bot.guilds.size} serveurs`]
 bot.on('ready', () => {
 	console.log("Bot lancer!")
 	console.log(`${bot.user.username} est Prêt!`);
