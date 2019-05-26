@@ -6,6 +6,7 @@ const music = require('./commands/music.js');
 const cmdss = require('./commands.js');
 const Radios = require('./listradio.json');
 const queue = new Map();
+const YouTube = require('simple-youtube-api');
 const youtube = new YouTube(process.env.YTB);
 const ytdl = require('ytdl-core');
 
