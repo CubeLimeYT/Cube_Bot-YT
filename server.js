@@ -80,7 +80,7 @@ bot.on("message", async message => {
 		
 		const sayMessage = args.join(" ");
 			message.delete().catch();
-			let embedglobal = new Discord.RichEmbed()
+			let embedglobal = new Client().RichEmbed()
 			.setAuthor(`${message.author.username} | ${message.author.id}`, message.author.avatarURL)
 			.setColor(0xBCFF78)
 			.addField(`${sayMessage}`, "Global Chat V.1.1")
@@ -240,7 +240,7 @@ bot.on("message", async message => {
     
     //Commande pour les jeux du bot
     if (message.content === config.prefix + 'Game') {
-        let gameEmbed = new Discord.RichEmbed()
+        let gameEmbed = new Client().RichEmbed()
         .setDescription('Voici les commandes possible pour jouer avec moi :D')
         .setColor('#03fff7')
         .addField(`${config.prefix}8ball`, "Je peut répondre a vos questions ,tapez la commande suivi de votre question (ex://8ball tu m'aime ?)")
