@@ -25,7 +25,7 @@ function help(msg){
         	.setColor('RANDOM')
         	.addField(`${config.prefix}Administration`, `Vous donne la page d'Administration`)
 		.addField(`${config.prefix}Utility`, `Vous donnes les commandes utiles`)
-        	.addField(`${config.prefix}Youtube`, `Vous donneras tout concernant le Youtube Game :6dz19sxu0u401:559060802246672384`)
+        	.addField(`${config.prefix}Youtube`, `Vous donneras tout concernant le Youtube Game <:6dz19sxu0u401:559060802246672384>`)
         	.addField(`${config.prefix}Game`, `Vous donneras tout les jeux présent sur le bot`)
         	.addField(`${config.prefix}Image`, `Vous donneras les commandes pour avoir des images`)
         	.addField(`${config.prefix}Invite`, `Vous donneras l'invitation du bot`)
