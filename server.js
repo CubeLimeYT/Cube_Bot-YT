@@ -1,4 +1,6 @@
-const { Client, Util, Discord } = require('discord.js')
+const Client = require('discord.js')
+const Discord = require('discord.js');
+const Util = require('discord.js');
 const bot = new Client();
 const config = require('./config.json');
 const superagent = require('superagent');
