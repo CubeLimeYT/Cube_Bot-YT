@@ -222,7 +222,7 @@ bot.on("message", async message => {
 	
 	//Youtube Channel
     if (message.content === config.prefix + 'Youtube'){
-	    var youtubeEmbed = new Client.RichEmbed()
+	    var youtubeEmbed = new Discord.RichEmbed()
 		.setDescription("Pense à t'abonner et à liké")
 		.setColor('#5DKK6L')
 		.addField('Voilà la chaîne de Cube_Lime YT', 'https://www.youtube.com/channel/UCKwjZKxnVGF2WUNPEHc0RVg')
@@ -241,7 +241,7 @@ bot.on("message", async message => {
     
     //Commande pour les jeux du bot
     if (message.content === config.prefix + 'Game') {
-        let gameEmbed = new Client().RichEmbed()
+        let gameEmbed = new Discord.RichEmbed()
         .setDescription('Voici les commandes possible pour jouer avec moi :D')
         .setColor('#03fff7')
         .addField(`${config.prefix}8ball`, "Je peut répondre a vos questions ,tapez la commande suivi de votre question (ex://8ball tu m'aime ?)")
