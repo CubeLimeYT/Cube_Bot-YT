@@ -1,4 +1,5 @@
 const { Client, Util, Discord } = require('discord.js')
+const discord = Discord();
 const bot = new Client();
 const config = require('./config.json');
 const superagent = require('superagent');
@@ -80,7 +81,7 @@ bot.on("message", async message => {
 		
 		const sayMessage = args.join(" ");
 			message.delete().catch();
-			let embedglobal = new Client().RichEmbed()
+			let embedglobal = new Discord.RichEmbed()
 			.setAuthor(`${message.author.username} | ${message.author.id}`, message.author.avatarURL)
 			.setColor(0xBCFF78)
 			.addField(`${sayMessage}`, "Global Chat V.1.1")
@@ -221,7 +222,7 @@ bot.on("message", async message => {
 	
 	//Youtube Channel
     if (message.content === config.prefix + 'Youtube'){
-	    var youtubeEmbed = new Discord.RichEmbed()
+	    var youtubeEmbed = new discord.RichEmbed()
 		.setDescription("Pense à t'abonner et à liké")
 		.setColor('#5DKK6L')
 		.addField('Voilà la chaîne de Cube_Lime YT', 'https://www.youtube.com/channel/UCKwjZKxnVGF2WUNPEHc0RVg')
