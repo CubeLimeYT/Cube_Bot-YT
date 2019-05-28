@@ -1,5 +1,4 @@
 const { Client, Util, Discord } = require('discord.js')
-const discord = Discord();
 const bot = new Client();
 const config = require('./config.json');
 const superagent = require('superagent');
@@ -222,7 +221,7 @@ bot.on("message", async message => {
 	
 	//Youtube Channel
     if (message.content === config.prefix + 'Youtube'){
-	    var youtubeEmbed = new discord.RichEmbed()
+	    var youtubeEmbed = new Client.RichEmbed()
 		.setDescription("Pense à t'abonner et à liké")
 		.setColor('#5DKK6L')
 		.addField('Voilà la chaîne de Cube_Lime YT', 'https://www.youtube.com/channel/UCKwjZKxnVGF2WUNPEHc0RVg')
