@@ -1,7 +1,6 @@
-const Client = require('discord.js')
 const Discord = require('discord.js');
-const Util = require('discord.js');
-const bot = new Client();
+const Util = require('./node_modules/discord.js/src/util/Util');
+const bot = new Discord.Client();
 const config = require('./config.json');
 const superagent = require('superagent');
 const music = require('./commands/music.js');
