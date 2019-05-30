@@ -11,9 +11,10 @@ const YouTube = require('simple-youtube-api');
 const youtube = new YouTube(process.env.YTB);
 const ytdl = require('ytdl-core');
 
-let statuses = [`${config.prefix}help | Version 1.1`, `${bot.guilds.size} serveurs`]
+let statuses = [`${config.prefix}help | Version 1.2`]//, `${bot.guilds.size} serveurs`]
 bot.on('ready', () => {
 	console.log("Bot lancer!")
+	console.log(`connecté à` + bot.user.tag );
 	console.log(`${bot.user.username} est Prêt!`);
 	setInterval(function() {
 		let status = statuses[Math.floor(Math.random()*statuses.length)];
@@ -50,6 +51,9 @@ bot.on('message', function (message) {
 	
 	if(message.content === 'bn')
 		message.reply("Moi aussi j'aime les BN <:troll:479719554826633236>")
+	
+	if(message.content === `Bn`)
+		message.reply(`BONNE NUIT`)
 
 	if(message.author.bot || message.channel.type != 'text')
 		return;
@@ -195,7 +199,7 @@ bot.on("message", async message => {
 		    }
 	
 	//help pour les images
-	if (message.content === config.prefix + 'Image'){
+	if (message.content === config.prefix + 'image') {
 		var catEmbed = new Discord.RichEmbed()
         	.setDescription('Voici les commandes possible pour obtenir des images :wink: ')
         	.setColor('#6D5G1R')
@@ -214,14 +218,14 @@ bot.on("message", async message => {
 	}
 	
 	//member count	
-	if (message.content === (config.prefix + 'Server') || message.content === (config.prefix + 'Serveur')) {
+	if (message.content === (config.prefix + 'server') || message.content === (config.prefix + 'serveur')) {
 		let server_name = message.guild.name
 		let server_size = message.guild.members.size
 		message.channel.send('Serveur : ' + server_name + '\nPersonnes : ' + server_size);
 	}
 	
 	//Youtube Channel
-    if (message.content === config.prefix + 'Youtube'){
+    if (message.content === config.prefix + 'youtube'){
 	    var youtubeEmbed = new Discord.RichEmbed()
 		.setDescription("Pense à t'abonner et à liké")
 		.setColor('#5DKK6L')
@@ -240,7 +244,7 @@ bot.on("message", async message => {
     }
     
     //Commande pour les jeux du bot
-    if (message.content === config.prefix + 'Game') {
+    if (message.content === config.prefix + 'game') {
         let gameEmbed = new Discord.RichEmbed()
         .setDescription('Voici les commandes possible pour jouer avec moi :D')
         .setColor('#03fff7')
@@ -251,7 +255,7 @@ bot.on("message", async message => {
     }
     
 	//Utility
-	 if (message.content === config.prefix + 'Utility') {
+	 if (message.content === config.prefix + 'utility') {
 		let utilityEmbed = new Discord.RichEmbed()
 		.setDescription('Voici les commandes utiles')
 		.setColor('#03fff7')
@@ -271,7 +275,7 @@ bot.on("message", async message => {
 	    }
 	
 	//Administration
-	if (message.content === config.prefix + 'Administration') {
+	if (message.content === config.prefix + 'administration') {
 	  if ( !message.member.hasPermission('ADMINISTRATOR')){
 		message.react('👌')
 		  .then(console.log)
@@ -282,12 +286,12 @@ bot.on("message", async message => {
 				let adminEmbed = new Discord.RichEmbed()
 					.setDescription('Voici la liste des commandes pour les administrateur')
 					.setColor('RANDOM')
-					.addField(`${config.prefix}Serveur`, `Vous donneras les infos sur le serveur`)
+					.addField(`${config.prefix}serveur`, `Vous donneras les infos sur le serveur`)
 				        .addField(`${config.prefix}SetupCGC`, `Vous ajouetras un Global-Chat automatiquement`)
-					.addField(`${config.prefix}Userinfo`, `Vous donnes les infos d'une personne`)
-					.addField(`${config.prefix}Clear`, `Permet de nettoyer une channel (0-100)`)
-					.addField(`${config.prefix}Ban`, `Pour bannir des gens de façon permanente`)
-					.addField(`${config.prefix}Kick`, `Pour kicker des gens :D`)
+					.addField(`${config.prefix}userinfo`, `Vous donnes les infos d'une personne`)
+					.addField(`${config.prefix}clear`, `Permet de nettoyer une channel (0-100)`)
+					.addField(`${config.prefix}ban`, `Pour bannir des gens de façon permanente`)
+					.addField(`${config.prefix}kick`, `Pour kicker des gens :D`)
 					.setFooter('Voila')
 			message.channel.send(adminEmbed);
 	  }
