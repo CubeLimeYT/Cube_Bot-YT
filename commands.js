@@ -50,7 +50,7 @@ else {
         .addField(`**Pour rejoindre la team, c'est très simple**`, "**========================================**")
         .addField(`Rend toi sur le serveur **💀FataLity Team💀** (utilise la commande **${config.prefix}Invite**)`, `Essaie de parler avec le Fondateur ou Co-Fondateur pour pouvoir rejoindre`)
         .addField(`:warning: **${config.prefix}help+** :warning:`, `Utilisez cette commmande si vous trouvez des bugs ou si vous avez besoin d'aide`)
-	.setFooter(`En réponse à ${msg.author.username}#${;sg.author.discriminator}`)
+	.setFooter(`En réponse à ${msg.author.username}#${msg.author.discriminator}`)
 	.setTimestamp()
 
 		msg.channel.send(helpembed);
