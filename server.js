@@ -14,7 +14,7 @@ const ytdl = require('ytdl-core');
 let statuses = [`${config.prefix}help | Version 1.2`]//, `${bot.guilds.size} serveurs`]
 bot.on('ready', () => {
 	console.log("Bot lancer!")
-	console.log(`connecté à` + bot.user.tag );
+	console.log(`connecté à ` + bot.user.tag );
 	console.log(`${bot.user.username} est Prêt!`);
 	setInterval(function() {
 		let status = statuses[Math.floor(Math.random()*statuses.length)];
