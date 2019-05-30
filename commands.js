@@ -9,7 +9,6 @@ module.exports = {
 function help(msg){
 	let args = msg.content.split(/\s+/).slice(1);
 	
-	user = message.author;
 	
 	let helpStr;
 	if(args.length == 1){
@@ -22,9 +21,10 @@ function help(msg){
 		helpStr(msg);
   }
 	else {
+		let user = message.author
 		let helpembed = new Discord.RichEmbed()
 	.setThumbnail(user.avatarURL)
-        .setDescription('**Mis à jour le 30/05/2019 à 10h18**')
+        .setDescription('**Mis à jour le 30/05/2019 à 15h09**')
         .setColor('#e11010')
         .addField(`**Voici les commandes disponible pour le moment**`, `**========================================**`)
         .addField(`<:interdit:583396310745481226> ${config.prefix}**administration** <:interdit:583396310745481226>`, `Vous donne la page d'Administration`)
