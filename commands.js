@@ -10,10 +10,23 @@ module.exports = {
    'help': help
 }
 
-bot.on(`message`, message => {
-	if (message.content === `${config.prefix}help`) {
+function help(msg){
+    let args = msg.content.split(/\s+/).slice(1);
+	user = message.author
 
-	 	user = message.author
+let helpStr;
+if(args.length == 1){
+    if(args[0].charAt(0) == config.prefix) //['L', 'efjofefe']
+        args[0] = args[0].slice(1);
+    helpStr = commandHelp[args[0]];
+    
+}
+if(helpStr){
+    helpStr(msg);
+}
+else {
+
+	 	
 		let helpembed = new Discord.RichEmbed()
 	.setThumbnail(user.avatarURL)
         .setDescription('**Mis à jour le 30/05/2019 à 15h09**')
@@ -42,4 +55,5 @@ bot.on(`message`, message => {
 
 		msg.channel.send(helpembed);
 	}
-})
+}
+}
