@@ -2,12 +2,15 @@ const commandHelp = require("./help.js");
 const config = require("./config.json");
 const Discord = require("discord.js");
 
+
+bot.on(`message`, message => {
+
+	
 module.exports = {
    'help': help
 }
 
 
-bot.on(`message`, message => {
 
 	function help(msg){
 		let args = msg.content.split(/\s+/).slice(1);
@@ -24,9 +27,9 @@ bot.on(`message`, message => {
 		helpStr(msg);
   }
 	else {
-		//let user = message.author
+	 	user = message.author
 		let helpembed = new Discord.RichEmbed()
-	//.setThumbnail(user.avatarURL)
+	.setThumbnail(user.avatarURL)
         .setDescription('**Mis à jour le 30/05/2019 à 15h09**')
         .setColor('#e11010')
         .addField(`**Voici les commandes disponible pour le moment**`, `**========================================**`)
@@ -48,8 +51,7 @@ bot.on(`message`, message => {
         .addField(`**Pour rejoindre la team, c'est très simple**`, "**========================================**")
         .addField(`Rend toi sur le serveur **💀FataLity Team💀** (utilise la commande **${config.prefix}Invite**)`, `Essaie de parler avec le Fondateur ou Co-Fondateur pour pouvoir rejoindre`)
         .addField(`:warning: **${config.prefix}help+** :warning:`, `Utilisez cette commmande si vous trouvez des bugs ou si vous avez besoin d'aide`)
-	.setFooter(`En cours de dévellopement`)
-	//.setFooter(`En réponse à ${message.author.username}#${message.author.discriminator}`)
+	.setFooter(`En réponse à ${message.author.username}#${message.author.discriminator}`)
 	.setTimestamp()
 
 		msg.channel.send(helpembed);
