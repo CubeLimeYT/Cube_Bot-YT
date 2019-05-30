@@ -14,7 +14,7 @@ module.exports = {
 function help(msg){
     let args = msg.content.split(/\s+/).slice(1);
 	
-	let user 
+	let user;
 	user = message.author;
 
 let helpStr;
