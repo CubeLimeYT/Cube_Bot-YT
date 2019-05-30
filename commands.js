@@ -56,4 +56,4 @@ else {
 		msg.channel.send(helpembed);
 	}
 }
-}
+
