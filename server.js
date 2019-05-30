@@ -293,7 +293,12 @@ bot.on("message", async message => {
 	  }
 	}
 	
+	//help+
 	
+	if (message.content === config.prefix + `help+`) {
+		message.channel.send(`Tu peut rejoindre le serveur support du bot avec la commande **${config.prefix}invite**`
+		message.reply(`Sinon tu peut aussi ajouter **Fatality_Cucube#3607** en ami, si tu as besoin de plus d'aide :blush:`
+		
 	
 	
 	
