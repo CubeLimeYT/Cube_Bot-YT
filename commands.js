@@ -21,9 +21,9 @@ function help(msg){
 		helpStr(msg);
   }
 	else {
-		let user = message.author
+		//let user = message.author
 		let helpembed = new Discord.RichEmbed()
-	.setThumbnail(user.avatarURL)
+	//.setThumbnail(user.avatarURL)
         .setDescription('**Mis à jour le 30/05/2019 à 15h09**')
         .setColor('#e11010')
         .addField(`**Voici les commandes disponible pour le moment**`, `**========================================**`)
