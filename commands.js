@@ -15,6 +15,7 @@ function help(msg){
 	
 	let message = message.author
 	let user = message.author
+	let author = message.author
 
 let helpStr;
 if(args.length == 1){
