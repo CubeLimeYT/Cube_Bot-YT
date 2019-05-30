@@ -6,8 +6,11 @@ module.exports = {
    'help': help
 }
 
-function help(msg){
-	let args = msg.content.split(/\s+/).slice(1);
+
+bot.on(`message`, message => {
+
+	function help(msg){
+		let args = msg.content.split(/\s+/).slice(1);
 	
 	
 	let helpStr;
@@ -52,3 +55,5 @@ function help(msg){
 		msg.channel.send(helpembed);
    }
 }
+	
+})
