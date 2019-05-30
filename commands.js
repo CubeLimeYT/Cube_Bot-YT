@@ -24,7 +24,7 @@ function help(msg){
         .setDescription('**Mis à jour le 30/05/2019 à 10h18**')
         .setColor('#e11010')
         .addField(`**Voici les commandes disponible pour le moment**`, `**========================================**`)
-        .addField(`<:interdit:583396310745481226> ${prefix}**Administration** <:interdit:583396310745481226>`, `Vous donne la page d'Administration`)
+        .addField(`<:interdit:583396310745481226> ${config.prefix}**Administration** <:interdit:583396310745481226>`, `Vous donne la page d'Administration`)
         .addBlankField(Boolean)
         .addField(`**Commandes disponible a tous**`, `**==========================================**`)
         .addField(`<:ampoule:583583402914086913> ${config.prefix}**Utility** <:ampoule:583583402914086913>`, `Vous donnes les commandes utiles`)
