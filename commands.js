@@ -12,7 +12,7 @@ module.exports = {
 
 function help(msg){
     let args = msg.content.split(/\s+/).slice(1);
-	const message = message.author
+	var message = message.author
 	const user = message.author
 
 let helpStr;
