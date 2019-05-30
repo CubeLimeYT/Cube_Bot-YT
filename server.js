@@ -357,7 +357,7 @@ bot.on('message', async msg => {
 
     if (command === 'play') {
         const voiceChannel = msg.member.voiceChannel;
-        if (!voiceChannel) return msg.channel.send('Vous devez etre dans un channel vocal pour utiliser cettecommande');
+        if (!voiceChannel) return msg.channel.send('Vous devez être dans un channel vocal pour utiliser cette commande');
         const permissions = voiceChannel.permissionsFor(msg.client.user);
         if (!permissions.has('CONNECT')) {
             return msg.channel.send('Je n\'ai pas la permission de me connecter au salon');
@@ -373,7 +373,7 @@ bot.on('message', async msg => {
                 const video2 = await youtube.getVideoByID(video.id); // eslint-disable-line no-await-in-loop
                 await handleVideo(video2, msg, voiceChannel, true); // eslint-disable-line no-await-in-loop
             }
-            return msg.channel.send(`:white_check_mark: Playlist: **${playlist.title}** a bien ete ajoute a la queue!`);
+            return msg.channel.send(`:white_check_mark: Playlist: **${playlist.title}** a bien été ajouté à la queue!`);
         } else {
             try {
                 var video = await youtube.getVideo(url);
@@ -385,7 +385,7 @@ bot.on('message', async msg => {
 __**Song selection:**__
 ${videos.map(video2 => `**${++index} -** ${video2.title}`).join('\n')}
 
-Veuillez fournir une valeur pour sélectionner l'un des resultats de la recherche, allant de 1 a 10.
+Veuillez fournir une valeur pour sélectionner l'un des résultats de la recherche, allant de 1 a 10.
                     `);
                     // eslint-disable-next-line max-depth
                     try {
@@ -396,34 +396,34 @@ Veuillez fournir une valeur pour sélectionner l'un des resultats de la recherch
                         });
                     } catch (err) {
                         console.error(err);
-                        return msg.channel.send('Aucune valeur ou valeur invalide entree, annulation de la sélection de video.');
+                        return msg.channel.send('Aucune valeur ou valeur invalide entrée, annulation de la sélection de vidéo.');
                     }
                     const videoIndex = parseInt(response.first().content);
                     var video = await youtube.getVideoByID(videos[videoIndex - 1].id);
                 } catch (err) {
                     console.error(err);
-                    return msg.channel.send(':sos: Je n\'ai pu obtenir aucun resultat de recherche.');
+                    return msg.channel.send(':sos: Je n\'ai pu obtenir aucun résultat de recherche.');
                 }
             }
             return handleVideo(video, msg, voiceChannel);
         }
     } else if (command === 'skip') {
-        if (!msg.member.voiceChannel) return msg.channel.send('Vous n\'etes pas dans un channel vocal');
+        if (!msg.member.voiceChannel) return msg.channel.send('Vous n\'êtes pas dans un channel vocal');
         if (!serverQueue) return msg.channel.send('Il n\'y a pas de musique qui joue actuellement ');
         serverQueue.connection.dispatcher.end('Skip command has been used!');
         return undefined;
     } else if (command === 'stop') {
-        if (!msg.member.voiceChannel) return msg.channel.send('Vous n\'etes pas dans un channel vocal');
+        if (!msg.member.voiceChannel) return msg.channel.send('Vous n\'êtes pas dans un channel vocal');
         if (!serverQueue) return msg.channel.send('Il n\'y a pas de musique qui joue actuellement');
         serverQueue.songs = [];
         serverQueue.connection.dispatcher.end('Stop command has been used!');
         return undefined;
     } else if (command === 'volume') {
-        if (!msg.member.voiceChannel) return msg.channel.send('Vous n\'etes pas dans un channel vocal');
+        if (!msg.member.voiceChannel) return msg.channel.send('Vous n\'êtes pas dans un channel vocal');
         if (!serverQueue) return msg.channel.send('Il n\'y a pas de musique qui joue actuellement');
 
         if (args[1] > 5) {
-            msg.channel.send('Vous ne pouvez pas mettre le volume superieur a 5 pour le confort de vos oreilles')
+            msg.channel.send('Vous ne pouvez pas mettre le volume supérieur a 5 pour le confort de vos oreilles')
         } else {
             if (!args[1]) return msg.channel.send(`Le volume est a : **${serverQueue.volume}**`);
             serverQueue.volume = args[1];
@@ -434,7 +434,7 @@ Veuillez fournir une valeur pour sélectionner l'un des resultats de la recherch
 
     } else if (command === 'np') {
         if (!serverQueue) return msg.channel.send('Il n\'y a pas de musique qui joue actuellement');
-        return msg.channel.send(`:notes: actuellement a l'ecoute: **${serverQueue.songs[0].title}**`);
+        return msg.channel.send(`:notes: actuellement à l'écoute: **${serverQueue.songs[0].title}**`);
     } else if (command === 'queue') {
         if (!serverQueue) return msg.channel.send('Il n\'y a pas de musique qui joue actuellement');
 
@@ -465,19 +465,19 @@ Veuillez fournir une valeur pour sélectionner l'un des resultats de la recherch
         return msg.channel.send('Il n\'y a pas de musique qui joue actuellement.');
     } else if (command === 'purge') {
         serverQueue.songs = [];
-        msg.channel.send("La queue a ete efface");
+        msg.channel.send("La queue a été effacé");
     } else if (command === "join") {
         if (!msg.member.voiceChannel) {
             msg.channel.send('Vous n\'etes pas dans un channel vocal');
         } else {
             msg.member.voiceChannel.join();
-            msg.channel.send("Le bot a bien rejoint le vocal")
+            msg.channel.send("Le bot à bien rejoint le vocal")
         }
 
     } else if (command === "leave") {
         if (msg.guild.me.voiceChannel) {
             msg.member.voiceChannel.leave();
-            msg.channel.send("Le bot a bien quitte le vocal");
+            msg.channel.send("Le bot à bien quitte le vocal");
         } else {
             msg.channel.send('Je ne suis pas dans un channel vocal');
         }
@@ -520,7 +520,7 @@ async function handleVideo(video, msg, voiceChannel, playlist = false) {
         serverQueue.songs.push(song);
         console.log(serverQueue.songs);
         if (playlist) return undefined;
-        else return msg.channel.send(`:white_check_mark: **${song.title}** a bien ete ajoute a la queue`);
+        else return msg.channel.send(`:white_check_mark: **${song.title}** a bien été ajouté à la queue`);
     }
     return undefined;
 }
