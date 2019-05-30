@@ -3,7 +3,7 @@ const config = require("./config.json");
 const Discord = require("discord.js");
 
 
-bot.on(`message`, message => {
+
 
 	
 module.exports = {
@@ -42,7 +42,4 @@ bot.on(`message`, message => {
 
 		msg.channel.send(helpembed);
 	}
-   }
-}
-	
 })
