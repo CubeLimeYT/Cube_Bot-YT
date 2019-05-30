@@ -10,12 +10,11 @@ module.exports = {
    'help': help
 }
 
+
 function help(msg){
     let args = msg.content.split(/\s+/).slice(1);
 	
-	let message = message.author
-	let user = message.author
-	let author = message.author
+	user = message.author
 
 let helpStr;
 if(args.length == 1){
