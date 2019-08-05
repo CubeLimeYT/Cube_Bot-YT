@@ -7,11 +7,10 @@ const music = require('./commands/music.js');
 const cmdss = require('./commands.js');
 const Radios = require('./listradio.json');
 const tokens = require('./tokens.json');
-/*const queue = new Map();
+const queue = new Map();
 const YouTube = require('simple-youtube-api');
 const youtube = new YouTube(process.env.YTB);
-*/
-const yt = require('ytdl-core');
+const ytdl = require('ytdl-core');
 
 let statuses = [`${config.prefix}help | Version 1.2`]//, `${bot.guilds.size} serveurs`]
 bot.on('ready', () => {
@@ -343,7 +342,7 @@ bot.on('message', msg => {
 });
 
 //bot.on pour la musique
-/*
+
 bot.on('message', async msg => {
 	let PREFIX = config.prefix;
     if (msg.author.bot) return undefined;
@@ -549,7 +548,7 @@ function play(guild, song) {
 
     serverQueue.textChannel.send(`:notes: Joue actuellement: **${song.title}**`);
 }
-*/
+/*
 
 let queue = {};
 
@@ -638,6 +637,8 @@ bot.on('message', msg => {
 	if (!msg.content.startsWith(tokens.prefix)) return;
 	if (commands.hasOwnProperty(msg.content.toLowerCase().slice(tokens.prefix.length).split(' ')[0])) commands[msg.content.toLowerCase().slice(tokens.prefix.length).split(' ')[0]](msg);
 });
+
+*/
 bot.login(process.env.token)
 
 function getCmdFunction(cmd){	
