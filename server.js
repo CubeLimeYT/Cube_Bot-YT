@@ -11,7 +11,7 @@ const tokens = require('./tokens.json');
 const YouTube = require('simple-youtube-api');
 const youtube = new YouTube(process.env.YTB);
 */
-const ytdl = require('ytdl-core');
+const yt = require('ytdl-core');
 
 let statuses = [`${config.prefix}help | Version 1.2`]//, `${bot.guilds.size} serveurs`]
 bot.on('ready', () => {
