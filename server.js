@@ -639,6 +639,24 @@ bot.on('message', msg => {
 });
 
 */
+
+bot.on('message', message => {
+	
+	let msg = message.content;	
+
+	
+
+	if(msg.startsWith (prefix + "send")){
+		if((message.author.id !== "372099632173416449") || (message.author.id !== "307231625459007488")) return message.reply('Vous n\'êtes pas le propriétaire du bot');
+		if(!message.mentions.users.first) { return message.channel.send("Veuillez spécifier une personne")}
+		let mention = message.mentions.users.first();
+		mentionMessage = message.content.slice (29);
+		if(mentionMessage === 'undefined') { return message.channel.send("Veuillez spécifier un message")}
+		mention.sendMessage(mentionMessage);
+		message.reply("message envoyé");
+	}
+});
+
 bot.login(process.env.token)
 
 function getCmdFunction(cmd){	
